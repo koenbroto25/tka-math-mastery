@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.2 Estimasi - TKA Matematika SMP</title>
+    <style>
+        /* CSS dasar agar mudah dibaca di browser */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 1.4rem;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+        h2.sub-chapter-title {
+            font-size: 2rem;
+            color: #4f46e5;
+            margin-top: 0;
+            border-bottom: 3px solid #4f46e5;
+            padding-bottom: 10px;
+        }
+        .summary-box {
+            background: #eff6ff;
+            border-left: 5px solid #3b82f6;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-bottom: 28px;
+        }
+        .question-card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+        }
+        .q-number {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            padding: 2px 12px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .fast-method {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-top: 12px;
+        }
+        .fast-method div {
+            margin-bottom: 6px;
+        }
+        .step-label {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 1px 8px;
+            margin-right: 6px;
+        }
+        .pro-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-top: 10px;
+            font-size: 0.92rem;
+        }
+        .math-text {
+            font-family: 'Courier New', monospace;
+            background: #e0e7ff;
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .badge-nomor {
+            float: right;
+            background: #e0e7ff;
+            color: #4f46e5;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 4px 14px;
+        }
+        /* CSS tambahan agar tabel (jika ada) tampil rapi */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 12px 0;
+        }
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background: #e0e7ff;
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="badge-nomor">Sub Bab 2 dari 17</span>
+        <h1>TKA Matematika SMP</h1>
+        <div class="chapter-card" id="sub2">
+<h2 class="sub-chapter-title">1.2 Estimasi</h2>
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong><br/>
+<strong>Apa itu Estimasi?</strong> Estimasi adalah seni "menebak cerdas" dengan membulatkan angka agar mudah dihitung. Kita tidak mencari hasil pasti, tapi hasil yang mendekati.<br/><br/>
+<strong>Aturan Pembulatan:</strong><br/>
+        - Angka 0, 1, 2, 3, 4 = dibulatkan ke bawah (tetap).<br/>
+        - Angka 5, 6, 7, 8, 9 = dibulatkan ke atas (ditambah 1).<br/><br/>
+<strong>Pembulatan ke Puluhan Terdekat:</strong> Lihat angka satuan. Contoh: 47 dibulatkan jadi 50 (karena satuan 7, naik). 42 dibulatkan jadi 40 (karena satuan 2, turun).<br/><br/>
+<strong>Pembulatan ke Ratusan Terdekat:</strong> Lihat angka puluhan. Contoh: 349 dibulatkan jadi 300 (puluhan 4, turun). 350 dibulatkan jadi 400 (puluhan 5, naik).<br/><br/>
+<strong>Logika Auto Paham:</strong> Bayangkan belanja di pasar. Kamu belanja Rp47.500, kurang lebih Rp50.000 kan? Itu estimasi! Tidak perlu hitung sampai sen, yang penting "kira-kira" berapa.
+    </div>
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Estimasikan hasil dari <span class="math-text">48 x 53</span> dengan pembulatan ke puluhan terdekat!</p>
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Bulatkan kedua angka ke puluhan terdekat sebelum dikalikan.</div>
+<div><span class="step-label">Langkah 1</span> Bulatkan 48: satuan 8, naik menjadi <span class="math-text">50</span>.</div>
+<div><span class="step-label">Langkah 2</span> Bulatkan 53: satuan 3, turun menjadi <span class="math-text">50</span>.</div>
+<div><span class="step-label">Langkah 3</span> Kalikan: <span class="math-text">50 x 50 = 2500</span>.</div>
+<strong>Hasil Cepat:</strong> Estimasi hasilnya sekitar <span class="math-text">2500</span>.
+        </div>
+<div class="pro-tip"><strong>Tips:</strong> Hasil asli 48 x 53 = 2544. Estimasi 2500 cukup dekat! Estimasi berguna untuk cek jawaban apakah masuk akal.</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Ibu membeli beras 23 kg seharga Rp12.500 per kg. Estimasikan total harga yang harus dibayar!</p>
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Bulatkan untuk mendapatkan angka yang mudah dihitung.</div>
+<div><span class="step-label">Langkah 1</span> Bulatkan 23 kg menjadi <span class="math-text">20 kg</span> (turun).</div>
+<div><span class="step-label">Langkah 2</span> Bulatkan Rp12.500 menjadi <span class="math-text">Rp10.000</span> (turun).</div>
+<div><span class="step-label">Langkah 3</span> Kalikan: <span class="math-text">20 x 10.000 = Rp200.000</span>.</div>
+<strong>Hasil Cepat:</strong> Estimasi harga sekitar <span class="math-text">Rp200.000</span>.
+        </div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Hasil dari <span class="math-text">7.506 + 2.491</span> jika dibulatkan ke ratusan terdekat adalah...</p>
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Pembulatan ke ratusan: lihat angka puluhan. Di atas 5 naik, di bawah 5 turun.</div>
+<div><span class="step-label">Langkah 1</span> 7.506: puluhan 0, turun jadi <span class="math-text">7.500</span>.</div>
+<div><span class="step-label">Langkah 2</span> 2.491: puluhan 9, naik jadi <span class="math-text">2.500</span>.</div>
+<div><span class="step-label">Langkah 3</span> Jumlahkan: <span class="math-text">7.500 + 2.500 = 10.000</span>.</div>
+<strong>Hasil Cepat:</strong> Hasil estimasi adalah <span class="math-text">10.000</span>.
+        </div>
+</div>
+</div>
+        <br>
+        <p style="color:#9ca3af; font-size:0.85rem; text-align:center; margin-top:30px;">
+            📘 Materi ini merupakan bagian dari Rangkuman TKA Matematika SMP
+        </p>
+    </div>
+</body>
+</html>

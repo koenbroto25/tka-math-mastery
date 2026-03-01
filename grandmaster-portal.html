@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandmaster Portal - Authentication</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --citadel-bg: #0a0a12;
+            --card-bg: #16213e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --text-light: #e2e2e2;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--citadel-bg);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(233, 69, 96, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+            color: var(--text-light);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--accent), var(--gold));
+        }
+
+        .portal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .portal-header i {
+            font-size: 3rem;
+            color: var(--gold);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+
+        .portal-header h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            background: rgba(10, 10, 18, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 10px;
+        }
+
+        .form-control:focus {
+            background: rgba(10, 10, 18, 0.8);
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+            color: white;
+        }
+
+        .btn-unlock {
+            background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%);
+            color: #0a0a12;
+            font-weight: 800;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 20px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .btn-unlock:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #f1c40f 0%, var(--gold) 100%);
+        }
+
+        .btn-unlock:disabled {
+            opacity: 0.7;
+            transform: none;
+        }
+
+        #errorMessage {
+            font-size: 0.9rem;
+            min-height: 1.5rem;
+            text-align: center;
+        }
+
+        .footer-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        .footer-link a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .footer-link a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <div class="portal-header">
+        <i class="bi bi-shield-lock-fill"></i>
+        <h2>Citadel Gate</h2>
+        <p class="small text-muted">Grandmaster Authentication Required</p>
+    </div>
+
+    <form id="adminLoginForm">
+        <div class="mb-3">
+            <label class="form-label">Admin Credentials</label>
+            <input type="email" class="form-control" id="adminEmail" placeholder="Email Address" required>
+        </div>
+        <div class="mb-4">
+            <label class="form-label">Secret Cipher</label>
+            <input type="password" class="form-control" id="adminPassword" placeholder="Password" required>
+        </div>
+
+        <div id="errorMessage" class="mb-3"></div>
+
+        <button type="submit" class="btn btn-unlock" id="btnLogin">
+            <i class="bi bi-key-fill"></i> Unlock Citadel
+        </button>
+    </form>
+
+    <div class="footer-link">
+        <a href="/dashboard.html"><i class="bi bi-arrow-left"></i> Return to Public Realm</a>
+    </div>
+</div>
+
+<script type="module" src="/src/admin-login.js"></script>
+
+</body>
+</html>

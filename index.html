@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKA Math Mastery - Petualangan Matematika RPG</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tkamath.com/">
+    <meta property="og:title" content="TKA Math Mastery - Matematika Jadi Petualangan!">
+    <meta property="og:description" content="Platform belajar matematika RPG pertama di Indonesia. Seru untuk siswa, transparan untuk orang tua, dan menguntungkan untuk guru.">
+    <meta property="og:image" content="https://tkamath.com/public/og-image.jpg">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0f172a; color: white; overflow-x: hidden; }
+        
+        /* Stars Background */
+        .bg-animated {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+        }
+        
+        /* Hero Section */
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            position: relative; 
+            z-index: 10;
+            padding-top: 80px; 
+        }
+        
+        .hero-title { 
+            font-size: 3.5rem; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #f59e0b, #fcd34d); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 4px 10px rgba(245, 158, 11, 0.5)); 
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle { font-size: 1.25rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 40px auto; line-height: 1.8; }
+        
+        /* Buttons */
+        .btn-play {
+            background: linear-gradient(45deg, #10b981, #059669); color: white; border: none;
+            padding: 15px 40px; font-size: 1.3rem; font-weight: 900; border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.5); border: 4px solid #34d399;
+            transition: all 0.3s; text-decoration: none;
+        }
+        .btn-play:hover { transform: scale(1.05) translateY(-3px); color: white; box-shadow: 0 15px 35px rgba(16, 185, 129, 0.7); }
+
+        .btn-outline-glow {
+            border: 2px solid rgba(255,255,255,0.2); color: white; background: rgba(255,255,255,0.05);
+            padding: 12px 30px; font-weight: 700; border-radius: 50px; text-decoration: none; transition: 0.3s;
+        }
+        .btn-outline-glow:hover { border-color: white; background: rgba(255,255,255,0.1); color: white; }
+
+        /* Role Cards */
+        .role-section { padding: 80px 0; background: rgba(15, 23, 42, 0.8); }
+        .role-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: 0.3s;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .role-card:hover { transform: translateY(-10px); background: rgba(30, 41, 59, 0.9); border-color: var(--card-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        
+        .role-icon { font-size: 3rem; margin-bottom: 20px; }
+        .role-student { --card-color: #3b82f6; }
+        .role-parent { --card-color: #10b981; }
+        .role-teacher { --card-color: #f59e0b; }
+        
+        .role-card h3 { color: var(--card-color); font-weight: 800; }
+
+        /* Mentor Preview */
+        .mentor-preview { padding: 80px 0; background: #020617; }
+        .mentor-card {
+            background: white; color: #1e293b; border-radius: 15px; padding: 20px;
+            transition: 0.3s; text-align: center;
+        }
+        .mentor-card:hover { transform: scale(1.05); }
+        .mentor-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #f59e0b; margin-bottom: 15px; }
+
+        /* Footer */
+        footer { background: #0f172a; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #64748b; }
+    </style>
+</head>
+<body>
+    <div class="bg-animated"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-opacity-75 bg-dark backdrop-blur">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="#"><i class="bi bi-shield-fill-check"></i> TKA Math</a>
+            <div class="d-flex gap-2">
+                <a href="/marketplace.html" class="btn btn-sm btn-outline-light rounded-pill px-3">Cari Guru</a>
+                <a href="/auth.html" class="btn btn-sm btn-warning fw-bold rounded-pill px-4 text-dark">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <span class="badge bg-secondary bg-opacity-25 border border-secondary text-light px-3 py-2 rounded-pill mb-3">🚀 Revolusi Belajar Matematika SD & SMP</span>
+            <h1 class="hero-title">Taklukkan <br>Monster Matematika!</h1>
+            <p class="hero-subtitle">
+                Platform edukasi pertama yang menggabungkan keseruan <b>Game RPG</b> dengan kurikulum matematika resmi. 
+                Siswa bermain, Orang Tua memantau, Guru mendapatkan penghasilan.
+            </p>
+            
+            <div class="d-flex flex-column flex-md-row justify-content-center gap-3 align-items-center">
+                <a href="/auth.html" class="btn-play">MULAI PETUALANGAN <i class="bi bi-controller"></i></a>
+                <a href="/marketplace.html" class="btn-outline-glow">Cari Guru Privat <i class="bi bi-search"></i></a>
+            </div>
+
+            <div class="mt-5 d-flex justify-content-center gap-4 text-muted small">
+                <span><i class="bi bi-check-circle-fill text-success"></i> Kurikulum BSKAP 2025</span>
+                <span><i class="bi bi-check-circle-fill text-success"></i> Metode Jurus Cepat</span>
+                <span><i class="bi bi-check-circle-fill text-success"></i> 100% Gratis Main</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Three Realms -->
+    <section class="role-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Satu Platform, Tiga Solusi</h2>
+                <p class="text-muted">Ekosistem lengkap untuk kesuksesan akademik.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Students -->
+                <div class="col-md-4">
+                    <div class="role-card role-student">
+                        <div class="role-icon">🦸‍♂️</div>
+                        <h3>Untuk Pahlawan (Siswa)</h3>
+                        <p class="mb-4">Ubah soal matematika membosankan menjadi pertarungan monster epik. Naikkan levelmu, buka jurus rahasia, dan pamerkan XP ke teman-teman!</p>
+                        <ul class="list-unstyled text-start small opacity-75">
+                            <li class="mb-2"><i class="bi bi-caret-right-fill"></i> Story Mode RPG yang seru</li>
+                            <li class="mb-2"><i class="bi bi-caret-right-fill"></i> Video Animasi "Jurus Cepat"</li>
+                            <li class="mb-2"><i class="bi bi-caret-right-fill"></i> Leaderboard & Badges</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Parents -->
+                <div class="col-md-4">
+                    <div class="role-card role-parent">
+                        <div class="role-icon">👨‍👩‍👧</div>
+                        <h3>Untuk Pemantau (Ortu)</h3>
+                        <p class="mb-4">Pantau perkembangan anak secara real-time dari HP Anda. Ketahui kelemahan mereka sebelum ujian dan temukan guru privat terbaik jika diperlukan.</p>
+                        <ul class="list-unstyled text-start small opacity-75">
+                            <li class="mb-2"><i class="bi bi-caret-right-fill"></i> Laporan Nilai Real-time</li>
+                            <li class="mb-2"><i class="bi bi-caret-right-fill"></i> Notifikasi Progres Belajar</li>
+                            <li class="mb-2"><i class="bi bi-caret-right-fill"></i> Akses ke Marketplace Guru</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Teachers -->
+                <div class="col-md-4">
+                    <div class="role-card role-teacher">
+                        <div class="role-icon">🧙‍♂️</div>
+                        <h3>Untuk Mentor (Guru)</h3>
+                        <p class="mb-4">Kelola kelas dengan mudah dan dapatkan penghasilan tambahan. Gunakan sistem kami untuk mengoreksi otomatis dan promosikan jasa les Anda.</p>
+                        <ul class="list-unstyled text-start small opacity-75">
+                            <li class="mb-2"><i class="bi bi-caret-right-fill"></i> Manajemen Kelas Gratis</li>
+                            <li class="mb-2"><i class="bi bi-caret-right-fill"></i> Bank Soal Otomatis (Sage's Library)</li>
+                            <li class="mb-2"><i class="bi bi-caret-right-fill"></i> Iklan Jasa Les (Marketplace)</li>
+                        </ul>
+                        <div class="mt-3 text-center">
+                            <a href="/iklanguru.html" class="btn btn-sm btn-outline-warning rounded-pill">Info Guru &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Preview -->
+    <section class="mentor-preview">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <div>
+                    <h2 class="fw-bold text-white">Temukan Mentor Terbaik</h2>
+                    <p class="text-muted mb-0">Guru terverifikasi siap membantu anak Anda menguasai TKA.</p>
+                </div>
+                <a href="/marketplace.html" class="btn btn-outline-light rounded-pill">Lihat Semua</a>
+            </div>
+
+            <div class="row g-4">
+                <!-- Static Preview 1 -->
+                <div class="col-6 col-md-3">
+                    <div class="mentor-card">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="mentor-avatar">
+                        <h6 class="fw-bold mb-1">Bpk. Aris, S.Pd.</h6>
+                        <small class="text-primary fw-bold">Matematika SD</small>
+                        <div class="text-warning small mt-1">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <!-- Static Preview 2 -->
+                <div class="col-6 col-md-3">
+                    <div class="mentor-card">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="mentor-avatar">
+                        <h6 class="fw-bold mb-1">Ibu Rina, M.Pd.</h6>
+                        <small class="text-primary fw-bold">Aljabar SMP</small>
+                        <div class="text-warning small mt-1">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <!-- Static Preview 3 -->
+                <div class="col-6 col-md-3">
+                    <div class="mentor-card">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="mentor-avatar">
+                        <h6 class="fw-bold mb-1">Kak Dimas, S.Si.</h6>
+                        <small class="text-primary fw-bold">Olimpiade</small>
+                        <div class="text-warning small mt-1">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <!-- Static Preview 4 -->
+                <div class="col-6 col-md-3">
+                    <div class="mentor-card bg-secondary bg-opacity-25 border border-secondary text-white d-flex flex-column align-items-center justify-content-center h-100">
+                        <h3 class="mb-2">🤔</h3>
+                        <p class="small mb-2">Anda Guru?</p>
+                        <a href="/iklanguru.html" class="btn btn-sm btn-warning fw-bold rounded-pill">Gabung Sini</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <h4 class="fw-bold text-white mb-3">TKA Math Mastery</h4>
+            <p class="mb-4">Membangun generasi emas Indonesia melalui matematika yang menyenangkan.</p>
+            
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="#" class="text-muted text-decoration-none">Tentang Kami</a>
+                <a href="/b2b.html" class="text-muted text-decoration-none">Kerjasama Sekolah (B2B)</a>
+                <a href="#" class="text-muted text-decoration-none">Kebijakan Privasi</a>
+            </div>
+            
+            <small>&copy; 2026 TKA Math Mastery. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

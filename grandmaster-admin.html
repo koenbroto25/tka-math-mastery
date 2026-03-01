@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandmaster Citadel - Control Center</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Marked.js -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --citadel-bg: #1a1a2e;
+            --sidebar-bg: #16213e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --text-light: #e2e2e2;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--citadel-bg);
+            color: var(--text-light);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar {
+            width: 280px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .sidebar-header {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.2rem;
+            text-align: center;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* --- Main Content --- */
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 40px;
+        }
+
+        .card-citadel {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card { text-align: center; padding: 20px; }
+        .stat-value { font-size: 2rem; font-weight: 700; color: var(--gold); }
+        .stat-label { font-size: 0.9rem; opacity: 0.7; }
+
+        h2, h3 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 20px; }
+
+        .ai-sync-area { background: #0f172a; border-radius: 10px; padding: 20px; font-family: 'Courier New', monospace; }
+        #jsonInput { width: 100%; height: 300px; background: transparent; color: #4ade80; border: none; outline: none; resize: vertical; }
+
+        .btn-sync { background: var(--gold); color: #1a1a2e; font-weight: 700; border: none; padding: 12px 30px; border-radius: 50px; margin-top: 15px; transition: 0.3s; }
+        .btn-sync:hover { transform: scale(1.05); background: #f1c40f; }
+
+        #admin-loading-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--citadel-bg);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .btn-xs { padding: 0.25rem 0.5rem; font-size: 0.75rem; }
+        .config-panel { animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<div id="admin-loading-overlay">
+    <div class="spinner-border text-warning" role="status"></div>
+    <p class="mt-3 font-cinzel">Summoning Grandmaster Session...</p>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-header">
+        <i class="bi bi-shield-lock-fill"></i> Citadel Admin
+    </div>
+    <nav class="nav flex-column">
+        <a class="nav-link active" data-section="overview"><i class="bi bi-speedometer2"></i> Overview</a>
+        <a class="nav-link" data-section="reports">
+            <i class="bi bi-flag-fill"></i> Reports
+            <span id="badge-reports" class="badge bg-danger rounded-pill ms-auto d-none">0</span>
+        </a>
+        <a class="nav-link" data-section="video-automator"><i class="bi bi-camera-reels-fill"></i> Video Automator</a>
+        <a class="nav-link" data-section="shadow-forge"><i class="bi bi-controller"></i> Shadow Forge (Interactive)</a>
+        <a class="nav-link" data-section="scroll-forge"><i class="bi bi-journal-plus"></i> Scroll Forge (CMS)</a>
+        <a class="nav-link" data-section="kingdom-settings"><i class="bi bi-gear-wide-connected"></i> Kingdom Settings</a>
+        <a class="nav-link" data-section="prompt-library"><i class="bi bi-magic"></i> Sage Prompt Library</a>
+        <a class="nav-link" data-section="simulation-hub"><i class="bi bi-incognito"></i> Simulation Hub (God Mode)</a>
+        <a class="nav-link" data-section="mentor-guild"><i class="bi bi-people"></i> Mentor Guild</a>
+        <a class="nav-link" data-section="treasury"><i class="bi bi-coin"></i> Treasury</a>
+        <a class="nav-link" data-section="b2b"><i class="bi bi-building"></i> Kingdom B2B</a>
+        <hr class="border-secondary">
+        <a class="nav-link text-danger" id="btnLogout"><i class="bi bi-box-arrow-left"></i> Logout</a>
+    </nav>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    
+    <!-- SECTION: OVERVIEW -->
+    <div id="section-overview" class="admin-section">
+        <h2>Citadel Overview</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card-citadel stat-card bg-danger bg-opacity-10 border-danger">
+                    <div class="stat-value text-danger" id="stat-reports">0</div>
+                    <div class="stat-label">Pending Reports</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-citadel stat-card">
+                    <div class="stat-value" id="stat-users">-</div>
+                    <div class="stat-label">Total Heroes</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-citadel stat-card">
+                    <div class="stat-value" id="stat-materi">-</div>
+                    <div class="stat-label">Knowledge Scrolls</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-citadel stat-card">
+                    <div class="stat-value" id="stat-teachers">-</div>
+                    <div class="stat-label">Guild Mentors</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-citadel stat-card">
+                    <div class="stat-value" id="stat-gold">0</div>
+                    <div class="stat-label">Total Gold (IDR)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION: REPORTS -->
+    <div id="section-reports" class="admin-section d-none">
+        <h2>Question Reports</h2>
+        <div class="card-citadel">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="text-warning">User Feedback</h5>
+                <button class="btn btn-sm btn-outline-light" id="btnRefreshReports"><i class="bi bi-arrow-clockwise"></i> Refresh</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover border-secondary">
+                    <thead>
+                        <tr class="text-secondary small text-uppercase">
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Location</th>
+                            <th>Issue</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reportsTableBody">
+                        <tr><td colspan="6" class="text-center text-muted py-4">Loading reports...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION: VIDEO AUTOMATOR -->
+    <div id="section-video-automator" class="admin-section d-none">
+        <h2>Video Automator (Grok Engine)</h2>
+        <div class="row">
+            <!-- Controls -->
+            <div class="col-md-5">
+                <div class="card-citadel">
+                    <div class="mb-4">
+                        <label class="form-label text-warning small fw-bold">1. JUDUL FILM</label>
+                        <input type="text" id="vaTitle" class="form-control bg-dark text-white border-secondary mb-3" placeholder="Judul Film (Otomatis dari PDF)">
+                        
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <label class="form-label small">Mode Render</label>
+                                <select id="vaMode" class="form-select bg-dark text-white border-secondary">
+                                    <option value="GROK">GROK (6s)</option>
+                                    <option value="SUPERGROK">SUPERGROK (10s)</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small">Gaya Visual</label>
+                                <select id="vaStyle" class="form-select bg-dark text-white border-secondary">
+                                    <option selected>Stickman Whiteboard</option>
+                                    <option>3D Pixar Style</option>
+                                    <option>Anime Cinematic</option>
+                                    <option>Realistic CGI</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small">Gemini API Key</label>
+                            <input type="password" id="vaApiKey" class="form-control bg-dark text-white border-secondary" placeholder="Paste Gemini API Key...">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-warning small fw-bold">2. UPLOAD MATERI</label>
+                        
+                        <div class="mb-3">
+                            <label class="form-label small"><i class="bi bi-file-earmark-text"></i> Materi (PDF/DOCX/TXT/HTML)</label>
+                            <input type="file" id="vaFileInput" accept=".pdf,.docx,.doc,.txt,.html" class="form-control bg-dark text-white border-secondary">
+                            <small id="fileStatus" class="text-muted">Min. Durasi: 80 Detik</small>
+                        </div>
+                    </div>
+
+                    <button id="btnGeneratePrompt" class="btn btn-sync w-100 py-3">
+                        <i class="bi bi-magic"></i> GENERATE PROMPT
+                    </button>
+                    <div id="vaErrorMsg" class="text-danger mt-3 small"></div>
+                </div>
+            </div>
+
+            <!-- Output -->
+            <div class="col-md-7">
+                <!-- Grok Best Settings Panel -->
+                <div class="card-citadel mb-3 p-3 bg-indigo-900 bg-opacity-20 border-info">
+                    <h6 class="text-info fw-bold mb-2"><i class="bi bi-sliders"></i> GROK BEST SETTINGS (Wajib!)</h6>
+                    <div class="row g-2 small text-light">
+                        <div class="col-4">🖼️ <b>Image Count:</b> 1 Image/Prompt</div>
+                        <div class="col-4">📐 <b>Aspect Ratio:</b> 16:9</div>
+                        <div class="col-4">🎬 <b>Motion:</b> Low (2-4)</div>
+                    </div>
+                </div>
+
+                <div class="card-citadel h-100 d-flex flex-col">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-info fw-bold">OUTPUT PROMPT</span>
+                        <button id="btnCopyPrompt" class="btn btn-sm btn-outline-light"><i class="bi bi-clipboard"></i> Copy</button>
+                    </div>
+                    <textarea id="vaOutput" class="form-control bg-dark text-info border-secondary flex-grow-1" style="height: 500px; font-family: monospace; font-size: 0.85rem;" readonly placeholder="Prompt siap pakai akan muncul di sini..."></textarea>
+                    
+                    <div class="mt-3 d-flex justify-content-between text-muted small font-monospace">
+                        <span id="vaSceneCount">Scenes: -</span>
+                        <span id="vaTotalDuration">Duration: -</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION: SHADOW FORGE (Interactive Video Editor) -->
+    <div id="section-shadow-forge" class="admin-section d-none">
+        <h2>Shadow Forge: Interactive Video Editor</h2>
+        
+        <!-- 1. Selection Panel -->
+        <div class="card-citadel mb-4">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label small fw-bold text-warning">1. Realm</label>
+                    <select class="form-select bg-dark text-white border-secondary" id="forgeJenjang">
+                        <option value="SD">SD (Elementary)</option>
+                        <option value="SMP">SMP (Junior High)</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label small fw-bold text-warning">2. Chapter</label>
+                    <select class="form-select bg-dark text-white border-secondary" id="forgeBab">
+                        <option value="" disabled selected>Select...</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label small fw-bold text-warning">3. Mission</label>
+                    <select class="form-select bg-dark text-white border-secondary" id="forgeSub">
+                        <option value="" disabled selected>Select...</option>
+                    </select>
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button class="btn btn-info w-100" id="btnLoadForge"><i class="bi bi-play-circle"></i> LOAD VIDEO</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1.5. Magic Auto-Forge Panel -->
+        <div class="card-citadel border-info mb-4">
+            <h5 class="text-info"><i class="bi bi-stars"></i> Magic Auto-Forge (AI Sync)</h5>
+            <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+                    <label class="form-label small text-muted">1. Materi Dasar (PDF/DOCX)</label>
+                    <input type="file" id="forgeMaterialFile" accept=".pdf,.docx,.doc,.txt" class="form-control bg-dark text-white border-secondary">
+                    <small class="text-muted" style="font-size: 0.7rem;">Sumber pertanyaan kuis</small>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label small text-muted">2. Script Video (.txt)</label>
+                    <input type="file" id="forgeScriptFile" accept=".txt" class="form-control bg-dark text-white border-secondary">
+                    <small class="text-muted" style="font-size: 0.7rem;">Sumber timing/durasi (Scene)</small>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-outline-info w-100" id="btnMagicForge">
+                        <i class="bi bi-magic"></i> RUN MAGIC SYNC
+                    </button>
+                </div>
+            </div>
+            <div id="magicStatus" class="mt-2 small"></div>
+        </div>
+
+        <!-- 2. Editor Workspace -->
+        <div id="forgeWorkspace" class="d-none">
+            <div class="row">
+                <!-- Video Player Column -->
+                <div class="col-md-7">
+                    <div class="card-citadel p-2">
+                        <div class="ratio ratio-16x9 mb-3 bg-black rounded border border-secondary">
+                            <div id="forgePlayerContainer"></div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="badge bg-danger fs-6" id="forgeTimer">00:00</span>
+                                <span class="text-muted small ms-2">Current Time</span>
+                            </div>
+                            <button class="btn btn-warning fw-bold" id="btnCaptureTime">
+                                <i class="bi bi-crosshair"></i> CAPTURE TIMESTAMP
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Editor Column -->
+                <div class="col-md-5">
+                    <div class="card-citadel bg-dark border-gold">
+                        <h5 class="text-gold mb-3"><i class="bi bi-pencil-square"></i> Quiz Editor</h5>
+                        
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Trigger Time (Seconds)</label>
+                            <input type="number" id="quizTime" class="form-control bg-secondary text-white border-0 fw-bold" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Question</label>
+                            <textarea id="quizQuestion" class="form-control bg-dark text-white border-secondary" rows="2" placeholder="Pertanyaan..."></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Options (A, B, C)</label>
+                            <div class="input-group mb-2">
+                                <span class="input-group-text bg-dark border-secondary text-muted">A</span>
+                                <input type="text" class="form-control bg-dark text-white border-secondary quiz-opt" data-idx="0">
+                            </div>
+                            <div class="input-group mb-2">
+                                <span class="input-group-text bg-dark border-secondary text-muted">B</span>
+                                <input type="text" class="form-control bg-dark text-white border-secondary quiz-opt" data-idx="1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-dark border-secondary text-muted">C</span>
+                                <input type="text" class="form-control bg-dark text-white border-secondary quiz-opt" data-idx="2">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Correct Answer</label>
+                            <select id="quizCorrect" class="form-select bg-dark text-white border-secondary">
+                                <option value="0">Option A</option>
+                                <option value="1">Option B</option>
+                                <option value="2">Option C</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Sage's Hint (If Wrong)</label>
+                            <input type="text" id="quizHint" class="form-control bg-dark text-white border-secondary" placeholder="Petunjuk...">
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success" id="btnAddQuiz"><i class="bi bi-plus-circle"></i> ADD TO TIMELINE</button>
+                            <button class="btn btn-secondary d-none" id="btnCancelEdit">Cancel Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Timeline / Quiz List -->
+            <div class="card-citadel mt-4">
+                <div class="d-flex justify-content-between mb-3">
+                    <h5 class="text-info"><i class="bi bi-list-check"></i> Quiz Timeline</h5>
+                    <button class="btn btn-primary fw-bold" id="btnSaveForge"><i class="bi bi-cloud-upload"></i> SAVE CHANGES TO DB</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover border-secondary align-middle">
+                        <thead>
+                            <tr class="text-secondary small text-uppercase">
+                                <th style="width: 100px;">Time</th>
+                                <th>Question</th>
+                                <th>Answer</th>
+                                <th style="width: 150px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="quizTimelineBody">
+                            <!-- Items injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION: SCROLL FORGE -->
+    <div id="section-scroll-forge" class="admin-section d-none">
+        <h2>Scroll Forge (AI Sync)</h2>
+        <div class="card-citadel">
+            <div class="row g-3 mb-4">
+                <!-- 1. MISSION TYPE (Moved to First) -->
+                <div class="col-md-3">
+                    <label class="form-label small fw-bold text-info">1. Mission Type</label>
+                    <select class="form-select bg-dark text-white border-info" id="syncType">
+                        <option value="materi" selected>📜 Knowledge Scroll (Material)</option>
+                        <option value="shadow">🛡️ Shadow Training (L1/L2)</option>
+                        <option value="guardian">⚔️ Guardian Skirmish (L2)</option>
+                        <option value="rift">🌀 The Time Rift (L3)</option>
+                    </select>
+                </div>
+
+                <!-- 2. LOCATION FILTERS -->
+                <div class="col-md-2">
+                    <label class="form-label small fw-bold text-warning">2. Target Realm</label>
+                    <select class="form-select bg-dark text-white border-secondary" id="syncJenjang">
+                        <option value="SD">SD (Elementary)</option>
+                        <option value="SMP">SMP (Junior High)</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label small fw-bold text-warning">3. Chapter</label>
+                    <select class="form-select bg-dark text-white border-secondary" id="syncBab">
+                        <option value="" disabled selected>Select...</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label small fw-bold text-warning">4. Sub-chapter</label>
+                    <select class="form-select bg-dark text-white border-secondary" id="syncSub">
+                        <option value="" disabled selected>Select...</option>
+                    </select>
+                </div>
+
+                <!-- 3. MODE -->
+                <div class="col-md-2">
+                    <label class="form-label small fw-bold text-secondary">Sync Mode</label>
+                    <select class="form-select bg-dark text-white border-secondary" id="syncMode">
+                        <option value="upsert">Add / Update</option>
+                        <option value="overwrite">Overwrite Mission</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- NEW: Quick Video Update (Specific to Materi) -->
+            <div id="videoQuickUpdatePanel" class="card-citadel bg-indigo-900 bg-opacity-20 border-info mb-4 d-none">
+                <h6 class="text-info fw-bold mb-3"><i class="bi bi-youtube"></i> Quick Video Link Inserter</h6>
+                <div class="input-group">
+                    <span class="input-group-text bg-dark border-secondary text-white">YouTube URL</span>
+                    <input type="text" id="quickVideoUrl" class="form-control bg-dark text-white border-secondary" placeholder="Paste link (e.g., https://youtu.be/xyz123 or watch?v=...)">
+                    <button class="btn btn-info fw-bold" id="btnUpdateVideoOnly">
+                        <i class="bi bi-save"></i> UPDATE VIDEO
+                    </button>
+                </div>
+                <small class="text-muted mt-2 d-block">Otamatis mengubah link YouTube biasa menjadi format Embed.</small>
+            </div>
+
+            <h5>Forge Input Area</h5>
+            
+            <!-- NEW: Auto-Forge Controls -->
+            <div class="card-citadel bg-dark border-secondary mb-3">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <label class="form-label small text-info"><i class="bi bi-magic"></i> Auto-Forge from PDF (Optional)</label>
+                        <input type="file" id="forgeFileInput" accept=".pdf" class="form-control bg-dark text-white border-secondary">
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <button id="btnForgeWithAI" class="btn btn-outline-info w-100 mt-4">
+                            <i class="bi bi-stars"></i> Forge with AI
+                        </button>
+                    </div>
+                </div>
+                <div id="forgeStatus" class="small text-muted mt-2"></div>
+            </div>
+
+            <div class="ai-sync-area">
+                <textarea id="jsonInput" placeholder="Paste AI JSON here OR use Auto-Forge..."></textarea>
+            </div>
+            <button class="btn btn-sync" id="btnSync"><i class="bi bi-lightning-charge-fill"></i> Execute Forge Sync</button>
+            <div id="syncStatus" class="mt-3"></div>
+        </div>
+    </div>
+
+    <!-- SECTION: KINGDOM SETTINGS -->
+    <div id="section-kingdom-settings" class="admin-section d-none">
+        <h2>Kingdom Settings</h2>
+        <div class="card-citadel">
+            <ul class="nav nav-pills mb-4" id="configTabs">
+                <li class="nav-item"><a class="nav-link active" data-config="branding">Branding</a></li>
+                <li class="nav-item"><a class="nav-link" data-config="features">B2B Toggles</a></li>
+                <li class="nav-item"><a class="nav-link" data-config="html">HTML/Ads</a></li>
+                <li class="nav-item"><a class="nav-link" data-config="logic">Game Logic</a></li>
+            </ul>
+
+            <div id="config-branding" class="config-panel">
+                <div class="mb-3">
+                    <label class="form-label">App Name</label>
+                    <input type="text" class="form-control bg-dark text-white border-secondary" id="set-app-name">
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-label">Primary Color</label>
+                        <input type="color" class="form-control form-control-color w-100 bg-dark border-secondary" id="set-primary-color">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Secondary (Gold)</label>
+                        <input type="color" class="form-control form-control-color w-100 bg-dark border-secondary" id="set-secondary-color">
+                    </div>
+                </div>
+            </div>
+
+            <div id="config-features" class="config-panel d-none">
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="set-enable-marketplace">
+                    <label class="form-check-label">Enable Mentor Guild</label>
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="set-enable-social">
+                    <label class="form-check-label">Enable Social Share</label>
+                </div>
+                <div class="form-check form-switch mb-3 text-danger">
+                    <input class="form-check-input" type="checkbox" id="set-maintenance">
+                    <label class="form-check-label fw-bold">MAINTENANCE MODE</label>
+                </div>
+            </div>
+
+            <div id="config-html" class="config-panel d-none">
+                <label class="form-label">Ad Header Script</label>
+                <textarea class="form-control bg-dark text-white border-secondary mb-3" rows="3" id="set-ad-header"></textarea>
+                <label class="form-label">Custom Hero HTML</label>
+                <textarea class="form-control bg-dark text-white border-secondary mb-3" rows="3" id="set-landing-html"></textarea>
+            </div>
+
+            <div id="config-logic" class="config-panel d-none">
+                <div class="mb-3"><label class="form-label">XP Multiplier</label><input type="number" step="0.1" class="form-control bg-dark text-white border-secondary" id="set-xp-mult"></div>
+                <div class="mb-3"><label class="form-label">Min Victory Score (%)</label><input type="number" class="form-control bg-dark text-white border-secondary" id="set-min-score"></div>
+            </div>
+
+            <hr class="border-secondary mt-4">
+            <button class="btn btn-sync w-100" id="btnSaveSettings"><i class="bi bi-save-fill"></i> Update Kingdom Configuration</button>
+            <div id="saveStatus" class="mt-3"></div>
+        </div>
+    </div>
+
+    <!-- SECTION: PROMPT LIBRARY -->
+    <div id="section-prompt-library" class="admin-section d-none">
+        <h2>Sage Prompt Library</h2>
+        
+        <!-- Dynamic Filter -->
+        <div class="card-citadel mb-4 border-info">
+            <h5 class="text-info mb-3"><i class="bi bi-filter-circle"></i> Filter Materi (Multi-Select)</h5>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <select id="promptJenjang" class="form-select bg-dark text-white border-secondary">
+                        <option value="SD">Jenjang SD</option>
+                        <option value="SMP">Jenjang SMP</option>
+                    </select>
+                </div>
+                <div class="col-md-9">
+                    <div id="promptSubCheckboxes" class="d-flex flex-wrap gap-2 p-2 bg-dark rounded border border-secondary" style="max-height: 150px; overflow-y: auto;">
+                        <span class="text-muted small">Select Jenjang first...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card-citadel">
+                    <h5 class="text-warning">TKA Official Simulation</h5>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-sm btn-outline-warning text-start" onclick="copyPrompt('simulasi-sd')">🎓 Simulasi TKA SD (40 Soal)</button>
+                        <button class="btn btn-sm btn-outline-warning text-start" onclick="copyPrompt('simulasi-smp')">🎓 Simulasi TKA SMP (40 Soal)</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-citadel">
+                    <h5 class="text-info">Exercise Prompts</h5>
+                    <div class="row g-2">
+                        <div class="col-6"><button class="btn btn-xs btn-outline-info w-100" onclick="copyPrompt('soal-shadow-sd')">SD Shadow</button></div>
+                        <div class="col-6"><button class="btn btn-xs btn-outline-info w-100" onclick="copyPrompt('soal-shadow-smp')">SMP Shadow</button></div>
+                        <div class="col-6"><button class="btn btn-xs btn-outline-info w-100" onclick="copyPrompt('soal-guardian-sd')">SD Guardian</button></div>
+                        <div class="col-6"><button class="btn btn-xs btn-outline-info w-100" onclick="copyPrompt('soal-guardian-smp')">SMP Guardian</button></div>
+                        <div class="col-6"><button class="btn btn-xs btn-outline-info w-100" onclick="copyPrompt('soal-rift-sd')">SD Rift</button></div>
+                        <div class="col-6"><button class="btn btn-xs btn-outline-info w-100" onclick="copyPrompt('soal-rift-smp')">SMP Rift</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 card-citadel bg-dark d-none" id="promptPreviewArea">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-warning text-dark" id="promptTitle">Prompt Text</span>
+                <button class="btn btn-xs btn-warning" onclick="copyToClipboard(document.getElementById('promptText').innerText)">COPY ALL</button>
+            </div>
+            <pre id="promptText" style="white-space: pre-wrap; font-size: 0.85rem; color: #a8ffb0;"></pre>
+        </div>
+    </div>
+
+    <!-- SECTION: SIMULATION HUB -->
+    <div id="section-simulation-hub" class="admin-section d-none">
+        <h2>Simulation Hub (God Mode)</h2>
+        <div class="card-citadel">
+            <div class="row g-3">
+                <div class="col-md-3"><button class="btn btn-outline-success w-100 py-3" id="btnSimStudentSD"><i class="bi bi-backpack-fill fs-2"></i><br>Hero Mode (SD)</button></div>
+                <div class="col-md-3"><button class="btn btn-outline-info w-100 py-3" id="btnSimStudentSMP"><i class="bi bi-calculator-fill fs-2"></i><br>Hero Mode (SMP)</button></div>
+                <div class="col-md-3"><button class="btn btn-outline-primary w-100 py-3" id="btnSimTeacher"><i class="bi bi-person-workspace fs-2"></i><br>Mentor Mode</button></div>
+                <div class="col-md-3"><button class="btn btn-outline-warning w-100 py-3" id="btnSimParent"><i class="bi bi-eye-fill fs-2"></i><br>Parent Mode</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION: MENTOR GUILD -->
+    <div id="section-mentor-guild" class="admin-section d-none">
+        <h2>Mentor Guild Moderation</h2>
+        <div class="card-citadel">
+            <p>Feature under development in Phase 2.</p>
+        </div>
+    </div>
+
+    <!-- SECTION: TREASURY -->
+    <div id="section-treasury" class="admin-section d-none">
+        <h2>Treasury</h2>
+        <div class="card-citadel">
+            <p>Feature under development in Phase 3.</p>
+        </div>
+    </div>
+
+    <!-- SECTION: B2B -->
+    <div id="section-b2b" class="admin-section d-none">
+        <h2>Kingdom B2B</h2>
+        <div class="card-citadel">
+            <p>Feature under development in Phase 2.</p>
+        </div>
+    </div>
+
+</div>
+
+<script type="module" src="/src/admin.js"></script>
+<script type="module" src="/src/video-automator.js"></script>
+
+<script>
+    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            document.querySelectorAll('.admin-section').forEach(s => s.classList.add('d-none'));
+            const section = document.getElementById(`section-${link.getAttribute('data-section')}`);
+            if(section) section.classList.remove('d-none');
+        });
+    });
+
+    document.querySelectorAll('#configTabs .nav-link').forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            document.querySelectorAll('#configTabs .nav-link').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            document.querySelectorAll('.config-panel').forEach(p => p.classList.add('d-none'));
+            const panel = document.getElementById(`config-${tab.getAttribute('data-config')}`);
+            if(panel) panel.classList.remove('d-none');
+        });
+    });
+</script>
+
+</body>
+</html>

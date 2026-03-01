@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.6 Barisan Bilangan - TKA Matematika SMP</title>
+    <style>
+        /* CSS dasar agar mudah dibaca di browser */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 1.4rem;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+        h2.sub-chapter-title {
+            font-size: 2rem;
+            color: #4f46e5;
+            margin-top: 0;
+            border-bottom: 3px solid #4f46e5;
+            padding-bottom: 10px;
+        }
+        .summary-box {
+            background: #eff6ff;
+            border-left: 5px solid #3b82f6;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-bottom: 28px;
+        }
+        .question-card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+        }
+        .q-number {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            padding: 2px 12px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .fast-method {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-top: 12px;
+        }
+        .fast-method div {
+            margin-bottom: 6px;
+        }
+        .step-label {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: 1px 8px;
+            margin-right: 6px;
+        }
+        .pro-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-top: 10px;
+            font-size: 0.92rem;
+        }
+        .math-text {
+            font-family: 'Courier New', monospace;
+            background: #e0e7ff;
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .badge-nomor {
+            float: right;
+            background: #e0e7ff;
+            color: #4f46e5;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 4px 14px;
+        }
+        /* CSS tambahan agar tabel (jika ada) tampil rapi */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 12px 0;
+        }
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background: #e0e7ff;
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="badge-nomor">Sub Bab 9 dari 17</span>
+        <h1>TKA Matematika SMP</h1>
+        <div class="chapter-card" id="sub9">
+<h2 class="sub-chapter-title">2.6 Barisan Bilangan</h2>
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong><br/>
+<strong>Apa itu Barisan?</strong> Barisan adalah kumpulan bilangan yang tersusun teratur menurut pola tertentu. Setiap bilangan dalam barisan disebut suku.<br/><br/>
+<strong>Barisan Aritmetika:</strong> Pola yang suku-sukunya bertambah atau berkurang dengan nilai tetap (beda). Contoh: 2, 5, 8, 11, 14... (bertambah 3 setiap langkah).<br/><br/>
+<strong>Barisan Geometri:</strong> Pola yang suku-sukunya bertambah atau berkurang dengan perkalian tetap (rasio). Contoh: 3, 6, 12, 24... (dikalikan 2 setiap langkah).<br/><br/>
+<strong>Rumus Suku ke-n:</strong><br/>
+        - Aritmetika: Un = a + (n-1)b (a = suku awal, b = beda)<br/>
+        - Geometri: Un = a x r pangkat (n-1) (r = rasio)<br/><br/>
+<strong>Logika Auto Paham:</strong> Barisan seperti tangga. Aritmetika = tangga yang tinggi tiap anaknya sama. Geometri = tangga yang tiap anaknya semakin tinggi (kalau rasio &gt; 1) atau semakin pendek (kalau rasio &lt; 1).
+    </div>
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Tentukan suku ke-10 dari barisan: 3, 7, 11, 15, ...</p>
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Identifikasi jenis barisan dan gunakan rumus suku ke-n.</div>
+<div><span class="step-label">Langkah 1</span> Ini barisan aritmetika dengan a = 3, b = 4 (selisih antar suku).</div>
+<div><span class="step-label">Langkah 2</span> Rumus: <span class="math-text">Un = 3 + (n-1) x 4</span>.</div>
+<div><span class="step-label">Langkah 3</span> <span class="math-text">U10 = 3 + 9 x 4 = 3 + 36 = 39</span>.</div>
+<strong>Hasil Cepat:</strong> Suku ke-10 adalah <span class="math-text">39</span>.
+        </div>
+<div class="pro-tip"><strong>Tips:</strong> Cara cepat tanpa rumus: mulai dari suku pertama, tambahkan beda sebanyak (n-1) kali!</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Tentukan suku ke-6 dari barisan: 2, 6, 18, 54, ...</p>
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Identifikasi barisan geometri dan gunakan rumus.</div>
+<div><span class="step-label">Langkah 1</span> Ini barisan geometri dengan a = 2, r = 3 (rasio pembagi).</div>
+<div><span class="step-label">Langkah 2</span> Rumus: <span class="math-text">Un = 2 x 3 pangkat (n-1)</span>.</div>
+<div><span class="step-label">Langkah 3</span> <span class="math-text">U6 = 2 x 3 pangkat 5 = 2 x 243 = 486</span>.</div>
+<strong>Hasil Cepat:</strong> Suku ke-6 adalah <span class="math-text">486</span>.
+        </div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Antara suku berapakah angka 55 berada pada barisan: 5, 10, 15, 20, ...?</p>
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Cari n dari persamaan Un = 55.</div>
+<div><span class="step-label">Langkah 1</span> Barisan aritmetika: a = 5, b = 5.</div>
+<div><span class="step-label">Langkah 2</span> <span class="math-text">55 = 5 + (n-1) x 5</span>.</div>
+<div><span class="step-label">Langkah 3</span> <span class="math-text">50 = (n-1) x 5</span>, maka <span class="math-text">n-1 = 10</span>, <span class="math-text">n = 11</span>.</div>
+<strong>Hasil Cepat:</strong> Angka 55 adalah suku ke-<span class="math-text">11</span>.
+        </div>
+</div>
+</div>
+        <br>
+        <p style="color:#9ca3af; font-size:0.85rem; text-align:center; margin-top:30px;">
+            📘 Materi ini merupakan bagian dari Rangkuman TKA Matematika SMP
+        </p>
+    </div>
+</body>
+</html>

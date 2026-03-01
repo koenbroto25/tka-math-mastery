@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master TKA Matematika SD - 15 Sub Bab Lengkap</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .nav-item {
+            background: white;
+            padding: 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .nav-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .chapter-card {
+            background: var(--card);
+            border-radius: 25px;
+            padding: 35px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-top: 10px solid var(--primary);
+        }
+
+        .sub-chapter-title {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        .summary-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .question-card {
+            background: #ffffff;
+            border: 2px solid #f1f5f9;
+            border-radius: 18px;
+            padding: 25px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .q-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .fast-method {
+            background: #ecfdf5;
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 15px;
+            border: 1px solid #a7f3d0;
+        }
+
+        .step-label {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .pro-tip {
+            background: #fff7ed;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #fed7aa;
+            font-size: 0.95rem;
+        }
+
+        .math-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #c026d3;
+            background: #fdf4ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            .nav-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🚀 Master Matematika TKA SD</h1>
+    <p>Belajar Matematika Jadi Mudah, Runtut, dan Menyenangkan!</p>
+</header>
+
+<div class="container">
+
+<div class="nav-grid">
+    <a href="#sub1" class="nav-item">🔢 Urutan Bilangan</a>
+    <a href="#sub2" class="nav-item">➕ Operasi Hitung</a>
+    <a href="#sub3" class="nav-item">🍰 Pecahan & Desimal</a>
+    <a href="#sub4" class="nav-item">⚖️ Perbandingan</a>
+    <a href="#sub5" class="nav-item">🕙 KPK & FPB</a>
+    <a href="#sub6" class="nav-item">📐 Sifat Bangun Datar</a>
+    <a href="#sub7" class="nav-item">📏 Keliling & Luas</a>
+    <a href="#sub8" class="nav-item">🧊 Volume Ruang</a>
+    <a href="#sub9" class="nav-item">📦 Jaring-Jaring</a>
+    <a href="#sub10" class="nav-item">🧭 Koordinat Kartesius</a>
+    <a href="#sub11" class="nav-item">⏲️ Satuan Waktu & Berat</a>
+    <a href="#sub12" class="nav-item">⭕ Sudut & Busur</a>
+    <a href="#sub13" class="nav-item">📊 Membaca Data</a>
+    <a href="#sub14" class="nav-item">📈 Mean & Modus</a>
+    <a href="#sub15" class="nav-item">🔍 Analisis Prediksi</a>
+   <!-- SUB BAB 1 -->
+    <div id="sub1" class="chapter-card">
+        <h2 class="sub-chapter-title"><span>🔢</span> 1. Mengurutkan Bilangan</h2>
+        <div class="summary-box">
+            <strong>Ringkasan Materi:</strong> Untuk membandingkan berbagai jenis angka (pecahan, persen, desimal), kita harus mengubah semuanya menjadi "bahasa" yang sama. Cara yang paling mudah adalah mengubah semuanya menjadi bentuk <strong>Desimal</strong> (angka berkoma).
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Soal 1</div>
+            <p>Urutkan dari yang <strong>terbesar</strong>: <span class="math-text">3 4/5</span> ; <span class="math-text">3,66</span> ; <span class="math-text">375%</span>.</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Ubah semua angka menjadi desimal (angka berkoma).</div>
+                <div><span class="step-label">Langkah 1</span> Ubah <span class="math-text">3 4/5</span>. Caranya: 4 dibagi 5 adalah 0,8. Maka hasilnya <span class="math-text">3,80</span>.</div>
+                <div><span class="step-label">Langkah 2</span> Ubah <span class="math-text">375%</span>. Caranya: Geser koma ke kiri dua kali. Hasilnya <span class="math-text">3,75</span>.</div>
+                <div><span class="step-label">Langkah 3</span> Bandingkan: 3,80 | 3,75 | 3,66.</div>
+                <strong>⚡ Hasil Cepat:</strong> Urutannya adalah <span class="math-text">3 4/5</span> lalu <span class="math-text">375%</span> lalu <span class="math-text">3,66</span>.
+            </div>
+            <div class="pro-tip">💡 <strong>Tips:</strong> Bayangkan angka desimal seperti uang rupiah. 3,80 itu Rp3.800 dan 3,75 itu Rp3.750. Lebih mudah kan?</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Soal 2</div>
+            <p>Urutkan berat benda dari yang <strong>paling ringan</strong>: Televisi (<span class="math-text">4,25 kg</span>), Kursi (<span class="math-text">5,3 kg</span>), Kipas (<span class="math-text">5,8 kg</span>).</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Jika angka di depan koma berbeda, langsung bandingkan angka depannya. Jika sama, samakan jumlah angka di belakang koma.</div>
+                <div><span class="step-label">Langkah 1</span> Lihat angka depan: 4 dan 5. Berarti 4,25 adalah yang paling ringan.</div>
+                <div><span class="step-label">Langkah 2</span> Bandingkan 5,3 dan 5,8. Karena angka di belakang koma jumlahnya tidak sama, tambahkan nol bayangan. Menjadi <span class="math-text">5,30</span> dan <span class="math-text">5,80</span>.</div>
+                <strong>⚡ Hasil Cepat:</strong> Urutannya: <span class="math-text">4,25 kg</span> (TV) < <span class="math-text">5,3 kg</span> (Kursi) < <span class="math-text">5,8 kg</span> (Kipas).
+            </div>
+            <div class="pro-tip">💡 <strong>Tips:</strong> Jangan terkecoh! 5,3 bukan berarti lebih besar dari 5,25 hanya karena angkanya lebih sedikit. Anggap saja 5,30.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Soal 3</div>
+            <p>Di antara <span class="math-text">0,82</span> ; <span class="math-text">1 3/4</span> ; <span class="math-text">75%</span>, mana yang nilainya <strong>paling kecil</strong>?</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Persen (%) adalah per seratus. <span class="math-text">75%</span> artinya 75 per 100.</div>
+                <div><span class="step-label">Langkah 1</span> <span class="math-text">75%</span> diubah ke desimal menjadi <span class="math-text">0,75</span>.</div>
+                <div><span class="step-label">Langkah 2</span> <span class="math-text">1 3/4</span> adalah 1 ditambah 0,75, jadi <span class="math-text">1,75</span>.</div>
+                <div><span class="step-label">Langkah 3</span> Bandingkan: 0,82 | 1,75 | 0,75.</div>
+                <strong>⚡ Hasil Cepat:</strong> Yang paling kecil adalah <span class="math-text">75%</span>.
+            </div>
+        </div>
+    </div>
+
+    <!-- SUB BAB 2 -->
+    <div id="sub2" class="chapter-card">
+        <h2 class="sub-chapter-title"><span>➕</span> 2. Operasi Hitung Campuran</h2>
+        <div class="summary-box">
+            <strong>Ringkasan Materi:</strong> Dalam matematika, ada aturan "antrean". Perkalian dan Pembagian selalu dikerjakan lebih dulu daripada Penjumlahan dan Pengurangan, kecuali ada tanda kurung.
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Soal 1</div>
+            <p>Hasil dari <span class="math-text">250 + 50 x 4 - 100</span> adalah...</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Ingat kasta operasi: (Kurung) > Kali/Bagi > Tambah/Kurang.</div>
+                <div><span class="step-label">Langkah 1</span> Cari operasi perkalian: <span class="math-text">50 x 4 = 200</span>.</div>
+                <div><span class="step-label">Langkah 2</span> Masukkan kembali ke soal: <span class="math-text">250 + 200 - 100</span>.</div>
+                <div><span class="step-label">Langkah 3</span> Hitung dari kiri ke kanan: 450 - 100 = 350.</div>
+                <strong>⚡ Hasil Cepat:</strong> <span class="math-text">350</span>.
+            </div>
+            <div class="pro-tip">💡 <strong>Tips:</strong> Seringkali pembuat soal menaruh angka yang "enak" dijumlahkan di depan (250+50). Jangan terjebak! Selalu cari simbol Kali (x) dulu.</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Soal 2</div>
+            <p>Persediaan gula Ibu <span class="math-text">16,6 kg</span>. Ibu beli lagi <span class="math-text">10,75 kg</span>. Jika terjual <span class="math-text">12,5 kg</span>, berapa sisanya?</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> "Beli lagi" berarti ditambah (+), "Terjual" berarti dikurang (-).</div>
+                <div><span class="step-label">Langkah 1</span> Hitung total gula: <span class="math-text">16,60 + 10,75 = 27,35</span>.</div>
+                <div><span class="step-label">Langkah 2</span> Kurangi yang terjual: <span class="math-text">27,35 - 12,50 = 14,85</span>.</div>
+                <strong>⚡ Hasil Cepat:</strong> Sisa gula Ibu adalah <span class="math-text">14,85 kg</span>.
+            </div>
+            <div class="pro-tip">💡 <strong>Tips:</strong> Saat menjumlahkan atau mengurangkan desimal ke bawah, <strong>titik komanya harus sejajar</strong> lurus ke bawah!</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Soal 3</div>
+            <p>Hasil dari <span class="math-text">12 x (15 + 5) : 4</span> adalah...</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Kerjakan yang ada di dalam rumah (tanda kurung) terlebih dahulu.</div>
+                <div><span class="step-label">Langkah 1</span> <span class="math-text">15 + 5 = 20</span>.</div>
+                <div><span class="step-label">Langkah 2</span> Soal menjadi <span class="math-text">12 x 20 : 4</span>.</div>
+                <div><span class="step-label">Langkah 3</span> Kerjakan dari kiri atau bagi dulu agar kecil: <span class="math-text">20 : 4 = 5</span>. Lalu <span class="math-text">12 x 5 = 60</span>.</div>
+                <strong>⚡ Hasil Cepat:</strong> <span class="math-text">60</span>.
+            </div>
+        </div>
+    </div>
+
+    <!-- SUB BAB 3 -->
+    <div id="sub3" class="chapter-card">
+        <h2 class="sub-chapter-title"><span>🍰</span> 3. Pecahan & Desimal</h2>
+        <div class="summary-box">
+            <strong>Ringkasan Materi:</strong> Pecahan adalah bagian dari satu kesatuan. Menjumlahkan pecahan butuh penyebut (angka bawah) yang sama.
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Soal 1</div>
+            <p>Berapa bentuk desimal dari <span class="math-text">4/5 + 1/2</span>?</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Menjumlahkan pecahan paling cepat pakai "Kali Silang" atau samakan penyebut.</div>
+                <div><span class="step-label">Langkah 1</span> Kali Silang Pembilang: (4 dikali 2) + (1 dikali 5) = 8 + 5 = <span class="math-text">13</span>.</div>
+                <div><span class="step-label">Langkah 2</span> Kali Penyebutnya: 5 dikali 2 = <span class="math-text">10</span>.</div>
+                <div><span class="step-label">Langkah 3</span> Hasil Pecahan: <span class="math-text">13/10</span>. Diubah ke desimal menjadi <span class="math-text">1,3</span>.</div>
+                <strong>⚡ Hasil Cepat:</strong> <span class="math-text">1,3</span>.
+            </div>
+            <div class="pro-tip">💡 <strong>Tips:</strong> Jika penyebutnya sudah per 10, per 100, atau per 1000, langsung saja tulis angkanya dan kasih koma!</div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Soal 2</div>
+            <p>Siska memiliki 50 baju, terpakai <span class="math-text">80%</span>. Berapa banyak baju yang dipakai?</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Persen (%) adalah per seratus. "Dari" dalam matematika sering berarti dikali (x).</div>
+                <div><span class="step-label">Langkah 1</span> Soalnya adalah <span class="math-text">80/100 dikali 50</span>.</div>
+                <div><span class="step-label">Langkah 2</span> Coret dua angka nol: satu dari angka 80, satu dari angka 50.</div>
+                <div><span class="step-label">Langkah 3</span> Kalikan angka yang tersisa: 8 dikali 5 = 40.</div>
+                <strong>⚡ Hasil Cepat:</strong> <span class="math-text">40 helai baju</span>.
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="q-number">Soal 3</div>
+            <p>Berapa hasil dari <span class="math-text">3/4</span> bagian dari uang Rp10.000?</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Kerjakan pembagian dulu baru dikalikan agar angka tidak membesar.</div>
+                <div><span class="step-label">Langkah 1</span> <span class="math-text">Rp10.000 dibagi 4</span> adalah Rp2.500.</div>
+                <div><span class="step-label">Langkah 2</span> Hasilnya dikalikan 3: <span class="math-text">Rp2.500 x 3 = Rp7.500</span>.</div>
+                <strong>⚡ Hasil Cepat:</strong> <span class="math-text">Rp7.500</span>.
+            </div>
+        </div>
+    </div>
+
+<!-- SUB BAB 4 -->
+<div id="sub4" class="chapter-card">
+<h2 class="sub-chapter-title"><span>⚖️</span> 4. Perbandingan & Skala</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Perbandingan digunakan untuk membandingkan dua jumlah. Skala digunakan untuk memperkecil atau memperbesar ukuran sebenarnya, seperti pada peta atau denah.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Perbandingan umur Andi dan Budi adalah <span class="math-text">3 : 5</span>. Jika umur Andi <span class="math-text">12 tahun</span>, berapa umur Budi?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Perbandingan artinya jumlah bagian. Jika satu bagian diketahui, bagian lain bisa dicari dengan perkalian.</div>
+<div><span class="step-label">Langkah 1</span> Andi memiliki 3 bagian = 12 tahun.</div>
+<div><span class="step-label">Langkah 2</span> Satu bagian adalah <span class="math-text">12 dibagi 3 = 4</span>.</div>
+<div><span class="step-label">Langkah 3</span> Umur Budi = <span class="math-text">5 x 4 = 20</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Umur Budi adalah <span class="math-text">20 tahun</span>.
+</div>
+
+<div class="pro-tip">💡 Jika angka perbandingan kecil, cari dulu nilai 1 bagian agar lebih mudah.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Skala peta <span class="math-text">1 : 1000</span>. Jarak di peta <span class="math-text">5 cm</span>. Berapa jarak sebenarnya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Skala berarti 1 cm di peta mewakili jarak sebenarnya.</div>
+<div><span class="step-label">Langkah 1</span> 1 cm mewakili 1000 cm sebenarnya.</div>
+<div><span class="step-label">Langkah 2</span> Kalikan dengan jarak di peta: <span class="math-text">5 x 1000 = 5000 cm</span>.</div>
+<div><span class="step-label">Langkah 3</span> Ubah ke meter: <span class="math-text">5000 cm = 50 m</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Jarak sebenarnya <span class="math-text">50 meter</span>.
+</div>
+
+<div class="pro-tip">💡 Ingat: dari peta ke nyata = dikali. Dari nyata ke peta = dibagi.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Perbandingan jumlah kelereng merah dan biru adalah <span class="math-text">2 : 7</span>. Jika jumlah seluruh kelereng <span class="math-text">45</span>, berapa jumlah kelereng merah?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Jumlah seluruh bagian adalah hasil penjumlahan perbandingan.</div>
+<div><span class="step-label">Langkah 1</span> Total bagian = <span class="math-text">2 + 7 = 9</span>.</div>
+<div><span class="step-label">Langkah 2</span> Nilai satu bagian = <span class="math-text">45 dibagi 9 = 5</span>.</div>
+<div><span class="step-label">Langkah 3</span> Kelereng merah = <span class="math-text">2 x 5 = 10</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Jumlah kelereng merah adalah <span class="math-text">10</span>.
+</div>
+
+<div class="pro-tip">💡 Jika diketahui total keseluruhan, cari dulu nilai satu bagian.</div>
+</div>
+</div>
+
+<!-- SUB BAB 5 (tetap seperti file sebelumnya) -->
+<div id="sub5" class="chapter-card">
+        <h2 class="sub-chapter-title"><span>🕙</span> 5. KPK & FPB</h2>
+        <div class="summary-box">
+            <strong>Ringkasan Materi:</strong> 
+            <strong>KPK (Kelipatan Persekutuan Terkecil)</strong> digunakan untuk mencari waktu pertemuan atau kejadian yang berulang bersamaan. Keyword: <i>"Setiap... sekali"</i>, <i>"Bersama lagi"</i>. <br>
+            <strong>FPB (Faktor Persekutuan Terbesar)</strong> digunakan untuk membagi benda ke dalam kelompok atau plastik dengan jumlah yang sama banyak. Keyword: <i>"Paling banyak"</i>, <i>"Sama banyak"</i>.
+        </div>
+
+        <!-- Soal 1: KPK (Waktu Bersama) -->
+        <div class="question-card">
+            <div class="q-number">Soal 1</div>
+            <p>Lampu Merah menyala setiap <span class="math-text">8 detik</span>, Lampu Kuning setiap <span class="math-text">12 detik</span>. Kapan mereka menyala bersamaan lagi?</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Jika ditanya kapan dua kejadian terjadi bersama lagi, kita mencari angka terkecil yang bisa dibagi oleh kedua waktu tersebut (KPK).</div>
+                <div><span class="step-label">Langkah 1</span> Ambil angka yang paling besar, yaitu <span class="math-text">12</span>.</div>
+                <div><span class="step-label">Langkah 2</span> Sebutkan kelipatannya: 12, 24, 36...</div>
+                <div><span class="step-label">Langkah 3</span> Cek satu-satu: Apakah 12 bisa dibagi 8? (Tidak). Apakah 24 bisa dibagi 8? (Ya! 8 x 3 = 24).</div>
+                <strong>⚡ Hasil Cepat:</strong> Mereka menyala bersama lagi pada detik ke-<span class="math-text">24</span>.
+            </div>
+            <div class="pro-tip">💡 <strong>Tips:</strong> Tidak perlu hitung pohon faktor yang panjang. Cukup "tes" kelipatan angka paling besarnya saja!</div>
+        </div>
+
+        <!-- Soal 2: FPB (Membagi Barang) -->
+        <div class="question-card">
+            <div class="q-number">Soal 2</div>
+            <p>Yuda memiliki <span class="math-text">24 kelereng merah</span> dan <span class="math-text">42 kelereng putih</span>. Ia ingin membaginya ke dalam beberapa kantong plastik dengan jumlah yang sama banyak. Berapa kantong plastik paling banyak yang dibutuhkan?</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Jika tujuannya membagi benda menjadi kelompok-kelompok sama banyak, kita mencari angka terbesar yang bisa membagi kedua jumlah tersebut (FPB).</div>
+                <div><span class="step-label">Langkah 1</span> Cari angka yang bisa membagi <span class="math-text">24</span> dan <span class="math-text">42</span> sekaligus. Kita coba angka 2 (Bisa), angka 3 (Bisa).</div>
+                <div><span class="step-label">Langkah 2</span> Cek perkalian: <span class="math-text">2 x 3 = 6</span>. Apakah 6 bisa membagi keduanya? (Ya! 24 : 6 = 4 dan 42 : 6 = 7).</div>
+                <div><span class="step-label">Langkah 3</span> Adakah angka yang lebih besar dari 6? (Tidak ada).</div>
+                <strong>⚡ Hasil Cepat:</strong> Yuda membutuhkan paling banyak <span class="math-text">6 kantong plastik</span>.
+            </div>
+            <div class="pro-tip">💡 <strong>Tips:</strong> Untuk FPB, cari angka yang "pas" membagi kedua bilangan. Jika angkanya genap, mulailah mencoba membagi dengan angka 2 atau 6.</div>
+        </div>
+
+        <!-- Soal 3: FPB (Isi per Kelompok) -->
+        <div class="question-card">
+            <div class="q-number">Soal 3</div>
+            <p>Berdasarkan soal nomor 2, berapa butir kelereng merah yang ada di dalam setiap kantong plastik?</p>
+            <div class="fast-method">
+                <div><span class="step-label">Teori Dasar</span> Isi setiap kelompok didapat dengan cara membagi total benda dengan jumlah kelompok (kantong) yang sudah ditemukan.</div>
+                <div><span class="step-label">Langkah 1</span> Kita sudah tahu jumlah kantong maksimal adalah <span class="math-text">6</span>.</div>
+                <div><span class="step-label">Langkah 2</span> Jumlah kelereng merah mula-mula adalah <span class="math-text">24</span>.</div>
+                <div><span class="step-label">Langkah 3</span> Lakukan pembagian: <span class="math-text">24 : 6 = 4</span>.</div>
+                <strong>⚡ Hasil Cepat:</strong> Setiap kantong berisi <span class="math-text">4 butir kelereng merah</span>.
+            </div>
+            <div class="pro-tip">💡 <strong>Tips:</strong> Jangan tertukar! Untuk mencari isi kelereng putih, gunakan 42 : 6 = 7. Hati-hati membaca apa yang ditanyakan di soal (merah atau putih).</div>
+        </div>
+    </div>
+<!-- SUB BAB 6 -->
+<div id="sub6" class="chapter-card">
+<h2 class="sub-chapter-title"><span>📐</span> 6. Sifat-Sifat Bangun Datar</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Setiap bangun datar memiliki ciri khas seperti jumlah sisi, sudut, dan panjang sisi. Mengenali sifatnya membantu menjawab soal lebih cepat.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Bangun datar yang memiliki 4 sisi sama panjang dan 4 sudut siku-siku adalah...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Persegi memiliki semua sisi sama panjang dan semua sudut 90 derajat.</div>
+<div><span class="step-label">Langkah 1</span> Periksa jumlah sisi: ada 4 sisi.</div>
+<div><span class="step-label">Langkah 2</span> Semua sisi sama panjang.</div>
+<div><span class="step-label">Langkah 3</span> Semua sudut siku-siku.</div>
+<strong>⚡ Hasil Cepat:</strong> Jawabannya adalah <span class="math-text">Persegi</span>.
+</div>
+
+<div class="pro-tip">💡 Jika hanya dua sisi berhadapan yang sama panjang, itu biasanya persegi panjang.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Bangun datar yang memiliki satu pasang sisi sejajar disebut...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Trapesium memiliki satu pasang sisi sejajar.</div>
+<div><span class="step-label">Langkah 1</span> Cari bangun dengan sisi atas dan bawah sejajar.</div>
+<div><span class="step-label">Langkah 2</span> Sisi lainnya tidak harus sama panjang.</div>
+<strong>⚡ Hasil Cepat:</strong> Jawabannya <span class="math-text">Trapesium</span>.
+</div>
+
+<div class="pro-tip">💡 Kata kunci soal biasanya ada pada kata "sejajar".</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Bangun datar yang memiliki 3 sisi dan 3 sudut disebut...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Segitiga memiliki tiga sisi dan tiga sudut.</div>
+<div><span class="step-label">Langkah 1</span> Hitung jumlah sisi: ada 3.</div>
+<div><span class="step-label">Langkah 2</span> Hitung jumlah sudut: ada 3.</div>
+<strong>⚡ Hasil Cepat:</strong> Jawabannya adalah <span class="math-text">Segitiga</span>.
+</div>
+
+<div class="pro-tip">💡 Kata kunci: tiga sisi berarti segitiga.</div>
+</div>
+</div>
+
+<!-- SUB BAB 7 -->
+<div id="sub7" class="chapter-card">
+<h2 class="sub-chapter-title"><span>📏</span> 7. Keliling & Luas Bangun Datar</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Keliling adalah jumlah seluruh sisi. Luas adalah ukuran bagian dalam bangun.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Sebuah persegi memiliki sisi <span class="math-text">8 cm</span>. Berapa kelilingnya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Keliling persegi = 4 kali sisi.</div>
+<div><span class="step-label">Langkah 1</span> Sisi = 8 cm.</div>
+<div><span class="step-label">Langkah 2</span> <span class="math-text">4 x 8</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Keliling = <span class="math-text">32 cm</span>.
+</div>
+
+<div class="pro-tip">💡 Keliling selalu memakai satuan panjang, bukan cm persegi.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Panjang persegi panjang <span class="math-text">10 cm</span> dan lebar <span class="math-text">6 cm</span>. Berapa luasnya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Luas persegi panjang = panjang x lebar.</div>
+<div><span class="step-label">Langkah 1</span> Kalikan <span class="math-text">10 x 6</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Luas = <span class="math-text">60 cm persegi</span>.
+</div>
+
+<div class="pro-tip">💡 Luas selalu memakai kata "persegi".</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Sebuah persegi panjang memiliki panjang <span class="math-text">12 cm</span> dan lebar <span class="math-text">4 cm</span>. Berapa kelilingnya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Keliling persegi panjang = 2 x (panjang + lebar).</div>
+<div><span class="step-label">Langkah 1</span> <span class="math-text">12 + 4 = 16</span>.</div>
+<div><span class="step-label">Langkah 2</span> <span class="math-text">2 x 16 = 32</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Keliling = <span class="math-text">32 cm</span>.
+</div>
+
+<div class="pro-tip">💡 Jangan lupa dikali 2 karena ada dua pasang sisi.</div>
+</div>
+</div>
+
+<!-- SUB BAB 8 -->
+<div id="sub8" class="chapter-card">
+<h2 class="sub-chapter-title"><span>🧊</span> 8. Volume Bangun Ruang</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Volume menunjukkan isi suatu bangun ruang. Biasanya dihitung dengan panjang x lebar x tinggi.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Sebuah balok memiliki ukuran <span class="math-text">10 cm</span>, <span class="math-text">5 cm</span>, dan <span class="math-text">4 cm</span>. Berapa volumenya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Volume balok = panjang x lebar x tinggi.</div>
+<div><span class="step-label">Langkah 1</span> <span class="math-text">10 x 5 = 50</span>.</div>
+<div><span class="step-label">Langkah 2</span> <span class="math-text">50 x 4 = 200</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Volume = <span class="math-text">200 cm kubik</span>.
+</div>
+
+<div class="pro-tip">💡 Volume selalu memiliki satuan kubik.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Kubus dengan sisi <span class="math-text">6 cm</span> memiliki volume berapa?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Volume kubus = sisi x sisi x sisi.</div>
+<div><span class="step-label">Langkah 1</span> <span class="math-text">6 x 6 x 6</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Volume = <span class="math-text">216 cm kubik</span>.
+</div>
+
+<div class="pro-tip">💡 Kubus semua sisinya sama panjang.</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Sebuah balok memiliki panjang <span class="math-text">8 cm</span>, lebar <span class="math-text">3 cm</span>, dan tinggi <span class="math-text">5 cm</span>. Berapa volumenya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Volume balok = panjang x lebar x tinggi.</div>
+<div><span class="step-label">Langkah 1</span> <span class="math-text">8 x 3 = 24</span>.</div>
+<div><span class="step-label">Langkah 2</span> <span class="math-text">24 x 5 = 120</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Volume = <span class="math-text">120 cm kubik</span>.
+</div>
+
+<div class="pro-tip">💡 Kerjakan dua angka dulu agar lebih mudah.</div>
+</div>
+</div>
+
+<!-- SUB BAB 9 -->
+<div id="sub9" class="chapter-card">
+<h2 class="sub-chapter-title"><span>📦</span> 9. Jaring-Jaring Bangun Ruang</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Jaring-jaring adalah bangun ruang yang dibuka menjadi bangun datar.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Berapa jumlah sisi pada kubus?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Kubus memiliki sisi berbentuk persegi.</div>
+<div><span class="step-label">Langkah 1</span> Hitung sisi atas, bawah, depan, belakang, kiri, kanan.</div>
+<strong>⚡ Hasil Cepat:</strong> Ada <span class="math-text">6 sisi</span>.
+</div>
+
+<div class="pro-tip">💡 Bayangkan membuka kotak kado.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Bangun ruang dengan 2 lingkaran dan 1 selimut lengkung adalah...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Tabung memiliki dua lingkaran dan satu sisi lengkung.</div>
+<strong>⚡ Hasil Cepat:</strong> Jawaban <span class="math-text">Tabung</span>.
+</div>
+
+<div class="pro-tip">💡 Ingat bentuk kaleng minuman.</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Berapa jumlah rusuk pada kubus?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Rusuk adalah garis pertemuan dua sisi.</div>
+<div><span class="step-label">Langkah 1</span> Kubus memiliki 4 rusuk di atas.</div>
+<div><span class="step-label">Langkah 2</span> 4 rusuk di bawah.</div>
+<div><span class="step-label">Langkah 3</span> 4 rusuk tegak.</div>
+<strong>⚡ Hasil Cepat:</strong> Ada <span class="math-text">12 rusuk</span>.
+</div>
+
+<div class="pro-tip">💡 Bayangkan kerangka kotak.</div>
+</div>
+</div>
+
+<!-- SUB BAB 10 -->
+<div id="sub10" class="chapter-card">
+<h2 class="sub-chapter-title"><span>🧭</span> 10. Letak Titik Koordinat</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Koordinat menunjukkan posisi titik dengan pasangan angka (x,y).
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Titik A berada di <span class="math-text">(3,2)</span>. Apa artinya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Angka pertama ke kanan, angka kedua ke atas.</div>
+<div><span class="step-label">Langkah 1</span> Geser 3 langkah ke kanan.</div>
+<div><span class="step-label">Langkah 2</span> Naik 2 langkah.</div>
+<strong>⚡ Hasil Cepat:</strong> Posisi titik sesuai pasangan angka tersebut.
+</div>
+
+<div class="pro-tip">💡 Ingat: kanan dulu baru atas.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Titik B berada di <span class="math-text">(0,4)</span>. Di mana posisinya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Jika angka pertama 0, titik berada di garis tegak.</div>
+<strong>⚡ Hasil Cepat:</strong> Titik berada tepat di atas titik nol setinggi 4 satuan.
+</div>
+
+<div class="pro-tip">💡 Angka nol berarti tidak bergerak.</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Titik C berada di <span class="math-text">(4,0)</span>. Di mana posisinya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Jika angka kedua 0, titik berada di garis mendatar.</div>
+<div><span class="step-label">Langkah 1</span> Geser 4 langkah ke kanan.</div>
+<div><span class="step-label">Langkah 2</span> Tidak naik karena angka kedua 0.</div>
+<strong>⚡ Hasil Cepat:</strong> Titik berada di garis mendatar sejauh 4 satuan dari nol.
+</div>
+
+<div class="pro-tip">💡 Angka nol berarti tidak bergerak pada arah tersebut.</div>
+</div>
+</div>
+
+<!-- SUB BAB 11 -->
+<div id="sub11" class="chapter-card">
+<h2 class="sub-chapter-title"><span>⏲️</span> 11. Satuan Waktu, Panjang, & Berat</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Perubahan satuan dilakukan dengan naik atau turun tangga satuan.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p><span class="math-text">2 jam</span> berapa menit?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> 1 jam = 60 menit.</div>
+<div><span class="step-label">Langkah 1</span> <span class="math-text">2 x 60</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> <span class="math-text">120 menit</span>.
+</div>
+
+<div class="pro-tip">💡 Dari besar ke kecil selalu dikali.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p><span class="math-text">3000 gram</span> sama dengan berapa kilogram?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> 1000 gram = 1 kilogram.</div>
+<div><span class="step-label">Langkah 1</span> <span class="math-text">3000 dibagi 1000</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> <span class="math-text">3 kg</span>.
+</div>
+
+<div class="pro-tip">💡 Dari kecil ke besar selalu dibagi.</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p><span class="math-text">5 meter</span> sama dengan berapa centimeter?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> 1 meter = 100 centimeter.</div>
+<div><span class="step-label">Langkah 1</span> <span class="math-text">5 x 100</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> <span class="math-text">500 cm</span>.
+</div>
+
+<div class="pro-tip">💡 Dari besar ke kecil dikali.</div>
+</div>
+</div>
+
+<!-- SUB BAB 12 -->
+<div id="sub12" class="chapter-card">
+<h2 class="sub-chapter-title"><span>⭕</span> 12. Sudut & Busur Derajat</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Sudut diukur dengan derajat. Sudut siku-siku bernilai 90 derajat.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Sudut yang besarnya <span class="math-text">90 derajat</span> disebut...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Sudut siku-siku adalah sudut 90 derajat.</div>
+<strong>⚡ Hasil Cepat:</strong> Sudut siku-siku.
+</div>
+
+<div class="pro-tip">💡 Bentuknya seperti pojok buku.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Sudut kurang dari <span class="math-text">90 derajat</span> disebut...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Sudut lancip lebih kecil dari sudut siku-siku.</div>
+<strong>⚡ Hasil Cepat:</strong> Sudut lancip.
+</div>
+
+<div class="pro-tip">💡 Lancip berarti runcing.</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Sudut yang besarnya lebih dari <span class="math-text">90 derajat</span> tetapi kurang dari <span class="math-text">180 derajat</span> disebut...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Sudut tumpul lebih besar dari 90 derajat dan kurang dari 180 derajat.</div>
+<strong>⚡ Hasil Cepat:</strong> Sudut tumpul.
+</div>
+
+<div class="pro-tip">💡 Tumpul berarti lebih lebar dari siku-siku.</div>
+</div>
+</div>
+
+<!-- SUB BAB 13 -->
+<div id="sub13" class="chapter-card">
+<h2 class="sub-chapter-title"><span>📊</span> 13. Membaca & Menyajikan Data</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Data bisa ditampilkan dalam tabel atau diagram agar mudah dibaca.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Jika diagram menunjukkan angka tertinggi pada hari Senin, apa artinya?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Batang tertinggi berarti jumlah paling banyak.</div>
+<strong>⚡ Hasil Cepat:</strong> Hari Senin memiliki jumlah terbanyak.
+</div>
+
+<div class="pro-tip">💡 Selalu lihat yang paling tinggi dulu.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Jumlah seluruh data disebut...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Semua data dijumlahkan untuk mengetahui total.</div>
+<strong>⚡ Hasil Cepat:</strong> Total data.
+</div>
+
+<div class="pro-tip">💡 Kata kunci: seluruh atau semua.</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Jika semua batang pada diagram dijumlahkan, hasilnya disebut...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Semua data yang dijumlahkan menghasilkan total.</div>
+<strong>⚡ Hasil Cepat:</strong> Total data.
+</div>
+
+<div class="pro-tip">💡 Kata kunci: jumlah keseluruhan.</div>
+</div>
+</div>
+
+<!-- SUB BAB 14 -->
+<div id="sub14" class="chapter-card">
+<h2 class="sub-chapter-title"><span>📈</span> 14. Statistika (Mean, Median, Modus)</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Mean adalah rata-rata, median adalah nilai tengah, dan modus adalah nilai yang paling sering muncul.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Data: <span class="math-text">4, 6, 8</span>. Berapa mean?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Mean = jumlah semua data dibagi banyak data.</div>
+<div><span class="step-label">Langkah 1</span> <span class="math-text">4 + 6 + 8 = 18</span>.</div>
+<div><span class="step-label">Langkah 2</span> <span class="math-text">18 dibagi 3 = 6</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> Mean = <span class="math-text">6</span>.
+</div>
+
+<div class="pro-tip">💡 Rata-rata artinya dibagi rata.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Data: <span class="math-text">2, 3, 3, 5</span>. Berapa modus?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Modus adalah angka yang paling sering muncul.</div>
+<strong>⚡ Hasil Cepat:</strong> Modus = <span class="math-text">3</span>.
+</div>
+
+<div class="pro-tip">💡 Hitung angka yang muncul paling banyak.</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Data: <span class="math-text">5, 7, 9</span>. Berapa median?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Median adalah nilai tengah setelah data diurutkan.</div>
+<div><span class="step-label">Langkah 1</span> Data sudah urut.</div>
+<strong>⚡ Hasil Cepat:</strong> Median = <span class="math-text">7</span>.
+</div>
+
+<div class="pro-tip">💡 Median selalu berada di tengah.</div>
+</div>
+</div>
+
+<!-- SUB BAB 15 -->
+<div id="sub15" class="chapter-card">
+<h2 class="sub-chapter-title"><span>🔍</span> 15. Penalaran & Analisis Prediksi</h2>
+
+<div class="summary-box">
+<strong>Ringkasan Materi:</strong> Soal penalaran melatih logika untuk memperkirakan pola dan kemungkinan jawaban.
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 1</div>
+<p>Pola bilangan: <span class="math-text">2, 4, 6, 8, ...</span>. Angka berikutnya adalah?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Cari selisih antar angka.</div>
+<div><span class="step-label">Langkah 1</span> Selisih selalu bertambah 2.</div>
+<div><span class="step-label">Langkah 2</span> <span class="math-text">8 + 2</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> <span class="math-text">10</span>.
+</div>
+
+<div class="pro-tip">💡 Lihat perubahan antar angka, bukan hanya angkanya.</div>
+</div>
+
+<div class="question-card">
+<div class="q-number">Soal 2</div>
+<p>Jika hari ini Rabu, dua hari lagi adalah...</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Hitung maju sesuai urutan hari.</div>
+<div><span class="step-label">Langkah 1</span> Kamis (1 hari).</div>
+<div><span class="step-label">Langkah 2</span> Jumat (2 hari).</div>
+<strong>⚡ Hasil Cepat:</strong> Hari Jumat.
+</div>
+
+<div class="pro-tip">💡 Gunakan jari untuk menghitung urutan hari.</div>
+</div>
+<div class="question-card">
+<div class="q-number">Soal 3</div>
+<p>Pola bilangan: <span class="math-text">5, 10, 15, 20, ...</span>. Angka berikutnya adalah?</p>
+
+<div class="fast-method">
+<div><span class="step-label">Teori Dasar</span> Cari selisih antar angka.</div>
+<div><span class="step-label">Langkah 1</span> Selisih selalu bertambah 5.</div>
+<div><span class="step-label">Langkah 2</span> <span class="math-text">20 + 5</span>.</div>
+<strong>⚡ Hasil Cepat:</strong> <span class="math-text">25</span>.
+</div>
+
+<div class="pro-tip">💡 Perhatikan pola kenaikan yang tetap.</div>
+</div>
+</div>
+
+<footer>
+<p>Teruslah berlatih, karena Matematika bukan untuk dihafal, tapi untuk dipahami logikanya!</p>
+<p>&copy; 2025 Guru Matematika Cerdas - Panduan Sukses TKA SD</p>
+</footer>
+
+</div>
+</body>
+</html>

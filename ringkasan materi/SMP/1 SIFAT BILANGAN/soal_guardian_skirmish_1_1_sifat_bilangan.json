@@ -1,0 +1,402 @@
+[
+  {
+    "pertanyaan": "Perhatikan operasi hitung berikut!\n\n47 + 35 = 35 + 47\n\nSifat bilangan yang sesuai dengan operasi di atas adalah ....",
+    "difficulty": "L1",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Komutatif",
+      "B": "Asosiatif",
+      "C": "Distributif",
+      "D": "Invers"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Sifat komutatif adalah sifat tukar posisi pada penjumlahan dan perkalian."
+  },
+  {
+    "pertanyaan": "Diketahui operasi perkalian berikut:\n\n8 × 12 = 12 × 8\n\nPernyataan yang tepat tentang operasi di atas adalah ....",
+    "difficulty": "L1",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Merupakan penerapan sifat asosiatif",
+      "B": "Merupakan penerapan sifat distributif",
+      "C": "Merupakan penerapan sifat komutatif",
+      "D": "Tidak dapat diterapkan sifat apapun"
+    },
+    "kunci_jawaban": "C",
+    "hint": "Perhatikan bahwa posisi bilangan 8 dan 12 bertukar tempat."
+  },
+  {
+    "pertanyaan": "Hitung dengan mudah menggunakan sifat bilangan!\n\n25 × 37 × 4 = ....",
+    "difficulty": "L1",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "3.700",
+      "B": "3.400",
+      "C": "3.600",
+      "D": "3.500"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Gunakan pasangan sakti 25 × 4 = 100, lalu kalikan dengan 37."
+  },
+  {
+    "pertanyaan": "Perhatikan perhitungan berikut!\n\n(15 + 27) + 13 = 15 + (27 + 13)\n\nSifat yang digunakan dalam perhitungan di atas adalah ....",
+    "difficulty": "L1",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Sifat Komutatif",
+      "B": "Sifat Asosiatif",
+      "C": "Sifat Distributif",
+      "D": "Sifat Identitas"
+    },
+    "kunci_jawaban": "B",
+    "hint": "Sifat asosiatif berkaitan dengan pengelompokan bilangan."
+  },
+  {
+    "pertanyaan": "Pak Budi membeli 12 kantong gula. Setiap kantong berisi 5 kg gula. Berat total gula yang dibeli Pak Budi dapat dihitung dengan 12 × 5.\n\nJika Pak Budi menghitung dengan cara 5 × 12, sifat yang digunakan adalah ....",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Sifat Distributif",
+      "B": "Sifat Asosiatif",
+      "C": "Sifat Komutatif",
+      "D": "Sifat Invers"
+    },
+    "kunci_jawaban": "C",
+    "hint": "Perhatikan pertukaran posisi bilangan 12 dan 5."
+  },
+  {
+    "pertanyaan": "Manakah yang merupakan penerapan sifat distributif?",
+    "difficulty": "L1",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "7 × (8 + 5) = (7 × 8) + (7 × 5)",
+      "B": "15 × (20 − 6) = (15 × 20) − (15 × 6)",
+      "C": "25 × 4 × 17 = (25 × 4) × 17",
+      "D": "48 + 32 = 32 + 48"
+    },
+    "kunci_jawaban": ["A", "B"],
+    "hint": "Sifat distributif melibatkan perkalian yang tersebar ke dalam penjumlahan atau pengurangan dalam kurung."
+  },
+  {
+    "pertanyaan": "Berikut beberapa operasi hitung bilangan bulat.\n\nBeri tanda centang (✓) pada kolom Benar atau Salah untuk setiap pernyataan berikut!\n\n| Pernyataan | Benar | Salah |\n|---|---|---|\n| 18 − 9 = 9 − 18 merupakan penerapan sifat komutatif | | |\n| 24 × 1 = 24 merupakan penerapan sifat identitas | | |\n| (45 + 23) + 17 = 45 + (23 + 17) merupakan penerapan sifat asosiatif | | |",
+    "difficulty": "L1",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "18 − 9 = 9 − 18 merupakan penerapan sifat komutatif",
+        "24 × 1 = 24 merupakan penerapan sifat identitas",
+        "(45 + 23) + 17 = 45 + (23 + 17) merupakan penerapan sifat asosiatif"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Salah", "Benar", "Benar"],
+    "hint": "Sifat komutatif tidak berlaku untuk pengurangan."
+  },
+  {
+    "pertanyaan": "Seorang pedagang buah menjual 15 keranjang jeruk. Setiap keranjang berisi 24 buah jeruk. Pedagang tersebut menghitung total jeruk dengan cara:\n\n15 × 24 = 15 × (20 + 4) = (15 × 20) + (15 × 4)\n\nSifat yang digunakan pedagang untuk mempermudah perhitungan adalah ....",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Sifat Komutatif",
+      "B": "Sifat Asosiatif",
+      "C": "Sifat Distributif",
+      "D": "Sifat Invers"
+    },
+    "kunci_jawaban": "C",
+    "hint": "Perhatikan bagaimana bilangan 15 disebar ke dalam kurung (20 + 4)."
+  },
+  {
+    "pertanyaan": "Hasil dari 99 × 48 menggunakan sifat distributif adalah ....",
+    "difficulty": "L1",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "4.752",
+      "B": "4.652",
+      "C": "4.852",
+      "D": "4.552"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Ubah 99 menjadi (100 − 1), lalu gunakan sifat distributif: 48 × (100 − 1)."
+  },
+  {
+    "pertanyaan": "Perhatikan operasi hitung berikut!\n\n8 × (5 + 7)\n\nManakah yang bernilai sama dengan operasi di atas?",
+    "difficulty": "L1",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "8 × 5 + 7",
+      "B": "8 × 5 + 8 × 7",
+      "C": "8 + 5 × 7",
+      "D": "(8 × 5) + 7"
+    },
+    "kunci_jawaban": "B",
+    "hint": "Gunakan sifat distributif: a × (b + c) = (a × b) + (a × c)."
+  },
+  {
+    "pertanyaan": "Rani memiliki 125 butir kelereng. Ia membagikannya sama rata kepada 8 temannya. Untuk memudahkan perhitungan, Rani menggunakan sifat bilangan.\n\nBerilah tanda centang (✓) pada kolom Benar atau Salah untuk setiap pernyataan berikut!\n\n| Pernyataan | Benar | Salah |\n|---|---|---|\n| Sifat komutatif dapat digunakan untuk pembagian | | |\n| Sifat asosiatif dapat digunakan untuk pembagian | | |\n| Sifat distributif tidak berlaku untuk pembagian dalam bentuk a : (b + c) | | |",
+    "difficulty": "L2",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Sifat komutatif dapat digunakan untuk pembagian",
+        "Sifat asosiatif dapat digunakan untuk pembagian",
+        "Sifat distributif tidak berlaku untuk pembagian dalam bentuk a : (b + c)"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Salah", "Salah", "Benar"],
+    "hint": "Ingat bahwa sifat komutatif dan asosiatif tidak berlaku untuk pembagian."
+  },
+  {
+    "pertanyaan": "Hitunglah dengan cepat menggunakan sifat bilangan!\n\n125 × 32 × 8 = ....",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "32.000",
+      "B": "31.000",
+      "C": "30.000",
+      "D": "33.000"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Gunakan pasangan sakti 125 × 8 = 1.000."
+  },
+  {
+    "pertanyaan": "Pak Arman memiliki kebun apel. Ia memanen apel setiap hari selama seminggu. Hasil panennya berturut-turut adalah: 45, 38, 45, 52, 38, 45, dan 52 kg.\n\nUntuk menghitung total panen dengan cepat, Pak Arman dapat menggunakan sifat ....",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Sifat Identitas saja",
+      "B": "Sifat Komutatif dan Asosiatif",
+      "C": "Sifat Distributif saja",
+      "D": "Sifat Invers"
+    },
+    "kunci_jawaban": "B",
+    "hint": "Kelompokkan bilangan yang sama, lalu jumlahkan."
+  },
+  {
+    "pertanyaan": "Perhatikan beberapa operasi hitung berikut!\n\n1. 35 + 18 = 18 + 35\n2. 72 − 25 = 25 − 72\n3. 16 × 9 = 9 × 16\n4. 48 : 6 = 6 : 48\n\nPasangan operasi hitung yang benar diterapkan sifat komutatif ditunjukkan oleh nomor ....",
+    "difficulty": "L1",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "kunci_jawaban": ["A", "C"],
+    "hint": "Sifat komutatif hanya berlaku untuk penjumlahan dan perkalian."
+  },
+  {
+    "pertanyaan": "Seorang siswa diminta menghitung 37 × 99 dengan cara mudah. Manakah cara yang tepat menggunakan sifat distributif?",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "37 × 99 = 37 × (100 + 1)",
+      "B": "37 × 99 = 37 × (100 − 1)",
+      "C": "37 × 99 = (30 + 7) × 99",
+      "D": "37 × 99 = 99 × (40 − 3)"
+    },
+    "kunci_jawaban": "B",
+    "hint": "Gunakan bentuk 99 = (100 − 1) untuk mempermudah perhitungan."
+  },
+  {
+    "pertanyaan": "Tabel berikut menunjukkan beberapa operasi hitung dan hasilnya.\n\n| No | Operasi Hitung | Hasil |\n|---|---|---|\n| 1 | 45 × (20 + 3) | 1.035 |\n| 2 | (45 × 20) + (45 × 3) | 1.035 |\n| 3 | 45 × 23 | 1.025 |\n| 4 | (45 × 20) − (45 × 3) | 765 |\n\nPasangan operasi hitung dan hasil yang tepat ditunjukkan oleh nomor ....",
+    "difficulty": "L2",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "kunci_jawaban": ["A", "B", "D"],
+    "hint": "Periksa setiap perhitungan dengan teliti. 45 × 23 = 1.035, bukan 1.025."
+  },
+  {
+    "pertanyaan": "Di sebuah toko kelontong, Ibu membeli 5 kg gula pasir, 5 kg beras, dan 5 kg tepung. Harga gula Rp15.000/kg, beras Rp12.000/kg, dan tepung Rp10.000/kg.\n\nMenggunakan sifat distributif, total yang harus dibayar Ibu adalah ....",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Rp175.000",
+      "B": "Rp185.000",
+      "C": "Rp195.000",
+      "D": "Rp165.000"
+    },
+    "kunci_jawaban": "B",
+    "hint": "Gunakan: 5 × (15.000 + 12.000 + 10.000)."
+  },
+  {
+    "pertanyaan": "Perhatikan pernyataan berikut tentang sifat-sifat bilangan!\n\nBerilah tanda centang (✓) pada kolom Benar atau Salah!\n\n| Pernyataan | Benar | Salah |\n|---|---|---|\n| Sifat komutatif berlaku untuk penjumlahan dan perkalian | | |\n| Sifat asosiatif berlaku untuk semua operasi hitung | | |\n| Sifat distributif adalah perkalian yang tersebar ke penjumlahan atau pengurangan | | |",
+    "difficulty": "L1",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Sifat komutatif berlaku untuk penjumlahan dan perkalian",
+        "Sifat asosiatif berlaku untuk semua operasi hitung",
+        "Sifat distributif adalah perkalian yang tersebar ke penjumlahan atau pengurangan"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Benar", "Salah", "Benar"],
+    "hint": "Sifat asosiatif tidak berlaku untuk pengurangan dan pembagian."
+  },
+  {
+    "pertanyaan": "Seorang petani memiliki 6 petak sawit. Setiap petak menghasilkan 75 karung buah sawit. Petani tersebut menjual hasil panen kepada 3 pembeli dengan jumlah yang sama.\n\nBerapa karung buah sawit yang diterima setiap pembeli? Gunakan sifat bilangan untuk mempermudah perhitungan!",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "125 karung",
+      "B": "150 karung",
+      "C": "175 karung",
+      "D": "200 karung"
+    },
+    "kunci_jawaban": "B",
+    "hint": "Hitung total: 6 × 75 = 450, lalu bagi 3. Gunakan 75 × 6 = (75 × 2) × 3."
+  },
+  {
+    "pertanyaan": "Tiga bilangan bulat a, b, dan c memenuhi persamaan:\n\n(a + b) + c = a + (b + c) = 150\n\nJika a = 47 dan c = 53, maka nilai b adalah ....",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "45",
+      "B": "50",
+      "C": "55",
+      "D": "60"
+    },
+    "kunci_jawaban": "B",
+    "hint": "Gunakan sifat asosiatif. Jumlahkan a + c terlebih dahulu."
+  },
+  {
+    "pertanyaan": "Perhatikan identitas matematika berikut!\n\na × (b − c) = (a × b) − (a × c)\n\nManakah yang merupakan contoh penerapan identitas di atas?",
+    "difficulty": "L1",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "12 × (15 − 8) = (12 × 15) − (12 × 8)",
+      "B": "25 × (40 − 12) = (25 × 40) − (25 × 12)",
+      "C": "(18 − 9) × 7 = (18 × 7) − (9 × 7)",
+      "D": "50 × 12 = 12 × 50"
+    },
+    "kunci_jawaban": ["A", "B", "C"],
+    "hint": "Perhatikan posisi faktor pengali terhadap kurung (b − c)."
+  },
+  {
+    "pertanyaan": "Sebuah pabrik roti memproduksi 24 loyang roti setiap jam. Setiap loyang berisi 15 potong roti. Pabrik beroperasi 8 jam sehari.\n\nManakah cara perhitungan yang tepat untuk menentukan total roti yang diproduksi dalam sehari?",
+    "difficulty": "L2",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "24 × 15 × 8",
+      "B": "(24 × 8) × 15",
+      "C": "24 × (15 × 8)",
+      "D": "(24 × 15) + (24 × 8)"
+    },
+    "kunci_jawaban": ["A", "B", "C"],
+    "hint": "Gunakan sifat asosiatif dan komutatif perkalian."
+  },
+  {
+    "pertanyaan": "Diketahui:\n\nP = 36 × 25 × 4\nQ = 36 × (25 × 4)\nR = (36 × 25) × 4\n\nPernyataan yang benar tentang P, Q, dan R adalah ....",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "P = Q ≠ R",
+      "B": "P = R ≠ Q",
+      "C": "P = Q = R",
+      "D": "P, Q, dan R memiliki nilai berbeda"
+    },
+    "kunci_jawaban": "C",
+    "hint": "Sifat asosiatif perkalian menyatakan pengelompokan tidak mengubah hasil."
+  },
+  {
+    "pertanyaan": "Toko mainan menjual bola seharga Rp35.000 per buah. Seorang pembeli membeli 12 bola dan mendapat potongan harga Rp5.000 per bola.\n\nBerilah tanda centang (✓) pada kolom Benar atau Salah untuk setiap pernyataan berikut!\n\n| Pernyataan | Benar | Salah |\n|---|---|---|\n| Total harga sebelum potongan = 12 × 35.000 | | |\n| Total potongan = 12 × 5.000 | | |\n| Total yang dibayar = 12 × (35.000 − 5.000) | | |",
+    "difficulty": "L2",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Total harga sebelum potongan = 12 × 35.000",
+        "Total potongan = 12 × 5.000",
+        "Total yang dibayar = 12 × (35.000 − 5.000)"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Benar", "Benar", "Benar"],
+    "hint": "Gunakan sifat distributif untuk menghitung total pembayaran."
+  },
+  {
+    "pertanyaan": "Seorang arsitek merancang gedung dengan 15 lantai. Setiap lantai memiliki 24 ruangan. Setiap ruangan memerlukan 8 lampu.\n\nTotal lampu yang diperlukan untuk seluruh gedung adalah ....",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "2.880 lampu",
+      "B": "2.680 lampu",
+      "C": "2.980 lampu",
+      "D": "2.780 lampu"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Gunakan sifat asosiatif: (15 × 24) × 8 = 15 × (24 × 8)."
+  },
+  {
+    "pertanyaan": "Diketahui operasi:\n\n(a × b) × c = a × (b × c)\n\nOperasi tersebut merupakan penerapan sifat ....",
+    "difficulty": "L1",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Komutatif",
+      "B": "Asosiatif",
+      "C": "Distributif",
+      "D": "Invers"
+    },
+    "kunci_jawaban": "B",
+    "hint": "Sifat asosiatif berkaitan dengan cara pengelompokan bilangan."
+  },
+  {
+    "pertanyaan": "Perhatikan tabel operasi hitung berikut!\n\n| No | Operasi | Hasil |\n|---|---|---|\n| 1 | 87 × 99 | 8.613 |\n| 2 | 87 × 101 | 8.787 |\n| 3 | 87 × (100 − 1) | 8.613 |\n| 4 | 87 × (100 + 1) | 8.687 |\n\nPasangan operasi dan hasil yang BENAR ditunjukkan oleh nomor ....",
+    "difficulty": "L2",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "kunci_jawaban": ["A", "C"],
+    "hint": "87 × 101 = 8.787 (benar). Periksa kembali operasi nomor 2 dan 4."
+  },
+  {
+    "pertanyaan": "Seorang nelayan menangkap ikan selama 5 hari. Hasil tangkapannya berturut-turut adalah: 35 kg, 42 kg, 35 kg, 42 kg, dan 35 kg.\n\nUntuk menghitung total hasil tangkapan dengan cepat, nelayan dapat menggunakan sifat bilangan. Manakah pernyataan yang benar?",
+    "difficulty": "L3",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "Total = (3 × 35) + (2 × 42)",
+      "B": "Total = (35 × 3) + (42 × 2)",
+      "C": "Total = 5 × (35 + 42)",
+      "D": "Pengelompokan menggunakan sifat komutatif dan asosiatif mempermudah perhitungan"
+    },
+    "kunci_jawaban": ["A", "B", "D"],
+    "hint": "Kelompokkan bilangan yang sama menggunakan sifat komutatif dan asosiatif."
+  },
+  {
+    "pertanyaan": "Sebuah persegi panjang memiliki panjang (2x + 5) cm dan lebar x cm. Jika kelilingnya 46 cm, maka luas persegi panjang tersebut adalah ....",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "84 cm²",
+      "B": "96 cm²",
+      "C": "108 cm²",
+      "D": "120 cm²"
+    },
+    "kunci_jawaban": "D",
+    "hint": "Keliling = 2 × (panjang + lebar). Gunakan sifat distributif untuk menyelesaikan persamaan."
+  },
+  {
+    "pertanyaan": "Berikut adalah beberapa pernyataan tentang sifat-sifat operasi hitung.\n\nBerilah tanda centang (✓) pada kolom Benar atau Salah!\n\n| Pernyataan | Benar | Salah |\n|---|---|---|\n| a + b = b + a merupakan sifat komutatif penjumlahan | | |\n| (a − b) − c = a − (b − c) merupakan sifat asosiatif pengurangan | | |\n| a × (b + c) = a × b + a × c merupakan sifat distributif | | |",
+    "difficulty": "L3",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "a + b = b + a merupakan sifat komutatif penjumlahan",
+        "(a − b) − c = a − (b − c) merupakan sifat asosiatif pengurangan",
+        "a × (b + c) = a × b + a × c merupakan sifat distributif"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Benar", "Salah", "Benar"],
+    "hint": "Sifat asosiatif tidak berlaku untuk pengurangan. Coba buktikan dengan contoh angka."
+  }
+]

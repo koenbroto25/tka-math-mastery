@@ -1,0 +1,119 @@
+[
+  {
+    "pertanyaan": "Perhatikan tabel operasi hitung berikut!\n\n| No | Operasi Hitung | Hasil |\n|----|----------------|-------|\n| 1 | 15 + 27 | 42 |\n| 2 | 27 + 15 | 42 |\n| 3 | 18 - 9 | 9 |\n| 4 | 9 - 18 | -9 |\n\nPasangan operasi hitung yang membuktikan sifat komutatif adalah....\nA. 1 dan 2\nB. 1 dan 3\nC. 2 dan 4\nD. 3 dan 4",
+    "hint_teknik": "Jurus Komutatif Deteksi",
+    "langkah_1": "Ingat: Sifat komutatif berlaku pada penjumlahan dan perkalian, TIDAK pada pengurangan dan pembagian.",
+    "langkah_2": "Perhatikan pasangan operasi yang menukar posisi angka namun hasilnya tetap sama.",
+    "langkah_3": "Operasi 15 + 27 = 27 + 15 = 42 membuktikan sifat komutatif pada penjumlahan.",
+    "jawaban_akhir": "A. 1 dan 2",
+    "is_trial": true
+  },
+  {
+    "pertanyaan": "Seorang pedagang buah ingin menghitung total hasil penjualannya. Ia menjual 8 keranjang apel dengan setiap keranjang berisi 25 buah. Untuk menghitung cepat tanpa kalkulator, pedagang tersebut menggunakan sifat distributif.\n\nManakah cara yang tepat untuk menghitung 8 × 25?\nA. 8 × 25 = 25 × 8 = 200\nB. 8 × 25 = (10 - 2) × 25 = 250 - 50 = 200\nC. 8 × 25 = 8 × (20 + 5) = 160 + 40 = 200\nD. 8 × 25 = (8 × 20) + (8 × 5) = 160 + 40 = 200",
+    "hint_teknik": "Jurus Distributif Pemersatu",
+    "langkah_1": "Sifat distributif: a × (b + c) = (a × b) + (a × c) atau a × (b - c) = (a × b) - (a × c).",
+    "langkah_2": "Pilih opsi yang memperlihatkan penyebaran perkalian ke dalam kurung.",
+    "langkah_3": "Opsi D menunjukkan 8 × 25 = (8 × 20) + (8 × 5) yang merupakan penerapan distributif.",
+    "jawaban_akhir": "D. 8 × 25 = (8 × 20) + (8 × 5) = 160 + 40 = 200",
+    "is_trial": true
+  },
+  {
+    "pertanyaan": "Bacalah informasi berikut!\n\nPak Budi memiliki 3 petak sawah. Petak pertama menghasilkan 125 karung padi, petak kedua menghasilkan 125 karung padi, dan petak ketiga menghasilkan 125 karung padi.\n\nUntuk menghitung total panen dengan cepat, Pak Budi menggunakan sifat asosiatif pada perkalian.\n\nBerilah tanda centang (✓) pada kolom Benar atau Salah untuk setiap pernyataan berikut!\n\n| Pernyataan | Benar | Salah |\n|------------|-------|-------|\n| 125 × 3 = 375 menggunakan sifat komutatif | | |\n| (125 × 3) = 3 × 125 menggunakan sifat asosiatif | | |\n| 125 + 125 + 125 = 3 × 125 menggunakan konsep perkalian berulang | | |\n| (2 + 3) × 125 = 2 × 125 + 3 × 125 menggunakan sifat distributif | | |",
+    "hint_teknik": "Jurus Pembeda Sifat Bilangan",
+    "langkah_1": "Analisis setiap pernyataan: Sifat komutatif = tukar posisi; Sifat asosiatif = pengelompokan; Sifat distributif = penyebaran.",
+    "langkah_2": "Pernyataan 1 SALAH karena 125 × 3 adalah operasi biasa, bukan pembuktian komutatif.",
+    "langkah_3": "Pernyataan 2 SALAH karena tukar posisi adalah komutatif, bukan asosiatif. Pernyataan 3 dan 4 BENAR.",
+    "jawaban_akhir": "Benar: Pernyataan 3 dan 4; Salah: Pernyataan 1 dan 2",
+    "is_trial": true
+  },
+  {
+    "pertanyaan": "Perhatikan perhitungan berikut!\n\nHitung dengan cepat: 4 × 37 × 25\n\nStrategi yang paling efisien untuk menyelesaikan operasi tersebut adalah....\nA. Kalikan dari kiri ke kanan: (4 × 37) × 25\nB. Kelompokkan 4 dan 25: (4 × 25) × 37\nC. Kelompokkan 37 dan 25: (37 × 25) × 4\nD. Ubah menjadi penjumlahan: 37 + 37 + 37 + 37",
+    "hint_teknik": "Jurus Pasangan Sakti",
+    "langkah_1": "Kenali pasangan 'sakti' dalam perkalian: 4 × 25 = 100, 25 × 4 = 100.",
+    "langkah_2": "Gunakan sifat asosiatif untuk mengelompokkan pasangan yang mudah dihitung.",
+    "langkah_3": "(4 × 25) × 37 = 100 × 37 = 3700 adalah cara paling efisien.",
+    "jawaban_akhir": "B. Kelompokkan 4 dan 25: (4 × 25) × 37",
+    "is_trial": false
+  },
+  {
+    "pertanyaan": "Di sebuah toko kelontong, Ibu Ani membeli 12 botol minyak goreng. Setiap botol berharga Rp15.000. Ibu Ani ingin menghitung total harga dengan cara mudah.\n\nDengan menggunakan sifat distributif, manakah yang sama nilainya dengan 12 × 15.000?\nA. (10 + 2) × 15.000 = 150.000 + 30.000\nB. (15 - 3) × 15.000 = 225.000 - 45.000\nC. 12 × (10.000 + 5.000) = 120.000 + 60.000\nD. (12 × 10.000) + (12 × 5.000) = 120.000 + 60.000\n\nPilih jawaban yang BENAR lebih dari satu!",
+    "hint_teknik": "Jurus Distributif Ganda",
+    "langkah_1": "Sifat distributif dapat diterapkan dari kedua sisi: (a + b) × c atau a × (b + c).",
+    "langkah_2": "Opsi A: (10 + 2) × 15.000 = 10 × 15.000 + 2 × 15.000 = 150.000 + 30.000 = 180.000 ✓",
+    "langkah_3": "Opsi C dan D juga benar: 12 × (10.000 + 5.000) = 120.000 + 60.000 = 180.000 ✓",
+    "jawaban_akhir": "A, C, dan D (semua menghasilkan 180.000)",
+    "is_trial": false
+  },
+  {
+    "pertanyaan": "Cermati tabel operasi hitung bilangan berikut!\n\n| No | Operasi | Hasil |\n|----|---------|-------|\n| 1 | (6 + 4) + 5 | 15 |\n| 2 | 6 + (4 + 5) | 15 |\n| 3 | (8 - 3) - 2 | 3 |\n| 4 | 8 - (3 - 2) | 7 |\n| 5 | (7 × 2) × 3 | 42 |\n| 6 | 7 × (2 × 3) | 42 |\n\nPasangan operasi yang membuktikan sifat asosiatif adalah....\nA. 1 dan 2\nB. 3 dan 4\nC. 5 dan 6\nD. 1, 2, 5, dan 6",
+    "hint_teknik": "Jurus Asosiatif Kelompok",
+    "langkah_1": "Sifat asosiatif: (a ○ b) ○ c = a ○ (b ○ c), hanya berlaku pada penjumlahan dan perkalian.",
+    "langkah_2": "Periksa pasangan dengan pengelompokan berbeda tapi hasil sama.",
+    "langkah_3": "Pasangan 1-2 (penjumlahan) dan 5-6 (perkalian) membuktikan sifat asosiatif. Pasangan 3-4 hasil berbeda (bukan asosiatif).",
+    "jawaban_akhir": "D. 1, 2, 5, dan 6",
+    "is_trial": false
+  },
+  {
+    "pertanyaan": "Seorang arsitek merancang gedung dengan pola lantai berbentuk persegi panjang. Gedung memiliki 7 lantai dengan setiap lantai terdiri dari 15 ruangan berukuran 4 × 5 meter.\n\nUntuk menghitung luas total semua ruangan, manakah ekspresi yang benar?\n\nBeri tanda centang (✓) pada kolom Benar atau Salah!\n\n| Pernyataan | Benar | Salah |\n|------------|-------|-------|\n| 7 × 15 × 20 menggunakan sifat komutatif untuk mengubah urutan | | |\n| (7 × 15) × 20 = 7 × (15 × 20) menggunakan sifat asosiatif | | |\n| Luas total = 2.100 m² | | |\n| Sifat distributif tidak dapat digunakan dalam soal ini | | |",
+    "hint_teknik": "Jurus Multi-Sifat",
+    "langkah_1": "Luas satu ruangan = 4 × 5 = 20 m². Total ruangan = 7 × 15 = 105 ruangan.",
+    "langkah_2": "Luas total = 105 × 20 = 2.100 m². Dapat menggunakan komutatif dan asosiatif untuk memudahkan perhitungan.",
+    "langkah_3": "Pernyataan 1, 2, dan 3 BENAR. Pernyataan 4 SALAH karena distributif bisa digunakan: 7 × 15 × (4 × 5) = 7 × 15 × 4 × 5.",
+    "jawaban_akhir": "Benar: Pernyataan 1, 2, dan 3; Salah: Pernyataan 4",
+    "is_trial": false
+  },
+  {
+    "pertanyaan": "Perhatikan pernyataan berikut!\n\nAndi mengklaim bahwa:\n(1) 18 - 12 = 12 - 18 adalah contoh sifat komutatif\n(2) 24 ÷ 6 = 6 ÷ 24 adalah contoh sifat komutatif\n(3) 9 × 7 = 7 × 9 adalah contoh sifat komutatif\n(4) 35 + 48 = 48 + 35 adalah contoh sifat komutatif\n\nPernyataan yang benar tentang klaim Andi adalah....\nA. Hanya (1) dan (2)\nB. Hanya (3) dan (4)\nC. Hanya (1), (2), dan (3)\nD. Semua pernyataan benar",
+    "hint_teknik": "Jurus Komutatif vs Non-Komutatif",
+    "langkah_1": "Sifat komutatif HANYA berlaku pada penjumlahan dan perkalian, TIDAK pada pengurangan dan pembagian.",
+    "langkah_2": "Pernyataan (1) SALAH: 18 - 12 = 6, sedangkan 12 - 18 = -6 (hasil berbeda).",
+    "langkah_3": "Pernyataan (2) SALAH: 24 ÷ 6 = 4, sedangkan 6 ÷ 24 = 0,25 (hasil berbeda). Pernyataan (3) dan (4) BENAR.",
+    "jawaban_akhir": "B. Hanya (3) dan (4)",
+    "is_trial": false
+  },
+  {
+    "pertanyaan": "Sebuah pabrik roti memproduksi 98 loyang roti per jam. Setiap loyang berisi 12 buah roti. Produksi berjalan selama 8 jam.\n\nManakah cara yang TEPAT untuk menghitung total roti yang diproduksi?\n\nPilih jawaban yang benar lebih dari satu!\nA. 98 × 12 × 8 = (100 - 2) × 12 × 8 = 9.408 roti\nB. 98 × 12 × 8 = 98 × (12 × 8) = 98 × 96 = 9.408 roti\nC. 98 × 12 × 8 = 98 × 96 = 9.408 roti menggunakan sifat asosiatif\nD. (98 × 12) × 8 = 1.176 × 8 = 9.408 roti",
+    "hint_teknik": "Jurus Hitung Cepat Produksi",
+    "langkah_1": "Total roti = 98 × 12 × 8. Gunakan sifat asosiatif untuk pengelompokan yang mudah.",
+    "langkah_2": "Verifikasi: 98 × 96 = 9.408 atau 1.176 × 8 = 9.408 atau gunakan distributif (100-2) × 96.",
+    "langkah_3": "Semua opsi menghasilkan 9.408 roti dengan cara yang berbeda. Opsi A, B, C, dan D semuanya benar.",
+    "jawaban_akhir": "A, B, C, dan D (semua benar dan menghasilkan 9.408 roti)",
+    "is_trial": false
+  },
+  {
+    "pertanyaan": "Perhatikan gambar susunan kotak kemasan berikut!\n\n[Gambar: 3 baris kotak, setiap baris terdiri dari 4 kelompok, setiap kelompok berisi 25 kotak]\n\nDiketahui:\n- Baris paling bawah: 4 kelompok × 25 kotak = 100 kotak\n- Baris tengah: 4 kelompok × 25 kotak = 100 kotak\n- Baris atas: 4 kelompok × 25 kotak = 100 kotak\n\nPernyataan yang benar tentang cara menghitung total kotak adalah....\n\n| Pernyataan | Benar | Salah |\n|------------|-------|-------|\n| 3 × (4 × 25) = 300 menggunakan sifat asosiatif | | |\n| (3 × 4) × 25 = 300 menggunakan sifat distributif | | |\n| 3 × 100 = 300 adalah cara paling efisien | | |\n| (3 × 25) × 4 = 300 menggunakan sifat komutatif dan asosiatif | | |",
+    "hint_teknik": "Jurus Visual Sifat Bilangan",
+    "langkah_1": "Total kotak = 3 baris × 4 kelompok × 25 kotak = 3 × 4 × 25 = 300 kotak.",
+    "langkah_2": "Pernyataan 1 BENAR: pengelompokan (4 × 25) adalah asosiatif. Pernyataan 2 SALAH: itu asosiatif, bukan distributif.",
+    "langkah_3": "Pernyataan 3 BENAR: 3 × 100 paling efisien. Pernyataan 4 BENAR: menukar urutan (komutatif) lalu mengelompokkan (asosiatif).",
+    "jawaban_akhir": "Benar: Pernyataan 1, 3, dan 4; Salah: Pernyataan 2",
+    "is_trial": false
+  },
+  {
+    "pertanyaan": "Rani dan Dina berlomba menghitung 999 × 47.\n\nRani menggunakan cara: 999 × 47 = (1.000 - 1) × 47 = 47.000 - 47 = 46.953\nDina menggunakan cara: 999 × 47 = 999 × (50 - 3) = 49.950 - 2.997 = 46.953\n\nManakah pernyataan yang benar?\nA. Hanya cara Rani yang menggunakan sifat distributif\nB. Hanya cara Dina yang menggunakan sifat distributif\nC. Keduanya menggunakan sifat distributif\nD. Keduanya tidak menggunakan sifat distributif",
+    "hint_teknik": "Jurus Distributif Berbalik",
+    "langkah_1": "Sifat distributif: a × (b - c) = (a × b) - (a × c) atau (a - b) × c = (a × c) - (b × c).",
+    "langkah_2": "Rani: (1.000 - 1) × 47 = (1.000 × 47) - (1 × 47) → Distributif ✓",
+    "langkah_3": "Dina: 999 × (50 - 3) = (999 × 50) - (999 × 3) → Distributif ✓ Keduanya benar!",
+    "jawaban_akhir": "C. Keduanya menggunakan sifat distributif",
+    "is_trial": false
+  },
+  {
+    "pertanyaan": "Bacalah informasi berikut!\n\nDi sebuah kompleks perumahan, terdapat 16 blok rumah. Setiap blok memiliki 12 rumah. Setiap rumah dihuni oleh rata-rata 4 orang.\n\nKetua RT ingin menghitung jumlah penduduk seluruh kompleks dengan beberapa cara.\n\nManakah ekspresi yang bernilai sama dengan 16 × 12 × 4?\n\nPilih jawaban yang BENAR lebih dari satu!\nA. (16 × 12) × 4\nB. 16 × (12 × 4)\nC. (10 + 6) × 12 × 4\nD. 16 × 12 × 4 = 4 × 16 × 12",
+    "hint_teknik": "Jurus Kombinasi Sifat",
+    "langkah_1": "Hitung: 16 × 12 × 4 = 16 × 48 = 768 atau 192 × 4 = 768.",
+    "langkah_2": "Opsi A: Asosiatif ✓ | Opsi B: Asosiatif ✓ | Opsi C: Distributif (10+6) × 48 = 768 ✓",
+    "langkah_3": "Opsi D: Komutatif 16 × 12 × 4 = 4 × 16 × 12 = 768 ✓ Semua ekspresi bernilai sama!",
+    "jawaban_akhir": "A, B, C, dan D (semua bernilai 768)",
+    "is_trial": false
+  },
+  {
+    "pertanyaan": "Seorang guru matematika memberikan tantangan kepada siswanya:\n\n\"Tentukan nilai n agar persamaan berikut benar:\"\n(n + 15) + 27 = n + (15 + 27)\n\nSiswa A menjawab: n = 42\nSiswa B menjawab: n dapat berupa bilangan bulat apapun\nSiswa C menjawab: n = 0\nSiswa D menjawab: n = 27\n\nManakah jawaban siswa yang paling tepat dan mengapa?\nA. Siswa A benar karena hasil penjumlahannya adalah 42\nB. Siswa B benar karena persamaan tersebut adalah contoh sifat asosiatif yang berlaku untuk semua bilangan\nC. Siswa C benar karena n harus nol agar kedua ruas sama\nD. Siswa D benar karena n harus sama dengan salah satu angka dalam kurung",
+    "hint_teknik": "Jurus Asosiatif Universal",
+    "langkah_1": "Analisis persamaan: (n + 15) + 27 = n + (15 + 27). Ini adalah bentuk umum sifat asosiatif: (a + b) + c = a + (b + c).",
+    "langkah_2": "Sifat asosiatif penjumlahan berlaku untuk SEMUA bilangan real, tidak ada nilai n khusus yang diperlukan.",
+    "langkah_3": "Kesimpulan: Persamaan ini SELALU benar untuk setiap nilai n. Siswa B memberikan jawaban yang tepat.",
+    "jawaban_akhir": "B. Siswa B benar karena persamaan tersebut adalah contoh sifat asosiatif yang berlaku untuk semua bilangan",
+    "is_trial": false
+  }
+]

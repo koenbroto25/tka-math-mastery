@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master TKA Matematika SD - 15 Sub Bab Lengkap</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .nav-item {
+            background: white;
+            padding: 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .nav-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .chapter-card {
+            background: var(--card);
+            border-radius: 25px;
+            padding: 35px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-top: 10px solid var(--primary);
+        }
+
+        .sub-chapter-title {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        .summary-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .question-card {
+            background: #ffffff;
+            border: 2px solid #f1f5f9;
+            border-radius: 18px;
+            padding: 25px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .q-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .fast-method {
+            background: #ecfdf5;
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 15px;
+            border: 1px solid #a7f3d0;
+        }
+
+        .step-label {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .pro-tip {
+            background: #fff7ed;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #fed7aa;
+            font-size: 0.95rem;
+        }
+
+        .math-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #c026d3;
+            background: #fdf4ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            .nav-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Master Matematika TKA SD</h1>
+    <p>Belajar Matematika Jadi Mudah, Runtut, dan Menyenangkan!</p>
+</header>
+
+<div class="container">
+
+<div class="nav-grid">
+    <a href="#sub1" class="nav-item">1.1 Pecahan Senilai</a>
+    <a href="#sub2" class="nav-item">1.2 Perbandingan Pecahan</a>
+    <a href="#sub3" class="nav-item">1.3 Relasi Bentuk Pecahan</a>
+    <a href="#sub4" class="nav-item">1.4 Operasi Bilangan Cacah</a>
+    <a href="#sub5" class="nav-item">1.5 Operasi Bilangan Pecahan</a>
+    <a href="#sub6" class="nav-item">1.6 KPK, FPB, & Faktor</a>
+    <a href="#sub7" class="nav-item">2.1 Bangun Datar</a>
+    <a href="#sub8" class="nav-item">2.2 Bangun Ruang</a>
+    <a href="#sub9" class="nav-item">2.3 Satuan Panjang</a>
+    <a href="#sub10" class="nav-item">2.4 Volume & Berat</a>
+    <a href="#sub11" class="nav-item">2.5 Waktu & Kecepatan</a>
+    <a href="#sub12" class="nav-item">2.6 Keliling, Luas, Volume</a>
+    <a href="#sub13" class="nav-item">2.7 Sudut & Penaksiran</a>
+    <a href="#sub14" class="nav-item">3.1 Penyajian Data</a>
+    <a href="#sub15" class="nav-item">3.2 Interpretasi Data</a>
+</div>
+
+<!-- ==================== BAB 1: BILANGAN ==================== -->
+
+<!-- SUB BAB 1.1 -->
+<div id="sub1" class="chapter-card">
+    <h2 class="sub-chapter-title">1.1 Pecahan Senilai</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Apa itu Pecahan Senilai?</strong> Bayangkan kamu punya satu pizza besar. Kamu potong jadi 2 bagian sama besar, ambil 1 potong. Itu namanya <span class="math-text">1/2</span>. Nah, pizza yang sama jika dipotong jadi 4 bagian, dan kamu ambil 2 potong, itu namanya <span class="math-text">2/4</span>. Tunggu... bukankah besar potonganmu sama saja? <strong>BENAR!</strong> Karena itu, <span class="math-text">1/2 = 2/4</span>. Inilah yang disebut <strong>pecahan senilai</strong> — pecahan yang penulisannya beda, tapi nilainya sama besar.<br><br>
+        <strong>Rahasia Mengubah Pecahan Senilai:</strong> Angka pembilang (atas) dan penyebut (bawah) harus dikali atau dibagi dengan <strong>angka yang sama</strong>. Kalau pembilang dikali 2, penyebut juga harus dikali 2. Seperti tim sepak bola, kalau satu pemain maju, yang lain juga harus maju bersamaan!
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Manakah yang merupakan pecahan senilai dari <span class="math-text">1/3</span>?</p>
+        <p>A. <span class="math-text">2/5</span> &nbsp;&nbsp; B. <span class="math-text">2/6</span> &nbsp;&nbsp; C. <span class="math-text">3/8</span> &nbsp;&nbsp; D. <span class="math-text">2/7</span></p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Pecahan senilai diperoleh dengan mengalikan atau membagi pembilang dan penyebut dengan angka yang sama.</div>
+            <div><span class="step-label">Langkah 1</span> Lihat soal: <span class="math-text">1/3</span>. Coba kalikan pembilang dan penyebut dengan angka 2.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">1 x 2 = 2</span> dan <span class="math-text">3 x 2 = 6</span>. Jadi hasilnya <span class="math-text">2/6</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Cocokkan dengan pilihan jawaban. Yang benar adalah pilihan B.</div>
+            <strong>Hasil Cepat:</strong> Jawabannya adalah <span class="math-text">B. 2/6</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Cara cepat cek pecahan senilai: kalikan silang! <span class="math-text">1 x 6 = 6</span> dan <span class="math-text">3 x 2 = 6</span>. Kalau hasilnya sama, berarti senilai!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Pecahan <span class="math-text">6/8</span> jika disederhanakan menjadi...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Menyederhanakan pecahan berarti membagi pembilang dan penyebut dengan angka yang sama (FPB-nya).</div>
+            <div><span class="step-label">Langkah 1</span> Cari angka yang bisa membagi 6 dan 8 sekaligus. Angka itu adalah <span class="math-text">2</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Bagi pembilang: <span class="math-text">6 : 2 = 3</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Bagi penyebut: <span class="math-text">8 : 2 = 4</span>.</div>
+            <strong>Hasil Cepat:</strong> Pecahan sederhananya adalah <span class="math-text">3/4</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Selalu cari angka pembagi terbesar agar hasilnya paling sederhana. Kalau masih bisa dibagi lagi, berarti belum paling sederhana!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Mana yang nilainya sama dengan <span class="math-text">3/4</span>?</p>
+        <p>A. <span class="math-text">6/10</span> &nbsp;&nbsp; B. <span class="math-text">9/12</span> &nbsp;&nbsp; C. <span class="math-text">5/8</span> &nbsp;&nbsp; D. <span class="math-text">12/15</span></p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Gunakan teknik "kali silang" untuk mengecek nilai pecahan dengan cepat.</div>
+            <div><span class="step-label">Langkah 1</span> Cek pilihan B (<span class="math-text">9/12</span>): Kalikan silang dengan <span class="math-text">3/4</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">3 x 12 = 36</span> dan <span class="math-text">4 x 9 = 36</span>. Hasilnya sama!</div>
+            <div><span class="step-label">Langkah 3</span> Bisa juga dengan pembagian: <span class="math-text">9 : 3 = 3</span> dan <span class="math-text">12 : 3 = 4</span>, jadi <span class="math-text">9/12 = 3/4</span>.</div>
+            <strong>Hasil Cepat:</strong> Jawabannya adalah <span class="math-text">B. 9/12</span>.
+        </div>
+    </div>
+</div>
+
+<!-- SUB BAB 1.2 -->
+<div id="sub2" class="chapter-card">
+    <h2 class="sub-chapter-title">1.2 Perbandingan dan Pengurutan Pecahan</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Membandingkan Pecahan:</strong> Bagaimana caranya tahu mana pecahan yang lebih besar? Ada dua jalan:<br>
+        <strong>1. Cara Kali Silang:</strong> Kalikan pembilang pecahan pertama dengan penyebut pecahan kedua, dan sebaliknya. Hasil yang lebih besar, berarti pecahannya lebih besar.<br>
+        <strong>2. Cara Samakan Penyebut:</strong> Ubah kedua pecahan sampai penyebutnya sama, lalu bandingkan pembilangnya. Pembilang lebih besar = pecahan lebih besar.<br><br>
+        <strong>Logika Auto Paham:</strong> Bayangkan potongan kue. Kalau kuenya dipotong jadi 4 bagian (penyebut 4), tiap potongannya lebih besar daripada kalau dipotong jadi 8 bagian (penyebut 8). Jadi, <span class="math-text">1/4</span> lebih besar dari <span class="math-text">1/8</span> karena potongannya lebih sedikit tapi lebih besar!
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Manakah yang lebih besar: <span class="math-text">3/5</span> atau <span class="math-text">2/3</span>?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Gunakan teknik kali silang untuk membandingkan dua pecahan dengan cepat.</div>
+            <div><span class="step-label">Langkah 1</span> Kalikan silang: <span class="math-text">3 x 3 = 9</span> dan <span class="math-text">5 x 2 = 10</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Bandingkan hasilnya: <span class="math-text">10</span> lebih besar dari <span class="math-text">9</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Angka 10 berasal dari perkalian penyebut <span class="math-text">5</span> dengan pembilang <span class="math-text">2</span>. Jadi <span class="math-text">2/3</span> lebih besar.</div>
+            <strong>Hasil Cepat:</strong> <span class="math-text">2/3</span> lebih besar dari <span class="math-text">3/5</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Ingat rumus: kalikan pembilang dengan penyebut pecahan lawan. Hasil lebih besar = pecahan di sampingnya lebih besar!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Urutkan dari yang terkecil: <span class="math-text">1/2</span>, <span class="math-text">3/4</span>, <span class="math-text">2/5</span>.</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Samakan penyebut semua pecahan agar mudah dibandingkan. KPK dari 2, 4, dan 5 adalah 20.</div>
+            <div><span class="step-label">Langkah 1</span> Ubah <span class="math-text">1/2</span> menjadi <span class="math-text">10/20</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Ubah <span class="math-text">3/4</span> menjadi <span class="math-text">15/20</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Ubah <span class="math-text">2/5</span> menjadi <span class="math-text">8/20</span>.</div>
+            <div><span class="step-label">Langkah 4</span> Urutkan pembilang: 8, 10, 15. Jadi urutan: <span class="math-text">2/5</span>, <span class="math-text">1/2</span>, <span class="math-text">3/4</span>.</div>
+            <strong>Hasil Cepat:</strong> Urutan dari terkecil: <span class="math-text">2/5</span> lalu <span class="math-text">1/2</span> lalu <span class="math-text">3/4</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Cara cepat: ubah semua ke desimal! <span class="math-text">1/2 = 0,5</span>, <span class="math-text">3/4 = 0,75</span>, <span class="math-text">2/5 = 0,4</span>. Tinggal urutkan!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Di antara <span class="math-text">5/6</span>, <span class="math-text">7/8</span>, dan <span class="math-text">4/5</span>, mana yang paling kecil?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Ubah ke desimal untuk cara paling cepat membandingkan banyak pecahan sekaligus.</div>
+            <div><span class="step-label">Langkah 1</span> <span class="math-text">5/6 = 0,833...</span> (5 dibagi 6)</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">7/8 = 0,875</span> (7 dibagi 8)</div>
+            <div><span class="step-label">Langkah 3</span> <span class="math-text">4/5 = 0,8</span> (4 dibagi 5)</div>
+            <div><span class="step-label">Langkah 4</span> Bandingkan: <span class="math-text">0,8</span> adalah yang paling kecil.</div>
+            <strong>Hasil Cepat:</strong> Yang paling kecil adalah <span class="math-text">4/5</span>.
+        </div>
+    </div>
+</div>
+
+<!-- SUB BAB 1.3 -->
+<div id="sub3" class="chapter-card">
+    <h2 class="sub-chapter-title">1.3 Relasi Bentuk Pecahan</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Empat Wajah Pecahan:</strong> Satu nilai bisa ditulis dalam 4 bentuk berbeda, dan semuanya sama nilainya!<br>
+        <strong>1. Pecahan Biasa:</strong> Seperti <span class="math-text">3/4</span> — ada pembilang di atas, penyebut di bawah.<br>
+        <strong>2. Pecahan Campuran:</strong> Seperti <span class="math-text">1 3/4</span> — ada bilangan bulat dan pecahan. Dipakai kalau pembilang lebih besar dari penyebut.<br>
+        <strong>3. Desimal:</strong> Seperti <span class="math-text">0,75</span> — pakai koma. Cara dapatkan dengan membagi pembilang dengan penyebut.<br>
+        <strong>4. Persen:</strong> Seperti <span class="math-text">75%</span> — artinya 75 per seratus. Kalau desimal dikalikan 100, jadi persen!<br><br>
+        <strong>Contoh Lengkap:</strong> <span class="math-text">3/4 = 0,75 = 75%</span>. Tiga wajah, satu nilai!
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Bentuk desimal dari <span class="math-text">2/5</span> adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Untuk mengubah pecahan biasa ke desimal, bagi pembilang dengan penyebut.</div>
+            <div><span class="step-label">Langkah 1</span> Kalikan pembilang dan penyebut dengan angka yang membuat penyebutnya menjadi 10 atau 100.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">2/5 x 2/2 = 4/10</span>.</div>
+            <div><span class="step-label">Langkah 3</span> <span class="math-text">4/10</span> dalam desimal adalah <span class="math-text">0,4</span>.</div>
+            <strong>Hasil Cepat:</strong> Bentuk desimalnya adalah <span class="math-text">0,4</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Kalau penyebutnya 5, kalikan 2. Kalau penyebutnya 4, kalikan 25. Kalau penyebutnya 25, kalikan 4. Tujuannya sama-sama membuat penyebut jadi 100!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Ubah <span class="math-text">125%</span> menjadi pecahan campuran.</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Persen artinya per seratus. <span class="math-text">125%</span> = <span class="math-text">125/100</span>.</div>
+            <div><span class="step-label">Langkah 1</span> Tulis sebagai pecahan: <span class="math-text">125/100</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Sederhanakan dengan membagi 25: <span class="math-text">5/4</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Ubah ke pecahan campuran: <span class="math-text">5/4 = 1 1/4</span> (4 masuk ke 5 sebanyak 1 kali, sisa 1).</div>
+            <strong>Hasil Cepat:</strong> Bentuk pecahan campurannya adalah <span class="math-text">1 1/4</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Bentuk persen dari <span class="math-text">3/8</span> adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Ubah dulu ke desimal, lalu kalikan 100 untuk mendapat persen.</div>
+            <div><span class="step-label">Langkah 1</span> <span class="math-text">3/8</span> = <span class="math-text">3 dibagi 8</span>. Kalikan dengan 125: <span class="math-text">3 x 125 = 375</span> dan <span class="math-text">8 x 125 = 1000</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">375/1000 = 0,375</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Kalikan 100: <span class="math-text">0,375 x 100 = 37,5%</span>.</div>
+            <strong>Hasil Cepat:</strong> Bentuk persennya adalah <span class="math-text">37,5%</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Cara singkat: <span class="math-text">3/8 x 100% = 300/8 % = 37,5%</span>.</div>
+    </div>
+</div>
+
+<!-- SUB BAB 1.4 -->
+<div id="sub4" class="chapter-card">
+    <h2 class="sub-chapter-title">1.4 Operasi Bilangan Cacah</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Bilangan Cacah:</strong> Adalah semua bilangan bulat positif dimulai dari 0, 1, 2, 3, 4, dan seterusnya. Tidak ada angka negatif atau pecahan!<br><br>
+        <strong>Perkalian Besar Tanpa Kalkulator:</strong> Pecah angka besar menjadi bagian yang lebih kecil. Contoh: <span class="math-text">25 x 14</span> bisa dipecah jadi <span class="math-text">25 x 10</span> ditambah <span class="math-text">25 x 4</span>. Lebih mudah kan?<br><br>
+        <strong>Pembagian Bersisa:</strong> Kadang angka tidak habis terbagi. Sisa pembagian ini penting! Contoh: <span class="math-text">17 dibagi 5</span> hasilnya 3 dengan sisa 2. Ditulis: <span class="math-text">17 = 5 x 3 + 2</span>.<br><br>
+        <strong>Logika Auto Paham:</strong> Bayangkan membagi 17 permen ke 5 anak. Tiap anak dapat 3 permen, dan masih ada 2 permen sisa yang tidak cukup untuk dibagi lagi.
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Hasil dari <span class="math-text">24 x 15</span> adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Pecah angka yang lebih mudah dikalikan. Gunakan sifat distributif perkalian.</div>
+            <div><span class="step-label">Langkah 1</span> Pecah angka 15 menjadi <span class="math-text">10 + 5</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">24 x 10 = 240</span>.</div>
+            <div><span class="step-label">Langkah 3</span> <span class="math-text">24 x 5 = 120</span> (setengah dari 24 x 10).</div>
+            <div><span class="step-label">Langkah 4</span> Jumlahkan: <span class="math-text">240 + 120 = 360</span>.</div>
+            <strong>Hasil Cepat:</strong> Hasilnya adalah <span class="math-text">360</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Kalau ada angka 25, ingat bahwa <span class="math-text">25 x 4 = 100</span>. Jadi <span class="math-text">25 x 16 = 25 x 4 x 4 = 100 x 4 = 400</span>!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Hasil dari <span class="math-text">156 dibagi 12</span> adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Bagi bertahap atau gunakan perkalian terbalik untuk cek jawaban.</div>
+            <div><span class="step-label">Langkah 1</span> Coba tebak: <span class="math-text">12 x 10 = 120</span>. Masih kurang 36.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">12 x 3 = 36</span>. Jadi tambah 3 lagi.</div>
+            <div><span class="step-label">Langkah 3</span> Total: <span class="math-text">10 + 3 = 13</span>.</div>
+            <strong>Hasil Cepat:</strong> Hasilnya adalah <span class="math-text">13</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Sebuah kotak berisi 48 permen. Jika dibagi rata kepada 7 anak, berapa sisa permen yang tidak terbagi?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Lakukan pembagian bersisa untuk mencari sisa pembagian.</div>
+            <div><span class="step-label">Langkah 1</span> <span class="math-text">7 x 6 = 42</span> (mendekati 48).</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">48 - 42 = 6</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Sisa 6 tidak bisa dibagi 7 lagi karena 6 kurang dari 7.</div>
+            <strong>Hasil Cepat:</strong> Sisa permen adalah <span class="math-text">6 butir</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Sisa pembagian SELALU lebih kecil dari pembagi. Kalau sisa lebih besar atau sama dengan pembagi, berarti masih bisa dibagi lagi!</div>
+    </div>
+</div>
+
+<!-- SUB BAB 1.5 -->
+<div id="sub5" class="chapter-card">
+    <h2 class="sub-chapter-title">1.5 Operasi Bilangan Pecahan</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Penjumlahan dan Pengurangan Pecahan:</strong> Syarat utamanya adalah <strong>penyebut harus sama</strong>! Kalau beda, samakan dulu dengan mencari KPK penyebutnya.<br><br>
+        <strong>Perkalian Pecahan:</strong> Ini yang paling mudah! Langsung kalikan pembilang dengan pembilang, dan penyebut dengan penyebut. Tidak perlu samakan penyebut.<br><br>
+        <strong>Pembagian Pecahan:</strong> Balik pecahan pembagi, lalu ubah jadi perkalian! Contoh: <span class="math-text">2/3 : 4/5</span> menjadi <span class="math-text">2/3 x 5/4</span>.<br><br>
+        <strong>Logika Auto Paham:</strong> Bayangkan menjumlahkan potongan pizza. Tidak bisa menjumlahkan potongan ukuran 1/4 dengan 1/8 langsung. Harus sama dulu ukurannya!
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Hasil dari <span class="math-text">1/3 + 1/4</span> adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Samakan penyebut dengan mencari KPK dari 3 dan 4, yaitu 12.</div>
+            <div><span class="step-label">Langkah 1</span> Ubah <span class="math-text">1/3</span> menjadi <span class="math-text">4/12</span> (kalikan 4).</div>
+            <div><span class="step-label">Langkah 2</span> Ubah <span class="math-text">1/4</span> menjadi <span class="math-text">3/12</span> (kalikan 3).</div>
+            <div><span class="step-label">Langkah 3</span> Jumlahkan: <span class="math-text">4/12 + 3/12 = 7/12</span>.</div>
+            <strong>Hasil Cepat:</strong> Hasilnya adalah <span class="math-text">7/12</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Cara kilat "Kali Silang": <span class="math-text">(1x4 + 1x3) / (3x4) = 7/12</span>. Langsung dapat tanpa cari KPK dulu!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Hasil dari <span class="math-text">2/5 x 3/4</span> adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Perkalian pecahan: kalikan pembilang dengan pembilang, penyebut dengan penyebut.</div>
+            <div><span class="step-label">Langkah 1</span> Kalikan pembilang: <span class="math-text">2 x 3 = 6</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Kalikan penyebut: <span class="math-text">5 x 4 = 20</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Hasil: <span class="math-text">6/20</span>. Sederhanakan jadi <span class="math-text">3/10</span> (dibagi 2).</div>
+            <strong>Hasil Cepat:</strong> Hasilnya adalah <span class="math-text">3/10</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Hasil dari <span class="math-text">3/4 : 1/2</span> adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Pembagian pecahan: balik pecahan kedua, lalu kalikan.</div>
+            <div><span class="step-label">Langkah 1</span> Balik <span class="math-text">1/2</span> menjadi <span class="math-text">2/1</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Ubah ke perkalian: <span class="math-text">3/4 x 2/1</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Kalikan: <span class="math-text">3 x 2 = 6</span> dan <span class="math-text">4 x 1 = 4</span>. Hasil <span class="math-text">6/4</span>.</div>
+            <div><span class="step-label">Langkah 4</span> Sederhanakan: <span class="math-text">6/4 = 3/2 = 1 1/2</span>.</div>
+            <strong>Hasil Cepat:</strong> Hasilnya adalah <span class="math-text">1 1/2</span> atau <span class="math-text">3/2</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Mengapa dibagi pecahan malah jadi lebih besar? Karena membagi dengan 1/2 sama dengan membagi dengan setengah, berarti hasilnya jadi 2 kali lipat!</div>
+    </div>
+</div>
+
+<!-- SUB BAB 1.6 -->
+<div id="sub6" class="chapter-card">
+    <h2 class="sub-chapter-title">1.6 KPK, FPB, dan Faktor</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Faktor:</strong> Angka-angka yang bisa membagi habis suatu bilangan. Faktor dari 12 adalah: 1, 2, 3, 4, 6, 12 (karena semua angka ini bisa membagi habis 12).<br><br>
+        <strong>KPK (Kelipatan Persekutuan Terkecil):</strong> Angka terkecil yang merupakan kelipatan dari dua atau lebih bilangan. Dipakai untuk soal yang bertanya "kapan bertemu lagi", "kapan menyala bersama", atau menyamakan penyebut pecahan.<br><br>
+        <strong>FPB (Faktor Persekutuan Terbesar):</strong> Angka terbesar yang bisa membagi habis dua atau lebih bilangan. Dipakai untuk soal yang bertanya "paling banyak berapa", "membagi sama rata", atau "ukuran maksimal".<br><br>
+        <strong>Logika Auto Paham:</strong> KPK untuk menyatukan jadwal (bertemu), FPB untuk membagi barang (pisah).
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Ani les piano setiap 6 hari sekali, Budi les biola setiap 8 hari sekali. Jika mereka mulai les bersama hari Senin, setelah berapa hari mereka akan les bersama lagi?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Soal "bersama lagi" = cari KPK. Kelipatan yang bisa dibagi 6 dan 8 sekaligus.</div>
+            <div><span class="step-label">Langkah 1</span> Sebutkan kelipatan 6: 6, 12, 18, 24, 30...</div>
+            <div><span class="step-label">Langkah 2</span> Sebutkan kelipatan 8: 8, 16, 24, 32...</div>
+            <div><span class="step-label">Langkah 3</span> Angka yang sama pertama kali adalah 24.</div>
+            <strong>Hasil Cepat:</strong> Mereka akan les bersama lagi setelah <span class="math-text">24 hari</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Cara cepat: mulai dari kelipatan angka terbesar (8). Cek: 8 (tidak bisa dibagi 6), 16 (tidak bisa), 24 (bisa! 24:6=4). Ketemu!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Ibu memiliki 24 apel dan 36 jeruk. Ibu ingin memasukkannya ke dalam beberapa keranjang dengan jumlah masing-masing buah sama banyak. Berapa keranjang paling banyak yang bisa dibuat?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Soal "paling banyak" atau "sama rata" = cari FPB. Faktor terbesar yang bisa membagi 24 dan 36.</div>
+            <div><span class="step-label">Langkah 1</span> Faktor 24: 1, 2, 3, 4, 6, 8, 12, 24.</div>
+            <div><span class="step-label">Langkah 2</span> Faktor 36: 1, 2, 3, 4, 6, 9, 12, 18, 36.</div>
+            <div><span class="step-label">Langkah 3</span> Faktor yang sama: 1, 2, 3, 4, 6, 12. Yang terbesar adalah 12.</div>
+            <strong>Hasil Cepat:</strong> Paling banyak <span class="math-text">12 keranjang</span> bisa dibuat.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Setelah dapat FPB, jangan lupa cek isi per keranjang! Apel: 24:12=2, Jeruk: 36:12=3. Jadi tiap keranjang berisi 2 apel dan 3 jeruk.</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>KPK dari 4, 6, dan 8 adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Untuk 3 angka, cari KPK dua angka dulu, lalu cari KPK-nya dengan angka ketiga.</div>
+            <div><span class="step-label">Langkah 1</span> KPK 4 dan 6: kelipatan 6 (6, 12), 12 bisa dibagi 4. Jadi KPK = 12.</div>
+            <div><span class="step-label">Langkah 2</span> KPK 12 dan 8: kelipatan 12 (12, 24), 24 bisa dibagi 8. Jadi KPK = 24.</div>
+            <div><span class="step-label">Langkah 3</span> Bisa juga cek kelipatan 8: 8, 16, 24, 32... Cari yang bisa dibagi 4 dan 6. Yaitu 24.</div>
+            <strong>Hasil Cepat:</strong> KPK dari 4, 6, dan 8 adalah <span class="math-text">24</span>.
+        </div>
+    </div>
+</div>
+
+<!-- ==================== BAB 2: GEOMETRI & PENGUKURAN ==================== -->
+
+<!-- SUB BAB 2.1 -->
+<div id="sub7" class="chapter-card">
+    <h2 class="sub-chapter-title">2.1 Bangun Datar</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Apa itu Bangun Datar?</strong> Bayangkan menggambar di atas kertas. Hasil gambarnya hanya punya panjang dan lebar, tidak ada tinggi atau ketebalan. Itu disebut bangun datar!<br><br>
+        <strong>Segitiga:</strong> Punya 3 sisi dan 3 sudut. Jenisnya banyak: segitiga sama sisi (semua sisi sama), sama kaki (2 sisi sama), dan sembarang (semua sisi beda).<br>
+        <strong>Persegi:</strong> 4 sisi sama panjang, 4 sudut siku-siku. Ini bentuk paling simetris!<br>
+        <strong>Persegi Panjang:</strong> 4 sisi dengan 2 pasang yang sama panjang, 4 sudut siku-siku.<br>
+        <strong>Jajar Genjang:</strong> Seperti persegi panjang yang "dipusingkan". Punya 2 pasang sisi sejajar dan sama panjang.<br>
+        <strong>Trapesium:</strong> Punya 1 pasang sisi sejajar saja.<br>
+        <strong>Belah Ketupat:</strong> 4 sisi sama panjang, tapi sudutnya tidak siku-siku.
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Bangun datar yang memiliki 4 sisi sama panjang dan keempat sudutnya siku-siku adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Identifikasi ciri-ciri bangun datar berdasarkan jumlah sisi, panjang sisi, dan besar sudut.</div>
+            <div><span class="step-label">Langkah 1</span> Ada 4 sisi = termasuk segiempat.</div>
+            <div><span class="step-label">Langkah 2</span> Semua sisi sama panjang = bisa persegi atau belah ketupat.</div>
+            <div><span class="step-label">Langkah 3</span> Sudut siku-siku = hanya persegi yang memenuhi semua syarat.</div>
+            <strong>Hasil Cepat:</strong> Bangun datar tersebut adalah <span class="math-text">Persegi</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Belah ketupat juga punya 4 sisi sama panjang, tapi sudutnya TIDAK siku-siku. Bedakan dengan persegi!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Perhatikan bangun datar berikut: memiliki 2 pasang sisi sejajar dan tidak ada sudut siku-siku. Bangun apa itu?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> 2 pasang sisi sejajar = jajar genjang atau belah ketupat. Tanpa sudut siku-siku = bukan persegi panjang.</div>
+            <div><span class="step-label">Langkah 1</span> Persegi panjang punya sudut siku-siku, jadi bukan itu.</div>
+            <div><span class="step-label">Langkah 2</span> Jajar genjang punya 2 pasang sisi sejajar dan bisa tanpa sudut siku-siku.</div>
+            <div><span class="step-label">Langkah 3</span> Belah ketupat punya 4 sisi sama panjang (informasi ini tidak diberikan).</div>
+            <strong>Hasil Cepat:</strong> Bangun datar tersebut adalah <span class="math-text">Jajar Genjang</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Trapesium memiliki ciri khas yaitu...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Trapesium adalah segiempat dengan tepat satu pasang sisi sejajar.</div>
+            <div><span class="step-label">Langkah 1</span> Berbeda dengan jajar genjang yang punya 2 pasang sisi sejajar.</div>
+            <div><span class="step-label">Langkah 2</span> Sisi sejajar pada trapesium biasanya disebut sisi atas dan sisi bawah.</div>
+            <strong>Hasil Cepat:</strong> Trapesium memiliki <span class="math-text">satu pasang sisi sejajar</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Ingingat bentuk prisma segitiga? Kalau dilihat dari samping, bentuknya trapesium!</div>
+    </div>
+</div>
+
+<!-- SUB BAB 2.2 -->
+<div id="sub8" class="chapter-card">
+    <h2 class="sub-chapter-title">2.2 Bangun Ruang dan Visualisasi</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Apa itu Bangun Ruang?</strong> Bangun yang punya volume atau isi, bukan hanya permukaan. Bayangkan kotak kado, bola, atau kaleng minuman — itu semua bangun ruang!<br><br>
+        <strong>Kubus:</strong> Seperti dadu. Punya 6 sisi (semua berbentuk persegi), 12 rusuk (semua sama panjang), dan 8 titik sudut.<br>
+        <strong>Balok:</strong> Seperti kotak sepatu. Punya 6 sisi (pasangan persegi panjang), 12 rusuk, dan 8 titik sudut.<br>
+        <strong>Tabung:</strong> Seperti kaleng susu. Punya 2 sisi alas berbentuk lingkaran dan 1 selimut lengkung.<br>
+        <strong>Kerucut:</strong> Seperti topi ulang tahun. Punya 1 alas lingkaran, 1 titik puncak, dan selimut kerucut.<br>
+        <strong>Bola:</strong> Seperti bola sepak. Punya 1 sisi lengkung tanpa rusuk dan tanpa titik sudut.<br><br>
+        <strong>Cara Menghitung:</strong> Sisi = permukaan bidang, Rusuk = garis pertemuan 2 sisi, Titik Sudut = pertemuan rusuk.
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Sebuah kubus memiliki berapa jumlah rusuk?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Rusuk adalah garis pertemuan antara dua sisi. Hitung dengan memperhatikan semua rusuk tanpa mengulang.</div>
+            <div><span class="step-label">Langkah 1</span> Bayangkan kubus seperti dadu.</div>
+            <div><span class="step-label">Langkah 2</span> Ada 4 rusuk di bagian atas.</div>
+            <div><span class="step-label">Langkah 3</span> Ada 4 rusuk di bagian bawah.</div>
+            <div><span class="step-label">Langkah 4</span> Ada 4 rusuk tegak menghubungkan atas dan bawah.</div>
+            <div><span class="step-label">Langkah 5</span> Total: 4 + 4 + 4 = 12 rusuk.</div>
+            <strong>Hasil Cepat:</strong> Kubus memiliki <span class="math-text">12 rusuk</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Rumus cepat untuk kubus: Sisi = 6, Rusuk = 12, Titik Sudut = 8. Untuk balok juga sama!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Bangun ruang yang tidak memiliki rusuk dan titik sudut adalah...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Rusuk adalah garis, titik sudut adalah pertemuan garis. Bangun tanpa garis = bangun yang melengkung sempurna.</div>
+            <div><span class="step-label">Langkah 1</span> Kubus, balok, prisma punya rusuk dan titik sudut.</div>
+            <div><span class="step-label">Langkah 2</span> Tabung dan kerucut punya rusuk melingkar (garis lingkaran).</div>
+            <div><span class="step-label">Langkah 3</span> Bola hanya punya permukaan lengkung, tidak ada garis sama sekali.</div>
+            <strong>Hasil Cepat:</strong> Bangun ruang tersebut adalah <span class="math-text">Bola</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Jika sebuah balok memiliki panjang 6 cm, lebar 4 cm, dan tinggi 3 cm, berapa jumlah semua rusuknya?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Balok punya 12 rusuk terdiri dari 4 rusuk panjang, 4 rusuk lebar, dan 4 rusuk tinggi.</div>
+            <div><span class="step-label">Langkah 1</span> Rusuk panjang: <span class="math-text">4 x 6 = 24 cm</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Rusuk lebar: <span class="math-text">4 x 4 = 16 cm</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Rusuk tinggi: <span class="math-text">4 x 3 = 12 cm</span>.</div>
+            <div><span class="step-label">Langkah 4</span> Total: <span class="math-text">24 + 16 + 12 = 52 cm</span>.</div>
+            <strong>Hasil Cepat:</strong> Jumlah semua rusuk adalah <span class="math-text">52 cm</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Rumus cepat: Keliling rusuk balok = <span class="math-text">4 x (panjang + lebar + tinggi)</span> = <span class="math-text">4 x (6+4+3) = 4 x 13 = 52 cm</span>.</div>
+    </div>
+</div>
+
+<!-- SUB BAB 2.3 -->
+<div id="sub9" class="chapter-card">
+    <h2 class="sub-chapter-title">2.3 Satuan Panjang</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Tangga Satuan Panjang:</strong> Dari yang terkecil ke terbesar: mm (milimeter) — cm (centimeter) — dm (desimeter) — m (meter) — dam (dekameter) — hm (hektometer) — km (kilometer).<br><br>
+        <strong>Aturan Tangga:</strong> Naik tangga = bagi 10. Turun tangga = kali 10. Setiap satu anak tangga bernilai 10.<br><br>
+        <strong>Konversi Praktis:</strong><br>
+        - <span class="math-text">1 km = 1000 m</span> (turun 3 anak tangga = kali 1000)<br>
+        - <span class="math-text">1 m = 100 cm</span> (turun 2 anak tangga = kali 100)<br>
+        - <span class="math-text">1 cm = 10 mm</span> (turun 1 anak tangga = kali 10)<br><br>
+        <strong>Logika Auto Paham:</strong> Bayangkan kelereng. Kalau naik tangga (dari kecil ke besar), kelerengmu jadi lebih sedikit (dibagi). Kalau turun tangga (dari besar ke kecil), kelerengmu jadi lebih banyak (dikali).
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p><span class="math-text">3,5 km</span> sama dengan berapa meter?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Dari km ke m adalah turun 3 anak tangga. Setiap turun 1 tangga = kali 10.</div>
+            <div><span class="step-label">Langkah 1</span> Turun 3 tangga = kali <span class="math-text">10 x 10 x 10 = 1000</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">3,5 x 1000 = 3500</span>.</div>
+            <strong>Hasil Cepat:</strong> <span class="math-text">3,5 km = 3500 m</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Cara kilat: geser koma ke kanan 3 kali karena km ke m turun 3 tangga. <span class="math-text">3,5</span> menjadi <span class="math-text">3500</span>!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Sebuah pensil memiliki panjang <span class="math-text">15 cm</span>. Berapa panjang pensil tersebut dalam mm?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Dari cm ke mm adalah turun 1 anak tangga = kali 10.</div>
+            <div><span class="step-label">Langkah 1</span> cm ke mm: turun 1 tangga.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">15 x 10 = 150</span>.</div>
+            <strong>Hasil Cepat:</strong> Panjang pensil adalah <span class="math-text">150 mm</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Jarak rumah Andi ke sekolah adalah <span class="math-text">2500 m</span>. Berapa km jarak tersebut?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Dari m ke km adalah naik 3 anak tangga = bagi 1000.</div>
+            <div><span class="step-label">Langkah 1</span> m ke km: naik 3 tangga.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">2500 : 1000 = 2,5</span>.</div>
+            <strong>Hasil Cepat:</strong> Jaraknya adalah <span class="math-text">2,5 km</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Naik tangga = geser koma ke kiri. Turun tangga = geser koma ke kanan. Jumlah geseran = jumlah anak tangga!</div>
+    </div>
+</div>
+
+<!-- SUB BAB 2.4 -->
+<div id="sub10" class="chapter-card">
+    <h2 class="sub-chapter-title">2.4 Satuan Volume dan Berat</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Satuan Volume:</strong> Liter (L) dan mililiter (ml). <span class="math-text">1 L = 1000 ml</span>. Volume mengukur isi cairan seperti air, minyak, atau susu.<br><br>
+        <strong>Satuan Berat:</strong> Gram (g), kilogram (kg), dan ton. <span class="math-text">1 kg = 1000 g</span> dan <span class="math-text">1 ton = 1000 kg</span>. Berat mengukur massa benda.<br><br>
+        <strong>Hubungan Volume dan Berat:</strong> Untuk air murni, <span class="math-text">1 ml = 1 gram</span>. Jadi botol air 500 ml beratnya kira-kira 500 gram. Tapi untuk benda lain seperti minyak atau besi, beratnya berbeda!<br><br>
+        <strong>Logika Auto Paham:</strong> Liter seperti botol minuman (aqua 1 liter). Kilogram seperti beras (1 karung beras = 5 kg atau 10 kg). Ton seperti mobil atau gajah (1 ton = 1000 kg!).
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Ibu membeli <span class="math-text">2,5 L</span> minyak goreng. Berapa ml minyak goreng yang dibeli ibu?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Dari L ke ml adalah turun 3 tangga (kali 1000) karena 1 L = 1000 ml.</div>
+            <div><span class="step-label">Langkah 1</span> <span class="math-text">2,5 x 1000</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Geser koma ke kanan 3 kali: <span class="math-text">2,5</span> menjadi <span class="math-text">2500</span>.</div>
+            <strong>Hasil Cepat:</strong> <span class="math-text">2,5 L = 2500 ml</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Sebuah truk mengangkut <span class="math-text">3500 kg</span> beras. Berapa ton beras yang diangkut?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Dari kg ke ton adalah naik 3 tangga (bagi 1000) karena 1 ton = 1000 kg.</div>
+            <div><span class="step-label">Langkah 1</span> <span class="math-text">3500 : 1000</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Geser koma ke kiri 3 kali: <span class="math-text">3500</span> menjadi <span class="math-text">3,5</span>.</div>
+            <strong>Hasil Cepat:</strong> <span class="math-text">3500 kg = 3,5 ton</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Sebotol berisi <span class="math-text">750 ml</span> air. Jika ditambah <span class="math-text">250 ml</span>, berapa liter air seluruhnya?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Jumlahkan dulu dalam ml, lalu ubah ke liter.</div>
+            <div><span class="step-label">Langkah 1</span> Total air: <span class="math-text">750 + 250 = 1000 ml</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Ubah ke liter: <span class="math-text">1000 ml : 1000 = 1 L</span>.</div>
+            <strong>Hasil Cepat:</strong> Seluruhnya <span class="math-text">1 liter</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> <span class="math-text">750 ml + 250 ml = 1000 ml = 1 L</span>. Angka 750 dan 250 adalah pasangan yang sering muncul, karena 750 = 3/4 liter dan 250 = 1/4 liter!</div>
+    </div>
+</div>
+
+<!-- SUB BAB 2.5 -->
+<div id="sub11" class="chapter-card">
+    <h2 class="sub-chapter-title">2.5 Waktu dan Kecepatan</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Satuan Waktu:</strong> Detik/detik — Menit — Jam — Hari — Minggu — Bulan — Tahun.<br>
+        <span class="math-text">1 menit = 60 detik</span><br>
+        <span class="math-text">1 jam = 60 menit = 3600 detik</span><br>
+        <span class="math-text">1 hari = 24 jam</span><br><br>
+        <strong>Menghitung Durasi:</strong> Waktu selesai dikurangi waktu mulai. Tapi hati-hati dengan sistem 12 jam! Jam 2 siang = 14.00, jam 8 malam = 20.00.<br><br>
+        <strong>Rumus Kecepatan:</strong> Jarak = Kecepatan x Waktu. Atau: Kecepatan = Jarak : Waktu. Waktu = Jarak : Kecepatan.<br><br>
+        <strong>Logika Auto Paham:</strong> Kalau kamu jalan kaki 1 jam dengan kecepatan 4 km/jam, berarti kamu sudah berjalan sejauh 4 km!
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Andi berangkat sekolah pukul 06.30 dan tiba di sekolah pukul 07.15. Berapa lama perjalanan Andi?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Durasi = waktu tiba dikurangi waktu berangkat.</div>
+            <div><span class="step-label">Langkah 1</span> Hitung dari jam: <span class="math-text">07 - 06 = 1 jam</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Hitung dari menit: <span class="math-text">15 - 30</span> tidak bisa, jadi pinjam 1 jam. Menjadi <span class="math-text">75 - 30 = 45 menit</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Atau cara lain: dari 06.30 ke 07.00 = 30 menit, dari 07.00 ke 07.15 = 15 menit. Total = 45 menit.</div>
+            <strong>Hasil Cepat:</strong> Perjalanan Andi selama <span class="math-text">45 menit</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Sebuah mobil melaju dengan kecepatan <span class="math-text">60 km/jam</span>. Berapa jam waktu yang dibutuhkan untuk menempuh jarak <span class="math-text">180 km</span>?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Gunakan rumus: Waktu = Jarak : Kecepatan.</div>
+            <div><span class="step-label">Langkah 1</span> <span class="math-text">180 : 60</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">180 : 60 = 3</span>.</div>
+            <strong>Hasil Cepat:</strong> Waktu yang dibutuhkan adalah <span class="math-text">3 jam</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Kecepatan 60 km/jam artinya setiap 1 jam bisa menempuh 60 km. Jadi 180 km butuh 180:60 = 3 jam!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Kereta api berangkat dari Stasiun A pukul 08.45 dan tiba di Stasiun B pukul 11.20. Berapa lama perjalanan kereta tersebut?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Kurangi waktu tiba dengan waktu berangkat. Perhatikan jam dan menit.</div>
+            <div><span class="step-label">Langkah 1</span> Jam: <span class="math-text">11 - 8 = 3 jam</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Menit: <span class="math-text">20 - 45</span> tidak bisa, pinjam 1 jam. Menjadi <span class="math-text">80 - 45 = 35 menit</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Jam tersisa: <span class="math-text">3 - 1 = 2 jam</span>.</div>
+            <strong>Hasil Cepat:</strong> Perjalanan kereta selama <span class="math-text">2 jam 35 menit</span>.
+        </div>
+    </div>
+</div>
+
+<!-- SUB BAB 2.6 -->
+<div id="sub12" class="chapter-card">
+    <h2 class="sub-chapter-title">2.6 Keliling, Luas, dan Volume</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Keliling = Pagar:</strong> Bayangkan kamu ingin memagari kebun. Total panjang pagar yang dibutuhkan adalah keliling. Keliling = jumlah semua sisi.<br><br>
+        <strong>Luas = Keramik:</strong> Bayangkan kamu ingin memberi keramik lantai kamar. Berapa keramik yang dibutuhkan? Itu yang dihitung luas. Luas = panjang x lebar (untuk persegi panjang).<br><br>
+        <strong>Volume = Isi Air:</strong> Bayangkan aquarium. Berapa liter air yang bisa diisikan? Itu volume. Volume = panjang x lebar x tinggi.<br><br>
+        <strong>Satuan:</strong><br>
+        - Keliling pakai satuan panjang (cm, m, km)<br>
+        - Luas pakai satuan kuadrat (cm persegi, m persegi)<br>
+        - Volume pakai satuan kubik (cm kubik, m kubik) atau liter untuk cairan
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Sebuah kebun berbentuk persegi dengan sisi <span class="math-text">20 m</span>. Berapa panjang pagar yang dibutuhkan untuk mengelilingi kebun?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Keliling persegi = 4 x sisi (karena ada 4 sisi yang sama panjang).</div>
+            <div><span class="step-label">Langkah 1</span> Keliling = <span class="math-text">4 x 20 m</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">4 x 20 = 80</span>.</div>
+            <strong>Hasil Cepat:</strong> Panjang pagar yang dibutuhkan adalah <span class="math-text">80 m</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Keliling = jalan mengelilingi. Untuk persegi, jalan 4 sisi yang sama!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Sebuah ruangan berukuran <span class="math-text">8 m x 6 m</span>. Berapa luas lantai yang perlu dipasang keramik?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Luas persegi panjang = panjang x lebar.</div>
+            <div><span class="step-label">Langkah 1</span> Luas = <span class="math-text">8 x 6</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">8 x 6 = 48</span>.</div>
+            <strong>Hasil Cepat:</strong> Luas lantai adalah <span class="math-text">48 m persegi</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Sebuah aquarium berukuran <span class="math-text">50 cm x 30 cm x 40 cm</span>. Berapa liter air yang dapat ditampung?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Volume balok = panjang x lebar x tinggi. <span class="math-text">1 liter = 1000 cm kubik</span>.</div>
+            <div><span class="step-label">Langkah 1</span> Volume = <span class="math-text">50 x 30 x 40</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">50 x 30 = 1500</span>, lalu <span class="math-text">1500 x 40 = 60.000 cm kubik</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Ubah ke liter: <span class="math-text">60.000 : 1000 = 60 liter</span>.</div>
+            <strong>Hasil Cepat:</strong> Aquarium dapat menampung <span class="math-text">60 liter</span> air.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Cara kilat: <span class="math-text">50 x 30 x 40 = (5 x 3 x 4) x 1000 = 60 x 1000 = 60.000 cm kubik = 60 liter</span>.</div>
+    </div>
+</div>
+
+<!-- SUB BAB 2.7 -->
+<div id="sub13" class="chapter-card">
+    <h2 class="sub-chapter-title">2.7 Sudut dan Penaksiran</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Apa itu Sudut?</strong> Sudut adalah bukaan antara dua garis yang bertemu di satu titik. Semakin besar bukaannya, semakin besar sudutnya.<br><br>
+        <strong>Jenis-jenis Sudut:</strong><br>
+        - <strong>Sudut Lancip:</strong> Kurang dari 90 derajat. Bentuknya runcing seperti ujung pensil yang runcing.<br>
+        - <strong>Sudut Siku-siku:</strong> Tepat 90 derajat. Bentuknya seperti pojok kertas atau buku.<br>
+        - <strong>Sudut Tumpul:</strong> Lebih dari 90 derajat tapi kurang dari 180 derajat. Bentuknya melebar.<br>
+        - <strong>Sudut Lurus:</strong> Tepat 180 derajat. Bentuknya seperti garis lurus.<br><br>
+        <strong>Mengukur dengan Busur:</strong> Letakkan titik pusat busur di titik sudut, lalu baca angka yang ditunjuk oleh garis sudut.
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Sudut yang besarnya <span class="math-text">75 derajat</span> termasuk jenis sudut apa?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Bandingkan dengan 90 derajat. Kurang dari 90 = lancip, tepat 90 = siku-siku, lebih dari 90 = tumpul.</div>
+            <div><span class="step-label">Langkah 1</span> <span class="math-text">75</span> kurang dari <span class="math-text">90</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Karena kurang dari 90 derajat, maka termasuk sudut lancip.</div>
+            <strong>Hasil Cepat:</strong> Termasuk <span class="math-text">sudut lancip</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Ingat: Lancip = kurang dari 90 (runcing), Siku-siku = 90 (seperti pojok buku), Tumpul = lebih dari 90 (melebar).</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Jam menunjukkan pukul 03.00. Berapa besar sudut yang dibentuk oleh jarum jam?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Jarum jam membentuk sudut siku-siku pada pukul 03.00 dan 09.00 karena jarum pendek di angka 3 dan jarum panjang di angka 12.</div>
+            <div><span class="step-label">Langkah 1</span> Lihat posisi jarum: jarum pendek di angka 3, jarum panjang di angka 12.</div>
+            <div><span class="step-label">Langkah 2</span> Jarak dari 12 ke 3 adalah 1/4 lingkaran.</div>
+            <div><span class="step-label">Langkah 3</span> 1/4 lingkaran = 90 derajat.</div>
+            <strong>Hasil Cepat:</strong> Besar sudut adalah <span class="math-text">90 derajat</span> (sudut siku-siku).
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Tanpa mengukur, taksirlah besar sudut yang terlihat seperti huruf L terbalik sedikit melebar!</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Bandingkan dengan sudut yang sudah dikenal. Sudut siku-siku (90) sebagai patokan.</div>
+            <div><span class="step-label">Langkah 1</span> Huruf L sempurna = sudut siku-siku = 90 derajat.</div>
+            <div><span class="step-label">Langkah 2</span> L terbalik sedikit melebar = sudut lebih besar dari 90 derajat.</div>
+            <div><span class="step-label">Langkah 3</span> Tapi tidak terlalu lebar (belum 180 derajat). Mungkin sekitar 100-120 derajat.</div>
+            <strong>Hasil Cepat:</strong> Taksiran sudut sekitar <span class="math-text">100-120 derajat</span> (termasuk sudut tumpul).
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Untuk menaksir, gunakan sudut siku-siku sebagai pembanding. Kalau lebih lebar dari L = tumpul. Kalau lebih runcing = lancip.</div>
+    </div>
+</div>
+
+<!-- ==================== BAB 3: DATA ==================== -->
+
+<!-- SUB BAB 3.1 -->
+<div id="sub14" class="chapter-card">
+    <h2 class="sub-chapter-title">3.1 Penyajian Data</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Mengapa Data Harus Disajikan?</strong> Agar mudah dibaca dan dipahami! Data mentah berupa angka-angka bisa membingungkan. Dengan disajikan rapi, kita bisa melihat pola dan kesimpulan dengan cepat.<br><br>
+        <strong>Cara Menyajikan Data:</strong><br>
+        - <strong>Tabel:</strong> Data disusun dalam baris dan kolom. Cocok untuk data yang detail dan banyak.<br>
+        - <strong>Diagram Batang:</strong> Data ditunjukkan dengan batang-batang tinggi. Semakin tinggi batang, semakin besar nilainya. Cocok untuk membandingkan.<br>
+        - <strong>Diagram Lingkaran:</strong> Data ditunjukkan dengan potongan-potongan lingkaran seperti pizza. Cocok untuk menunjukkan persentase.<br>
+        - <strong>Digram Garis:</strong> Data dihubungkan dengan garis. Cocok untuk melihat perubahan dari waktu ke waktu.<br><br>
+        <strong>Langkah Membuat Diagram Batang:</strong> 1) Buat sumbu vertikal dan horizontal, 2) Beri skala angka, 3) Gambar batang sesuai data.
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Data jumlah siswa per kelas: Kelas A ada 25 siswa, Kelas B ada 30 siswa, Kelas C ada 20 siswa. Diagram batang yang benar menunjukkan...</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Dalam diagram batang, tinggi batang harus sesuai dengan nilai data.</div>
+            <div><span class="step-label">Langkah 1</span> Kelas A = 25 (batang sedang)</div>
+            <div><span class="step-label">Langkah 2</span> Kelas B = 30 (batang paling tinggi)</div>
+            <div><span class="step-label">Langkah 3</span> Kelas C = 20 (batang paling rendah)</div>
+            <strong>Hasil Cepat:</strong> Diagram yang benar menunjukkan batang Kelas B paling tinggi, Kelas A sedang, dan Kelas C paling rendah.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Dari diagram lingkaran tentang hobi siswa, bagian membaca buku menunjukkan <span class="math-text">25%</span>. Jika total siswa <span class="math-text">80 orang</span>, berapa siswa yang hobi membaca?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Persentase artinya per seratus. 25% dari 80 = 25/100 x 80.</div>
+            <div><span class="step-label">Langkah 1</span> <span class="math-text">25% x 80</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">25/100 x 80 = 2000/100 = 20</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Atau cara cepat: 25% = 1/4, jadi <span class="math-text">80 : 4 = 20</span>.</div>
+            <strong>Hasil Cepat:</strong> Ada <span class="math-text">20 siswa</span> yang hobi membaca buku.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Dari tabel data penjualan buah, apel terjual <span class="math-text">40 kg</span>, jeruk <span class="math-text">35 kg</span>, dan mangga <span class="math-text">25 kg</span>. Berapa total penjualan buah?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Total = menjumlahkan semua data.</div>
+            <div><span class="step-label">Langkah 1</span> <span class="math-text">40 + 35 + 25</span>.</div>
+            <div><span class="step-label">Langkah 2</span> <span class="math-text">40 + 35 = 75</span>.</div>
+            <div><span class="step-label">Langkah 3</span> <span class="math-text">75 + 25 = 100</span>.</div>
+            <strong>Hasil Cepat:</strong> Total penjualan buah adalah <span class="math-text">100 kg</span>.
+        </div>
+    </div>
+</div>
+
+<!-- SUB BAB 3.2 -->
+<div id="sub15" class="chapter-card">
+    <h2 class="sub-chapter-title">3.2 Interpretasi Data</h2>
+    <div class="summary-box">
+        <strong>Ringkasan Materi:</strong><br>
+        <strong>Interpretasi Data</strong> berarti membaca, memahami, dan membuat kesimpulan dari data yang disajikan.<br><br>
+        <strong>Nilai Rata-rata (Mean):</strong> Jumlah semua data dibagi banyaknya data. Rumus: <span class="math-text">Mean = Total Data : Banyak Data</span>.<br><br>
+        <strong>Nilai Tengah (Median):</strong> Nilai yang berada di tengah setelah data diurutkan dari kecil ke besar. Kalau jumlah data genap, median adalah rata-rata dua nilai tengah.<br><br>
+        <strong>Nilai yang Paling Sering Muncul (Modus):</strong> Nilai yang muncul paling banyak dalam data. Modus bisa lebih dari satu atau tidak ada sama sekali!<br><br>
+        <strong>Logika Auto Paham:</strong> Mean seperti membagi kue sama rata. Median seperti berdiri berbaris, yang di tengah. Modus seperti pemilihan ketua kelas, yang paling banyak dipilih.
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <p>Nilai ulangan 5 siswa adalah: <span class="math-text">70, 80, 60, 90, 75</span>. Berapa nilai rata-ratanya?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Mean = jumlah semua nilai dibagi banyak siswa.</div>
+            <div><span class="step-label">Langkah 1</span> Jumlahkan semua: <span class="math-text">70 + 80 + 60 + 90 + 75 = 375</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Bagi dengan banyak data: <span class="math-text">375 : 5</span>.</div>
+            <div><span class="step-label">Langkah 3</span> <span class="math-text">375 : 5 = 75</span>.</div>
+            <strong>Hasil Cepat:</strong> Nilai rata-rata adalah <span class="math-text">75</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Cara kilat: cari selisih dari angka yang mudah. 70-75=-5, 80-75=+5, 60-75=-15, 90-75=+15, 75-75=0. Total = 0. Berarti rata-rata 75 benar!</div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 2</div>
+        <p>Data tinggi badan 6 siswa: <span class="math-text">145, 150, 148, 152, 147, 155 cm</span>. Berapa mediannya?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Median adalah nilai tengah setelah data diurutkan. Untuk jumlah genap, median = rata-rata 2 nilai tengah.</div>
+            <div><span class="step-label">Langkah 1</span> Urutkan: <span class="math-text">145, 147, 148, 150, 152, 155</span>.</div>
+            <div><span class="step-label">Langkah 2</span> Karena ada 6 data (genap), ambil data ke-3 dan ke-4: <span class="math-text">148</span> dan <span class="math-text">150</span>.</div>
+            <div><span class="step-label">Langkah 3</span> Rata-rata keduanya: <span class="math-text">(148 + 150) : 2 = 298 : 2 = 149</span>.</div>
+            <strong>Hasil Cepat:</strong> Median adalah <span class="math-text">149 cm</span>.
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="q-number">Soal 3</div>
+        <p>Data sepatu yang terjual: <span class="math-text">38, 39, 40, 40, 40, 41, 42</span>. Berapa modusnya?</p>
+        <div class="fast-method">
+            <div><span class="step-label">Teori Dasar</span> Modus adalah nilai yang paling sering muncul.</div>
+            <div><span class="step-label">Langkah 1</span> Hitung kemunculan setiap nilai:</div>
+            <div><span class="step-label">Langkah 2</span> 38 muncul 1x, 39 muncul 1x, 40 muncul 3x, 41 muncul 1x, 42 muncul 1x.</div>
+            <div><span class="step-label">Langkah 3</span> Nilai 40 muncul paling banyak (3 kali).</div>
+            <strong>Hasil Cepat:</strong> Modusnya adalah <span class="math-text">40</span>.
+        </div>
+        <div class="pro-tip"><strong>Tips:</strong> Modus = yang paling banyak muncul. Cara mudah: cari angka yang paling sering diulang dalam data!</div>
+    </div>
+</div>
+
+<footer>
+    <p>Teruslah berlatih, karena Matematika bukan untuk dihafal, tapi untuk dipahami logikanya!</p>
+    <p>&copy; 2025 koenbroto@gmail.com - Panduan Sukses TKA SD</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Training - Guided Drill</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <!-- Marked.js for Markdown Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #0f172a; color: white; min-height: 100vh; }
+        
+        .drill-container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        
+        /* Header Card */
+        .drill-header {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border: 2px solid #64748b;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .drill-header::before {
+            content: "";
+            position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+        }
+
+        .technique-badge {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid #3b82f6;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Step Card */
+        .step-card {
+            background: #ffffff;
+            color: #1e293b;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 8px solid #cbd5e1;
+            transition: all 0.3s ease;
+            opacity: 0.5;
+            filter: blur(1px);
+            pointer-events: none;
+        }
+
+        .step-card.active {
+            opacity: 1;
+            filter: blur(0);
+            pointer-events: auto;
+            border-left-color: #3b82f6;
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        .step-card.completed {
+            opacity: 0.8;
+            filter: blur(0);
+            border-left-color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .step-number {
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .active .step-number { color: #3b82f6; }
+        .completed .step-number { color: #10b981; }
+
+        /* Inputs */
+        .drill-input {
+            border: none;
+            border-bottom: 2px solid #94a3b8;
+            background: transparent;
+            width: 80px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin: 0 5px;
+            transition: 0.3s;
+        }
+        .drill-input:focus { outline: none; border-bottom-color: #3b82f6; }
+        .drill-input.correct { border-bottom-color: #10b981; color: #10b981; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981' width='16' height='16'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right center; }
+        .drill-input.wrong { border-bottom-color: #ef4444; color: #ef4444; animation: shake 0.3s; }
+
+        /* Markdown Table Styling */
+        .drill-header table, .step-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: rgba(255,255,255,0.05);
+            color: inherit;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .drill-header th, .step-card th, 
+        .drill-header td, .step-card td {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px;
+            text-align: left;
+        }
+        .drill-header th, .step-card th {
+            background: rgba(0,0,0,0.3);
+            color: #60a5fa; /* Matches technique badge color */
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        .step-card table {
+            color: #1e293b; /* Dark text for light card */
+        }
+        .step-card th {
+            background: #f1f5f9;
+            color: #334155;
+            border-color: #cbd5e1;
+        }
+        .step-card td {
+            border-color: #cbd5e1;
+        }
+
+        /* Audio Controls */
+        .audio-btn {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: #f1f5f9;
+            color: #334155;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+            float: right;
+            margin-top: -5px;
+        }
+        .audio-btn:hover { background: #e2e8f0; color: #0f172a; }
+        .audio-btn.playing { background: #dbeafe; color: #2563eb; animation: pulse 1.5s infinite; }
+
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); } 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); } }
+        @keyframes shake { 10%, 90% { transform: translate3d(-2px, 0, 0); } 20%, 80% { transform: translate3d(4px, 0, 0); } 30%, 50%, 70% { transform: translate3d(-6px, 0, 0); } 40%, 60% { transform: translate3d(6px, 0, 0); } }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: #0f172a; z-index: 100;
+        }
+        .progress-bar { height: 100%; background: #3b82f6; width: 0%; transition: width 0.5s; }
+
+        /* Modal */
+        .modal-content { background: #1e293b; color: white; border: 1px solid #475569; }
+        .btn-next { background: #10b981; color: white; width: 100%; padding: 15px; font-weight: bold; border-radius: 12px; border: none; font-size: 1.1rem; }
+        .btn-next:hover { background: #059669; }
+    </style>
+</head>
+<body>
+
+<div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="drill-container">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <button id="btnKembali" class="btn btn-outline-secondary btn-sm rounded-pill px-3">⬅ Kembali</button>
+        <div class="d-flex align-items-center gap-3">
+            <button id="btnSoundToggle" class="btn btn-dark btn-sm rounded-circle border-secondary text-warning" style="width:40px; height:40px;">
+                <i class="bi bi-volume-up-fill"></i>
+            </button>
+            <div class="text-secondary small font-monospace">SHADOW TRAINING MODE</div>
+        </div>
+    </div>
+
+    <!-- Question Context -->
+    <div class="drill-header position-relative">
+        <div class="d-flex justify-content-between align-items-start">
+            <div class="technique-badge">
+                <i class="bi bi-lightbulb-fill"></i> <span id="hintTeknik">Memuat Teknik...</span>
+            </div>
+            <button id="btnReport" class="btn btn-link text-muted p-0" title="Laporkan Soal" style="text-decoration: none;">
+                <i class="bi bi-flag-fill"></i>
+            </button>
+        </div>
+        <div id="teksSoal" class="fw-bold mb-0 mt-2 fs-5">Memuat Soal...</div>
+    </div>
+
+    <!-- Steps Container -->
+    <div id="stepsContainer">
+        <!-- Steps will be injected here -->
+        <div class="text-center py-5 text-muted">
+            <div class="spinner-border mb-3"></div>
+            <p>Master Sage sedang menyiapkan arena...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Success -->
+<div class="modal fade" id="modalSuccess" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+            <div class="mb-3" style="font-size: 4rem;">🎉</div>
+            <h3>Luar Biasa!</h3>
+            <p class="text-gray-400">Kamu telah menguasai teknik ini dengan sempurna.</p>
+            <div class="d-flex gap-2 mt-4">
+                <button class="btn btn-outline-light w-50 py-3" onclick="location.reload()">Ulangi</button>
+                <button class="btn btn-next w-50 py-3" id="btnNextDrill">Lanjut Soal >></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Report -->
+<div class="modal fade" id="modalReport" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-warning">
+            <div class="modal-header bg-dark border-bottom border-secondary">
+                <h5 class="modal-title text-warning"><i class="bi bi-flag-fill"></i> Laporkan Masalah</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body bg-dark text-white">
+                <p class="small text-muted">Bantu Master Sage memperbaiki soal ini. Apa masalahnya?</p>
+                <textarea id="reportIssue" class="form-control bg-secondary text-white border-0" rows="3" placeholder="Contoh: Jawaban salah, Soal tidak jelas..."></textarea>
+            </div>
+            <div class="modal-footer bg-dark border-top border-secondary">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Batal</button>
+                <button type="button" id="btnSubmitReport" class="btn btn-warning btn-sm fw-bold">Kirim Laporan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="/src/latihan_shadow.js"></script>
+
+</body>
+</html>

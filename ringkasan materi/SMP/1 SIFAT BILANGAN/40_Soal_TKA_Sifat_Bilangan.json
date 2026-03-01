@@ -1,0 +1,552 @@
+[
+  {
+    "pertanyaan": "Perhatikan informasi berikut!\n\nSeorang petani memiliki 3 kebun apel. Kebun pertama menghasilkan 25 keranjang apel, kebun kedua menghasilkan 18 keranjang, dan kebun ketiga menghasilkan 32 keranjang. Petani tersebut ingin menghitung total apel yang dihasilkan dengan dua cara berbeda.\n\nCara 1: (25 + 18) + 32\nCara 2: 25 + (18 + 32)\n\nAnalisalah perbedaan kedua cara tersebut dan tentukan sifat matematika yang mendasarinya. Pernyataan manakah yang BENAR?",
+    "difficulty": "L3",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Kedua cara menghasilkan hasil yang sama",
+        "Cara 1 lebih mudah dihitung daripada Cara 2",
+        "Perhitungan ini menggunakan sifat komutatif",
+        "Perhitungan ini menggunakan sifat asosiatif"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Benar", "Salah", "Salah", "Benar"],
+    "hint": "Sifat asosiatif memungkinkan pengelompokan ulang operasi penjumlahan tanpa mengubah hasil."
+  },
+  {
+    "pertanyaan": "Bacalah informasi berikut!\n\nToko elektronik \"Maju Jaya\" memberikan diskon spesial. Seorang pembeli membeli 15 unit televisi dengan harga Rp2.500.000 per unit. Untuk mempermudah perhitungan, kasir menghitung: 15 x 2.500.000 = (10 + 5) x 2.500.000.\n\nManakah yang merupakan langkah selanjutnya yang TEPAT menggunakan sifat distributif?",
+    "difficulty": "L1",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "(10 x 2.500.000) + (5 x 2.500.000)",
+      "B": "(10 x 5) x 2.500.000",
+      "C": "10 x (5 x 2.500.000)",
+      "D": "(15 x 10) x 2.500.000"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Sifat distributif: a x (b + c) = (a x b) + (a x c)"
+  },
+  {
+    "pertanyaan": "Perhatikan data hasil ujian matematika kelas VII berikut!\n\nPada saat menghitung nilai rata-rata, guru melakukan operasi berikut:\nNilai total = 85 + 92 + 78 + 85 + 90\n\nGuru menyatakan bahwa \"85 + 92 = 92 + 85\" dan \"78 + 90 = 90 + 78\".\n\nPernyataan mana sajakah yang BENAR tentang pernyataan guru tersebut?",
+    "difficulty": "L1",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "Pernyataan guru menerapkan sifat komutatif",
+      "B": "Sifat yang sama berlaku untuk pengurangan",
+      "C": "Sifat yang sama berlaku untuk perkalian",
+      "D": "Sifat yang sama berlaku untuk pembagian"
+    },
+    "kunci_jawaban": ["A", "C"],
+    "hint": "Sifat komutatif berlaku untuk penjumlahan dan perkalian, tetapi TIDAK untuk pengurangan dan pembagian."
+  },
+  {
+    "pertanyaan": "Bacalah artikel berikut!\n\n**Strategi Berhitung Cepat Siswa Indonesia**\n\nDi kompetisi Matematika Internasional, siswa Indonesia terkenal dengan kemampuan berhitung cepat. Salah satu rahasia mereka adalah menguasai sifat-sifat bilangan. Misalnya, untuk menghitung 47 x 99, mereka tidak menghitung secara langsung, melainkan mengubahnya menjadi 47 x (100 - 1).\n\nBerdasarkan artikel tersebut, hasil dari 47 x 99 adalah ....",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "4.653",
+      "B": "4.600",
+      "C": "4.753",
+      "D": "4.553"
+    },
+    "kunci_jawaban": "A",
+    "hint": "47 x 99 = 47 x (100 - 1) = (47 x 100) - (47 x 1)"
+  },
+  {
+    "pertanyaan": "Perhatikan infografis berikut!\n\n**PRODUKSI PABRIK ROTI \"MANIS JAYA\"**\n\n| Hari | Jumlah Roti (lusin) |\n|------|---------------------|\n| Senin | 125 |\n| Selasa | 125 |\n| Rabu | 125 |\n| Kamis | 125 |\n\nManajer pabrik menghitung total produksi dengan cara: 125 x 4. Ia menyatakan bahwa \"4 x 125 = 125 x 4\".\n\nEvaluasilah pernyataan manajer tersebut dan identifikasi sifat matematika yang digunakan. Pernyataan manakah yang BENAR?",
+    "difficulty": "L3",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Pernyataan tersebut menunjukkan sifat asosiatif",
+        "Pernyataan tersebut menunjukkan sifat komutatif",
+        "Hasil dari 4 x 125 adalah 500",
+        "Sifat yang sama TIDAK berlaku untuk penjumlahan"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Salah", "Benar", "Benar", "Salah"],
+    "hint": "Sifat komutatif adalah sifat tukar posisi yang berlaku untuk penjumlahan dan perkalian."
+  },
+  {
+    "pertanyaan": "Bacalah kasus berikut!\n\nSeorang arsitek sedang menghitung luas ruangan berbentuk persegi panjang dengan ukuran 8 meter x 15 meter. Untuk mempermudah, ia menghitung: 8 x 15 = 8 x (10 + 5).\n\nHasil luas ruangan tersebut adalah .... m²",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "120",
+      "B": "130",
+      "C": "115",
+      "D": "125"
+    },
+    "kunci_jawaban": "A",
+    "hint": "8 x (10 + 5) = (8 x 10) + (8 x 5)"
+  },
+  {
+    "pertanyaan": "Perhatikan ilustrasi berikut!\n\nTiga sahabat yaitu Andi, Budi, dan Citra sedang berdiskusi tentang matematika.\n\n**Andi:** \"Aku yakin 7 + 3 sama dengan 3 + 7\"\n**Budi:** \"Menurutku, 10 - 5 sama dengan 5 - 10\"\n**Citra:** \"Aku setuju dengan Andi, tapi tidak dengan Budi\"\n\nSiapa sajakah yang pernyataannya BENAR?",
+    "difficulty": "L2",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "Andi",
+      "B": "Budi",
+      "C": "Citra",
+      "D": "Tidak ada yang benar"
+    },
+    "kunci_jawaban": ["A", "C"],
+    "hint": "Sifat komutatif berlaku untuk penjumlahan tetapi tidak untuk pengurangan."
+  },
+  {
+    "pertanyaan": "Bacalah informasi berikut!\n\n**LAPORAN PENJUALAN BUKU**\n\nSebuah toko buku memiliki data penjualan selama 3 hari:\n- Hari pertama: Terjual 45 buku pelajaran dan 30 novel\n- Hari kedua: Terjual 55 buku pelajaran dan 20 novel\n- Hari ketiga: Terjual 40 buku pelajaran dan 35 novel\n\nPemilik toko ingin menghitung total buku pelajaran yang terjual dengan dua cara:\nCara 1: (45 + 55) + 40\nCara 2: 45 + (55 + 40)\n\nBandingkan efektivitas kedua cara tersebut dan tentukan sifat matematika yang mendasarinya. Manakah pernyataan yang BENAR?",
+    "difficulty": "L3",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Cara 1 dan Cara 2 menghasilkan hasil yang berbeda",
+        "Pengelompokan seperti ini menggunakan sifat asosiatif",
+        "Total buku pelajaran yang terjual adalah 140 buku",
+        "Sifat komutatif tidak dapat digunakan dalam perhitungan ini"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Salah", "Benar", "Benar", "Salah"],
+    "hint": "Sifat asosiatif memungkinkan pengelompokan ulang operasi penjumlahan."
+  },
+  {
+    "pertanyaan": "Perhatikan tabel berikut!\n\n**HARGA BARANG DI TOKO \"SEJAHTERA\"**\n\n| Nama Barang | Harga per Unit (Rp) |\n|-------------|---------------------|\n| Buku Tulis | 3.500 |\n| Pensil | 2.000 |\n| Penghapus | 1.500 |\n\nSeorang pembeli membeli 12 buku tulis. Kasir menghitung dengan cara: 12 x 3.500 = (10 + 2) x 3.500.\n\nBerapa total yang harus dibayar pembeli?",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Rp38.000",
+      "B": "Rp42.000",
+      "C": "Rp40.000",
+      "D": "Rp36.000"
+    },
+    "kunci_jawaban": "B",
+    "hint": "(10 + 2) x 3.500 = (10 x 3.500) + (2 x 3.500)"
+  },
+  {
+    "pertanyaan": "Bacalah kasus berikut!\n\nPak Budi adalah petani yang memiliki sawah seluas 2.500 m². Ia membagi sawahnya menjadi 4 bagian yang sama luas untuk ditanami padi varietas berbeda. Luas setiap bagian dihitung dengan: 2.500 ÷ 4.\n\nAnaknya, Adi, mengusulkan cara alternatif: 2.500 ÷ 4 = 2.500 x (1/4).\n\nApakah usulan Adi dapat dibenarkan?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Ya, karena pembagian dengan suatu bilangan sama dengan perkalian dengan kebalikannya",
+      "B": "Tidak, karena pembagian tidak dapat diubah menjadi perkalian",
+      "C": "Ya, tetapi hanya berlaku untuk bilangan genap",
+      "D": "Tidak, karena 1/4 bukan bilangan bulat"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Pembagian adalah invers dari perkalian. a ÷ b = a x (1/b) untuk b ≠ 0."
+  },
+  {
+    "pertanyaan": "Perhatikan infografis berikut!\n\n**JUMLAH SISWA DI SD NEGERI 1 HARAPAN**\n\n| Kelas | Jumlah Siswa |\n|-------|--------------|\n| I | 36 |\n| II | 36 |\n| III | 36 |\n| IV | 36 |\n| V | 36 |\n| VI | 36 |\n\nKepala sekolah menghitung total siswa dengan: 36 x 6. Seorang guru mengusulkan cara: (30 + 6) x 6.\n\nPernyataan manakah yang BENAR tentang kedua cara tersebut?",
+    "difficulty": "L2",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Kedua cara menghasilkan hasil yang sama",
+        "Cara guru menggunakan sifat distributif",
+        "Total siswa adalah 216 siswa",
+        "Cara (6 x 30) + 6 akan menghasilkan hasil yang sama"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Benar", "Benar", "Benar", "Salah"],
+    "hint": "Perhatikan sifat distributif: (a + b) x c = (a x c) + (b x c)"
+  },
+  {
+    "pertanyaan": "Bacalah artikel berikut!\n\n**FENOMENA MATEMATIKA DALAM KEHIDUPAN SEHARI-HARI**\n\nDi sebuah pasar tradisional, Ibu Sari berjualan sayur. Setiap harinya ia menjual 25 ikat kangkung dengan harga Rp3.000 per ikat. Untuk menghitung pendapatannya, ia menggunakan cara: 25 x 3 = 75, lalu menambahkan dua angka nol menjadi 75.000.\n\nPernyataan manakah yang menjelaskan strategi Ibu Sari?",
+    "difficulty": "L3",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "Ibu Sari menggunakan sifat komutatif untuk menukar posisi angka",
+      "B": "Ibu Sari menerapkan konsep perkalian dengan kelipatan 10",
+      "C": "Strategi Ibu Sari adalah 25 x 3.000 = 25 x 3 x 1.000",
+      "D": "Strategi Ibu Sari adalah 25 x 3.000 = (25 x 3) x 1.000"
+    },
+    "kunci_jawaban": ["B", "C", "D"],
+    "hint": "Perhatikan hubungan antara 3.000 dan 3 x 1.000, serta sifat asosiatif dalam perkalian."
+  },
+  {
+    "pertanyaan": "Perhatikan perhitungan berikut!\n\nSeorang siswa diminta menghitung 998 x 52.\n\nSiswa tersebut menyelesaikan dengan cara:\n998 x 52 = (1.000 - 2) x 52\n= (1.000 x 52) - (2 x 52)\n= 52.000 - 104\n= 51.896\n\nSifat apa sajakah yang digunakan siswa tersebut?",
+    "difficulty": "L3",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "Sifat distributif perkalian terhadap pengurangan",
+      "B": "Sifat asosiatif",
+      "C": "Sifat komutatif",
+      "D": "Konsep pengurangan bilangan"
+    },
+    "kunci_jawaban": ["A", "D"],
+    "hint": "Perhatikan: (a - b) x c = (a x c) - (b x c)"
+  },
+  {
+    "pertanyaan": "Bacalah kasus berikut!\n\nDi sebuah lomba matematika, peserta diminta menghitung 25 x 17 x 4 dengan cepat tanpa kalkulator.\n\n**Peserta A:** Menghitung langsung 25 x 17 = 425, lalu 425 x 4 = 1.700\n**Peserta B:** Mengelompokkan (25 x 4) x 17 = 100 x 17 = 1.700\n\nMengapa strategi Peserta B lebih efisien?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Karena Peserta B menggunakan sifat asosiatif untuk mengelompokkan angka yang mudah dikalikan",
+      "B": "Karena Peserta B menggunakan sifat komutatif untuk menukar posisi angka",
+      "C": "Karena 25 x 17 menghasilkan bilangan bulat",
+      "D": "Karena Peserta A salah menghitung"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Pasangan 25 x 4 = 100 adalah pasangan yang mudah dihitung. Sifat asosiatif memungkinkan pengelompokan ulang."
+  },
+  {
+    "pertanyaan": "Perhatikan informasi berikut!\n\n**DATA PENDUDUK DESA MAKMUR**\n\n| Kategori | Jumlah |\n|----------|--------|\n| Laki-laki dewasa | 245 |\n| Perempuan dewasa | 255 |\n| Anak-anak | 500 |\n\nKetua RT menghitung total penduduk dengan: 245 + 255 + 500.\n\nManakah yang sama dengan perhitungan tersebut?",
+    "difficulty": "L2",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "(245 + 255) + 500",
+      "B": "500 + (245 + 255)",
+      "C": "245 + (255 + 500)",
+      "D": "(500 + 255) + 245"
+    },
+    "kunci_jawaban": ["A", "B", "C", "D"],
+    "hint": "Sifat asosiatif dan komutatif memungkinkan pengelompokan dan penukaran posisi dalam penjumlahan."
+  },
+  {
+    "pertanyaan": "Bacalah kasus nyata berikut!\n\nSeorang pedagang buah membeli 15 keranjang mangga dengan harga Rp75.000 per keranjang. Ia ingin menghitung total pembayaran dengan cepat.\n\nPedagang tersebut berkata: \"15 x 75.000 = (10 + 5) x 75.000 = 750.000 + 375.000\".\n\nHasil perhitungan pedagang tersebut adalah ....",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Rp1.125.000",
+      "B": "Rp1.100.000",
+      "C": "Rp1.150.000",
+      "D": "Rp1.075.000"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Perhitikan langkah: 750.000 + 375.000"
+  },
+  {
+    "pertanyaan": "Perhatikan pernyataan berikut!\n\nSeorang guru matematika memberikan tugas kepada siswanya untuk menentukan apakah pernyataan berikut BENAR atau SALAH:\n\nPernyataan 1: 8 - 5 = 5 - 8\nPernyataan 2: 8 ÷ 4 = 4 ÷ 8\nPernyataan 3: 8 + 5 = 5 + 8\nPernyataan 4: 8 x 5 = 5 x 8\n\nManakah pernyataan yang BENAR?",
+    "difficulty": "L2",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Pernyataan 1 adalah BENAR",
+        "Pernyataan 2 adalah BENAR",
+        "Pernyataan 3 adalah BENAR",
+        "Pernyataan 4 adalah BENAR"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Salah", "Salah", "Benar", "Benar"],
+    "hint": "Sifat komutatif hanya berlaku untuk penjumlahan dan perkalian, bukan untuk pengurangan dan pembagian."
+  },
+  {
+    "pertanyaan": "Bacalah artikel berikut!\n\n**TRIK MENGHITUNG CEPAT DALAM LOMBA MATEMATIKA**\n\nDalam lomba matematika tingkat nasional, peserta sering dihadapkan pada soal-soal perkalian besar seperti 999 x 37. Kunci utama adalah mengenali pola dan menggunakan sifat distributif dengan mengubah 999 menjadi (1.000 - 1).\n\nBerdasarkan artikel tersebut, hasil dari 999 x 37 adalah ....",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "36.963",
+      "B": "37.000",
+      "C": "36.999",
+      "D": "37.037"
+    },
+    "kunci_jawaban": "A",
+    "hint": "999 x 37 = (1.000 - 1) x 37 = 37.000 - 37"
+  },
+  {
+    "pertanyaan": "Perhatikan ilustrasi berikut!\n\nSeorang arsitek merancang taman berbentuk persegi panjang dengan ukuran panjang 125 meter dan lebar 8 meter. Untuk menghitung luas, ia menggunakan cara: 125 x 8 = 1.000.\n\nMengapa hasil 125 x 8 = 1.000?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Karena 125 x 8 = (100 + 25) x 8 = 800 + 200 = 1.000",
+      "B": "Karena 125 adalah seperdelapan dari 1.000",
+      "C": "Karena 8 x 125 = 8 x (100 + 25) = 800 + 200 = 1.000",
+      "D": "Semua jawaban di atas benar"
+    },
+    "kunci_jawaban": "D",
+    "hint": "Perhatikan bahwa semua cara menghasilkan jawaban yang sama dan menggunakan sifat-sifat bilangan yang benar."
+  },
+  {
+    "pertanyaan": "Bacalah data berikut!\n\n**PENGELUARAN BULANAN KELUARGA PAK ANDI**\n\n| Kategori | Pengeluaran (Rp) |\n|----------|------------------|\n| Makanan | 1.500.000 |\n| Transportasi | 500.000 |\n| Pendidikan | 1.000.000 |\n| Listrik & Air | 500.000 |\n\nIbu Andi menghitung total pengeluaran dengan: 1.500.000 + 500.000 + 1.000.000 + 500.000.\n\nCara manakah yang paling efisien untuk menghitung?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Mengelompokkan: (1.500.000 + 500.000) + (1.000.000 + 500.000) = 2.000.000 + 1.500.000",
+      "B": "Menghitung secara berurutan dari kiri ke kanan",
+      "C": "Menjumlahkan angka yang sama terlebih dahulu: 500.000 + 500.000 = 1.000.000",
+      "D": "Semua cara sama efisiennya"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Cara A mengelompokkan angka sehingga menghasilkan bilangan bulat yang mudah dijumlahkan."
+  },
+  {
+    "pertanyaan": "Perhatikan kasus berikut!\n\nSeorang siswa SMP mengajukan argumen:\n\"Jika a dan b adalah bilangan bulat, maka a - b = b - a jika dan hanya jika a = b.\"\n\nApakah argumen siswa tersebut BENAR?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Ya, karena jika a = b maka a - b = 0 = b - a",
+      "B": "Tidak, karena a - b tidak pernah sama dengan b - a",
+      "C": "Ya, tetapi hanya berlaku untuk bilangan positif",
+      "D": "Tidak, karena argumen tersebut hanya benar untuk perkalian"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Substitusikan a = b ke dalam persamaan a - b = b - a."
+  },
+  {
+    "pertanyaan": "Bacalah artikel berikut!\n\n**PENEMUAN STRATEGI BERHITUNG CEPAT**\n\nSeorang matematikawan menemukan bahwa untuk menghitung perkalian dengan 99, 999, atau 9.999, kita dapat menggunakan strategi \"kurangi dari 100, 1.000, atau 10.000\". Misalnya, 99 x 47 = (100 - 1) x 47 = 4.700 - 47 = 4.653.\n\nBerdasarkan artikel tersebut, berapakah hasil dari 999 x 123?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "122.877",
+      "B": "123.000",
+      "C": "122.999",
+      "D": "123.123"
+    },
+    "kunci_jawaban": "A",
+    "hint": "999 x 123 = (1.000 - 1) x 123 = 123.000 - 123"
+  },
+  {
+    "pertanyaan": "Perhatikan infografis berikut!\n\n**PRODUKSI PABRIK SEPATU**\n\nPabrik sepatu \"Langkah Baru\" memproduksi sepatu dalam 3 ukuran: S, M, dan L.\n\n| Ukuran | Produksi per Hari |\n|--------|-------------------|\n| S | 50 pasang |\n| M | 75 pasang |\n| L | 50 pasang |\n\nManajer produksi menghitung total produksi dengan: 50 + 75 + 50.\n\nPernyataan manakah yang BENAR?",
+    "difficulty": "L2",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Total produksi per hari adalah 175 pasang",
+        "Cara (50 + 50) + 75 lebih efisien karena menghasilkan bilangan bulat",
+        "Perhitungan dapat dilakukan dengan 75 + (50 + 50)",
+        "Sifat komutatif tidak dapat digunakan dalam perhitungan ini"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Benar", "Benar", "Benar", "Salah"],
+    "hint": "Sifat komutatif dan asosiatif dapat digunakan untuk mempermudah perhitungan penjumlahan."
+  },
+  {
+    "pertanyaan": "Bacalah kasus berikut!\n\nDi sebuah toko kelontong, Bu Siti menjual 1.250 botol minyak goreng selama 8 hari dengan jumlah yang sama setiap hari.\n\nBerapa botol minyak goreng yang terjual setiap hari?",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "156 botol",
+      "B": "156,25 botol",
+      "C": "157 botol",
+      "D": "155 botol"
+    },
+    "kunci_jawaban": "B",
+    "hint": "1.250 ÷ 8. Ingat bahwa 1.000 ÷ 8 = 125 dan 250 ÷ 8 = 31,25"
+  },
+  {
+    "pertanyaan": "Perhatikan perhitungan berikut!\n\nSeorang siswa menghitung:\n7 x 6 x 5 = (7 x 6) x 5 = 42 x 5 = 210\n\nTemannya menghitung:\n7 x 6 x 5 = 7 x (6 x 5) = 7 x 30 = 210\n\nMengapa kedua cara menghasilkan hasil yang sama?",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Karena sifat asosiatif memungkinkan pengelompokan ulang dalam perkalian",
+      "B": "Karena sifat komutatif memungkinkan penukaran posisi angka",
+      "C": "Karena kedua siswa menghitung dengan benar secara kebetulan",
+      "D": "Karena perkalian selalu menghasilkan bilangan genap"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Sifat asosiatif: (a x b) x c = a x (b x c)"
+  },
+  {
+    "pertanyaan": "Bacalah informasi berikut!\n\n**KEBUTUHAN BAHAN BAKU PABRIK ROTI**\n\nPabrik roti \"Manis Sejati\" membutuhkan:\n- 25 kg tepung per hari\n- 2 kg gula per hari\n- 3 kg mentega per hari\n\nSelama 30 hari, pabrik ingin menghitung total kebutuhan tepung dengan cara: 25 x 30.\n\nManakah yang BUKAN cara yang tepat untuk menghitung 25 x 30?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "(20 + 5) x 30",
+      "B": "25 x (20 + 10)",
+      "C": "(30 - 5) x 30",
+      "D": "25 x 3 x 10"
+    },
+    "kunci_jawaban": "C",
+    "hint": "Periksa apakah (30 - 5) x 30 sama dengan 25 x 30."
+  },
+  {
+    "pertanyaan": "Perhatikan tabel berikut!\n\n**NILAI UJIAN MATEMATIKA KELAS VII**\n\n| Kelompok | Jumlah Siswa | Nilai Rata-rata |\n|----------|--------------|-----------------|\n| A | 15 | 80 |\n| B | 15 | 85 |\n| C | 10 | 90 |\n\nGuru menghitung total nilai dengan cara: (15 x 80) + (15 x 85) + (10 x 90).\n\nManakah yang sama dengan perhitungan tersebut?",
+    "difficulty": "L3",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "15 x (80 + 85) + (10 x 90)",
+      "B": "(15 x 165) + 900",
+      "C": "1.200 + 1.275 + 900",
+      "D": "(15 + 15 + 10) x (80 + 85 + 90)"
+    },
+    "kunci_jawaban": ["A", "B", "C"],
+    "hint": "Gunakan sifat distributif untuk memeriksa kesamaan. Opsi D tidak benar karena rata-rata tidak bisa dijumlahkan langsung."
+  },
+  {
+    "pertanyaan": "Bacalah kasus berikut!\n\nSeorang programmer membuat algoritma untuk menghitung (a + b)². Ia menulis: (a + b)² = a² + b².\n\nApakah algoritma programmer tersebut benar?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Tidak, karena (a + b)² = a² + 2ab + b² berdasarkan sifat distributif",
+      "B": "Ya, karena kuadrat dari penjumlahan sama dengan penjumlahan kuadrat",
+      "C": "Ya, tetapi hanya berlaku untuk a = 0 atau b = 0",
+      "D": "Tidak, karena kuadrat tidak berlaku untuk penjumlahan"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Gunakan sifat distributif: (a + b) x (a + b) = a² + ab + ba + b² = a² + 2ab + b²"
+  },
+  {
+    "pertanyaan": "Perhatikan ilustrasi berikut!\n\nDi sebuah lomba cerdas cermat, tim A dan tim B bersaing untuk menghitung 45 x 99.\n\n**Tim A:** 45 x 99 = 45 x (100 - 1) = 4.500 - 45 = 4.455\n**Tim B:** 45 x 99 = (50 - 5) x 99 = 4.950 - 495 = 4.455\n\nPernyataan manakah yang BENAR?",
+    "difficulty": "L3",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Kedua tim menggunakan sifat distributif",
+        "Strategi Tim A lebih sederhana karena melibatkan pengurangan bilangan yang lebih kecil",
+        "Strategi Tim B juga benar tetapi lebih rumit",
+        "Hasil akhir kedua tim berbeda"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Benar", "Benar", "Benar", "Salah"],
+    "hint": "Kedua strategi menggunakan sifat distributif perkalian terhadap pengurangan."
+  },
+  {
+    "pertanyaan": "Bacalah informasi berikut!\n\n**JARAK ANTAR KOTA**\n\n| Kota Asal | Kota Tujuan | Jarak (km) |\n|-----------|-------------|------------|\n| A | B | 125 |\n| B | C | 125 |\n| C | D | 125 |\n| D | E | 125 |\n\nSeorang pengendara motor ingin menghitung jarak total dari kota A ke kota E dengan cara: 125 x 4.\n\nStrategi manakah yang paling efisien?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "125 x 4 = 125 x 2 x 2 = 250 x 2 = 500",
+      "B": "125 x 4 = (100 + 25) x 4 = 400 + 100 = 500",
+      "C": "125 x 4 = 125 + 125 + 125 + 125 = 500",
+      "D": "Semua cara sama efisiennya"
+    },
+    "kunci_jawaban": "A",
+    "hint": "Cara A menggunakan pengelompokan yang menghasilkan bilangan bulat sederhana di setiap langkah."
+  },
+  {
+    "pertanyaan": "Perhatikan kasus berikut!\n\nSeorang guru memberikan soal:\n\"Buktikan bahwa (a x b) x c = a x (b x c) dengan a = 2, b = 3, c = 4\"\n\nSiswa A menjawab: (2 x 3) x 4 = 6 x 4 = 24\nSiswa B menjawab: 2 x (3 x 4) = 2 x 12 = 24\n\nApakah kedua siswa telah membuktikan sifat asosiatif?",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Ya, karena kedua cara menghasilkan hasil yang sama",
+      "B": "Tidak, karena membuktikan sifat asosiatif memerlukan variabel umum, bukan contoh khusus",
+      "C": "Ya, tetapi hanya berlaku untuk bilangan tersebut",
+      "D": "Tidak, karena hasilnya berbeda"
+    },
+    "kunci_jawaban": "B",
+    "hint": "Pembuktian matematika yang valid memerlukan generalisasi, bukan hanya contoh khusus."
+  },
+  {
+    "pertanyaan": "Bacalah artikel berikut!\n\n**MATEMATIKA DALAM DUNIA BISNIS**\n\nSeorang pengusaha sukses mengungkapkan rahasia bisnisnya: \"Dalam menghitung keuntungan, saya selalu menggunakan strategi mengelompokkan angka. Misalnya, untuk menghitung keuntungan dari penjualan 1.001 unit dengan keuntungan Rp25.000 per unit, saya menghitung: (1.000 + 1) x 25.000\".\n\nBerdasarkan artikel tersebut, berapakah keuntungan total pengusaha tersebut?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "Rp25.025.000",
+      "B": "Rp25.000.000",
+      "C": "Rp25.500.000",
+      "D": "Rp24.975.000"
+    },
+    "kunci_jawaban": "A",
+    "hint": "(1.000 + 1) x 25.000 = 25.000.000 + 25.000"
+  },
+  {
+    "pertanyaan": "Perhatikan pernyataan berikut!\n\nTiga orang siswa berdiskusi tentang sifat-sifat bilangan:\n\n**Siswa 1:** \"Sifat komutatif berlaku untuk semua operasi dasar\"\n**Siswa 2:** \"Sifat asosiatif berlaku untuk penjumlahan dan perkalian\"\n**Siswa 3:** \"Sifat distributif hanya berlaku untuk perkalian terhadap penjumlahan\"\n\nManakah pernyataan yang BENAR?",
+    "difficulty": "L2",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Pernyataan Siswa 1 adalah BENAR",
+        "Pernyataan Siswa 2 adalah BENAR",
+        "Pernyataan Siswa 3 adalah BENAR",
+        "Sifat distributif juga berlaku untuk perkalian terhadap pengurangan"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Salah", "Benar", "Salah", "Benar"],
+    "hint": "Sifat komutatif tidak berlaku untuk pengurangan dan pembagian. Sifat distributif berlaku untuk penjumlahan dan pengurangan."
+  },
+  {
+    "pertanyaan": "Bacalah kasus berikut!\n\nSeorang arkeolog menemukan artefak bertuliskan angka Romawi. Ia ingin menghitung umur artefak tersebut. Dalam catatannya, tertulis bahwa artefak tersebut berusia \"LXXV + XXV\" tahun.\n\nLXXV = 75 dan XXV = 25.\n\nBerapa umur artefak tersebut jika dihitung dengan cara (75 + 25)?",
+    "difficulty": "L1",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "100 tahun",
+      "B": "90 tahun",
+      "C": "95 tahun",
+      "D": "85 tahun"
+    },
+    "kunci_jawaban": "A",
+    "hint": "75 + 25 = 100. Ini adalah penjumlahan sederhana."
+  },
+  {
+    "pertanyaan": "Perhatikan data berikut!\n\n**LUAS TANAH DI PERUMAHAN**\n\n| Blok | Panjang (m) | Lebar (m) |\n|------|-------------|-----------|\n| A | 25 | 16 |\n| B | 16 | 25 |\n| C | 20 | 20 |\n\nPengembang menghitung luas:\n- Blok A: 25 x 16\n- Blok B: 16 x 25\n- Blok C: 20 x 20\n\nPernyataan manakah yang BENAR?",
+    "difficulty": "L2",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Luas Blok A sama dengan Luas Blok B",
+        "Luas Blok C adalah yang terbesar",
+        "25 x 16 = 16 x 25 karena sifat komutatif",
+        "Total luas Blok A dan B adalah 800 m²"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Benar", "Salah", "Benar", "Benar"],
+    "hint": "25 x 16 = 400 m², 16 x 25 = 400 m² (sama), 20 x 20 = 400 m² (sama). Total A + B = 800 m²."
+  },
+  {
+    "pertanyaan": "Bacalah artikel berikut!\n\n**TRIK PERKALIAN CEPAT DENGAN ANGKA 11**\n\nDalam buku \"Math Magic\", dijelaskan trik perkalian dengan 11:\n\"Untuk mengalikan bilangan dua digit dengan 11, jumlahkan kedua digit tersebut dan sisipkan di tengah. Contoh: 35 x 11 = 3(3+5)5 = 385\"\n\nBerdasarkan artikel tersebut, berapakah hasil dari 72 x 11?",
+    "difficulty": "L3",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "792",
+      "B": "782",
+      "C": "772",
+      "D": "762"
+    },
+    "kunci_jawaban": "A",
+    "hint": "72 x 11 = 7(7+2)2 = 7(9)2 = 792. Atau gunakan: 72 x 11 = 72 x (10 + 1) = 720 + 72"
+  },
+  {
+    "pertanyaan": "Perhatikan kasus berikut!\n\nSeorang investor membeli 1.250 lembar saham dengan harga Rp8.000 per lembar. Ia ingin menghitung total investasinya.\n\nCara manakah yang paling efisien untuk menghitung 1.250 x 8.000?",
+    "difficulty": "L3",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "(1.000 + 250) x 8.000",
+      "B": "1.250 x (8 x 1.000)",
+      "C": "(1.250 x 8) x 1.000",
+      "D": "1.250 x 8 + 1.250 x 8.000"
+    },
+    "kunci_jawaban": ["A", "B", "C"],
+    "hint": "Opsi D salah karena tidak ekuivalen dengan 1.250 x 8.000."
+  },
+  {
+    "pertanyaan": "Bacalah ilustrasi berikut!\n\nDi sebuah pabrik kertas, mesin A dapat memproduksi 125 lembar kertas per menit, sedangkan mesin B dapat memproduksi 8 kali lebih banyak.\n\nBerapa lembar kertas yang diproduksi mesin B per menit?",
+    "difficulty": "L2",
+    "question_type": "single",
+    "opsi_jawaban": {
+      "A": "1.000 lembar",
+      "B": "133 lembar",
+      "C": "992 lembar",
+      "D": "1.025 lembar"
+    },
+    "kunci_jawaban": "A",
+    "hint": "125 x 8 = 1.000. Ingat pasangan sakti: 125 x 8 = 1.000"
+  },
+  {
+    "pertanyaan": "Perhatikan informasi berikut!\n\n**DATA PENJUALAN TOKO ELEKTRONIK**\n\n| Produk | Terjual | Harga per Unit (Rp) |\n|--------|---------|---------------------|\n| TV | 25 unit | 2.500.000 |\n| Laptop | 25 unit | 5.000.000 |\n| HP | 50 unit | 1.500.000 |\n\nManajer toko menghitung total penjualan TV dan Laptop dengan: 25 x (2.500.000 + 5.000.000).\n\nPernyataan manakah yang BENAR?",
+    "difficulty": "L3",
+    "question_type": "kategori",
+    "opsi_jawaban": {
+      "pernyataan": [
+        "Perhitungan menggunakan sifat distributif",
+        "Total penjualan TV dan Laptop adalah Rp187.500.000",
+        "Cara 25 x 2.500.000 + 25 x 5.000.000 menghasilkan hasil yang sama",
+        "Sifat komutatif tidak dapat digunakan dalam perhitungan ini"
+      ],
+      "kategori": ["Benar", "Salah"]
+    },
+    "kunci_jawaban": ["Benar", "Benar", "Benar", "Salah"],
+    "hint": "25 x (2.500.000 + 5.000.000) = 25 x 7.500.000 = 187.500.000. Sifat komutatif bisa digunakan untuk penjumlahan."
+  },
+  {
+    "pertanyaan": "Bacalah kasus berikut!\n\nSeorang petani memiliki sawah seluas 4.000 m². Ia membagi sawahnya menjadi 8 petak yang sama luas. Luas setiap petak dihitung dengan: 4.000 ÷ 8.\n\nIa juga mempertimbangkan cara alternatif: 4.000 ÷ 8 = 4.000 x (1/8).\n\nManakah pernyataan yang BENAR?",
+    "difficulty": "L2",
+    "question_type": "mcma",
+    "opsi_jawaban": {
+      "A": "Kedua cara menghasilkan hasil yang sama yaitu 500 m²",
+      "B": "Pembagian dengan suatu bilangan sama dengan perkalian dengan kebalikannya",
+      "C": "1/8 adalah kebalikan dari 8",
+      "D": "Cara 4.000 x 8 akan menghasilkan hasil yang sama"
+    },
+    "kunci_jawaban": ["A", "B", "C"],
+    "hint": "a ÷ b = a x (1/b). Perhatikan perbedaan antara pembagian dan perkalian."
+  }
+]

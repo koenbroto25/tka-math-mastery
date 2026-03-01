@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markas - TKA Math Mastery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* BASIC STYLES */
+    body { font-family: 'Nunito', sans-serif; background-color: #f0f8ff; color: #334155; overflow-x: hidden; }
+    .navbar { background-color: #0f172a !important; border-bottom: 4px solid #3b82f6; }
+    .fun-card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1); border: none; margin-bottom: 20px;}
+    
+    /* MAP STYLES (SISWA) */
+    .map-bg { background-color: #86efac; border-radius: 30px; padding: 40px 0; display: flex; flex-direction: column; align-items: center; position: relative; box-shadow: inset 0 0 50px rgba(0,0,0,0.1); min-height: 600px; }
+    .path-line { position: absolute; width: 10px; background: #fbbf24; top: 50px; bottom: 50px; z-index: 0; border-radius: 10px; }
+    .level-wrapper { display: flex; align-items: center; position: relative; width: 100%; max-width: 400px; margin: 15px 0;}
+    .level-wrapper:nth-child(odd) { justify-content: flex-start; padding-left: 15%;}
+    .level-wrapper:nth-child(even) { justify-content: flex-end; padding-right: 15%; }
+    
+    .level-node { position: relative; z-index: 10; width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; border: 6px solid white; box-shadow: 0 10px 0px rgba(0,0,0,0.2); cursor: pointer; text-decoration: none; transition: transform 0.2s; }
+    .level-node:hover:not(.node-locked) { transform: translateY(-5px); }
+    
+    .node-passed { background: #3b82f6; color: white; }
+    .node-current { background: #f59e0b; color: white; animation: pulse 2s infinite; }
+    .node-locked { background: #94a3b8; color: #cbd5e1; cursor: not-allowed; border-color: #e2e8f0; box-shadow: 0 5px 0px rgba(0,0,0,0.1);}
+    
+    .stage-label { position: absolute; background: white; color: #334155; font-weight: 900; font-size: 0.9rem; padding: 8px 15px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); top: -20px; white-space: nowrap; pointer-events: none; }
+    .level-wrapper:nth-child(odd) .stage-label { left: 80px; }
+    .level-wrapper:nth-child(even) .stage-label { right: 80px; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(245, 158, 11, 0); } 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); } }
+
+    /* ORTU & GURU STYLES */
+    .locked-blur { filter: blur(8px) grayscale(50%); opacity: 0.5; pointer-events: none; user-select: none; transition: filter 0.5s ease; }
+    .paywall-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(240, 248, 255, 0.4); display: flex; justify-content: center; align-items: center; z-index: 20; backdrop-filter: blur(2px); }
+    .btn-share { background-color: #25d366; color: white; font-weight: bold; border-radius: 50px; }
+    .btn-share:hover { background-color: #128c7e; color: white; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-dark shadow-sm">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span class="navbar-brand fw-bold h1 mb-0" id="navTitle">TKA Math Mastery</span>
+      <button class="btn btn-danger btn-sm fw-bold rounded-pill px-4 shadow" id="btnLogout">Keluar / Logout</button>
+    </div>
+  </nav>
+
+  <div class="container mt-4 mb-5">
+    
+    <!-- HEADER PROFIL -->
+    <div class="fun-card d-flex flex-column flex-md-row justify-content-between align-items-center bg-white">
+        <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
+            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 fs-2 border border-primary border-2" id="avatarIcon">🧑‍🚀</div>
+            <div>
+                <h3 class="fw-bold mb-0 text-dark" id="userName">Memuat...</h3>
+                <small class="text-muted fw-bold text-uppercase" id="userRoleText">Menganalisis peran...</small>
+            </div>
+        </div>
+
+        <!-- Indikator Khusus Siswa (Hearts, Level, XP) -->
+        <div id="statsSiswa" class="d-none gap-2 gap-md-3">
+            <a href="/marketplace.html" class="btn btn-outline-warning rounded-circle d-flex align-items-center justify-content-center p-0" style="width:50px; height:50px;" title="Cari Mentor" data-bs-toggle="tooltip">
+                <i class="bi bi-search-heart-fill fs-4"></i>
+            </a>
+            <div class="text-center px-3 px-md-4 py-2 bg-light border border-2 rounded-4 shadow-sm">
+                <h6 class="mb-0 text-muted fw-bold small">Energi</h6>
+                <h4 class="mb-0 text-danger fw-bold">❤️ <span id="userHearts">5</span>/5</h4>
+            </div>
+            <div class="text-center px-3 px-md-4 py-2 bg-light border border-2 rounded-4 shadow-sm">
+                <h6 class="mb-0 text-muted fw-bold small">Level</h6>
+                <h4 class="mb-0 text-warning fw-bold" id="userLevel">1</h4>
+            </div>
+            <div class="text-center px-3 px-md-4 py-2 bg-light border border-2 rounded-4 shadow-sm">
+                <h6 class="mb-0 text-muted fw-bold small">XP Kamu</h6>
+                <h4 class="mb-0 text-success fw-bold">⚡ <span id="userXP">0</span></h4>
+            </div>
+        </div>
+        
+        <!-- Indikator Khusus Ortu/Guru -->
+        <div id="statsPremium" class="d-none">
+            <div class="px-4 py-2 bg-warning rounded-pill shadow-sm fw-bold text-dark" id="statusPremium">
+                Status: Akun Standar
+            </div>
+        </div>
+    </div>
+
+    <!-- WADAH 1: KHUSUS SISWA (PETA GAME) -->
+    <div id="panelStudent" class="d-none">
+        
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <div class="bg-white rounded-4 shadow-sm p-4 text-center h-100 d-flex flex-column justify-content-center">
+                    <h2 class="fw-bold text-success mb-1" id="judulDunia">Dunia Petualangan</h2>
+                    <p class="text-muted mb-0">Selesaikan setiap stage untuk menjadi Master Matematika!</p>
+                </div>
+            </div>
+            <div class="col-md-4 mt-3 mt-md-0">
+                <div class="bg-white border border-primary border-3 rounded-4 p-3 text-center shadow-sm mb-3">
+                    <p class="small text-muted mb-1 fw-bold">ID Pahlawan (Kode Taut):</p>
+                    <h2 id="pairingCode" class="user-select-all font-monospace fw-bold text-primary mb-2">XXXXXX</h2>
+					<button class="btn btn-success btn-sm fw-bold w-100 rounded-pill mb-1" id="btnKirimKodeOrtu">
+						<i class="bi bi-whatsapp"></i> Kirim ke HP Ortu
+					</button>
+                    <div id="statusKirimOrtu" class="small fw-bold text-warning mt-1">🎁 Dapatkan +100 XP!</div>
+                </div>
+
+                <!-- JOIN GUILD CARD -->
+                <div class="bg-white border border-warning border-2 rounded-4 p-3 text-center shadow-sm">
+                    <h6 class="fw-bold text-warning">🛡️ Gabung Guild Mentor</h6>
+                    <p class="small text-muted mb-2">Punya kode kelas dari gurumu?</p>
+                    <div class="input-group input-group-sm mb-2">
+                        <input type="text" class="form-control" id="inputGuildCode" placeholder="Kode Guild..." style="text-transform:uppercase">
+                        <button class="btn btn-warning text-white fw-bold" id="btnJoinGuild">GABUNG</button>
+                    </div>
+                    <div id="msgJoinGuild" class="small fw-bold"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PETA SD: DUNIA PETUALANGAN -->
+        <div class="map-bg d-none" id="mapSD">
+            <div class="path-line"></div>
+            
+            <!-- Arc 1: The Numeracy Chronicles -->
+            <div class="text-center w-100 mb-4 mt-2" style="z-index: 5;"><span class="badge bg-success px-4 py-2 rounded-pill shadow-sm">ARC 1: THE NUMERACY CHRONICLES</span></div>
+            <div class="level-wrapper"><a href="/materi.html?jenjang=SD&bab=1&sub=1" class="level-node node-passed" id="node_SD_1_1">⭐<div class="stage-label">1. Misteri Potongan Pizza</div></a></div>
+            <div class="level-wrapper"><a href="/materi.html?jenjang=SD&bab=1&sub=2" class="level-node node-current" id="node_SD_1_2">⚔️<div class="stage-label">2. Jembatan Timbangan</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_1_3">🔒<div class="stage-label text-muted">3. Mantra Penyatuan Wujud</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_1_4">🔒<div class="stage-label text-muted">4. Serangan Pasukan Cacah</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_1_5">🔒<div class="stage-label text-muted">5. Kepingan Kekuatan</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_1_6">🔒<div class="stage-label text-muted">6. Harta Karun Kelipatan</div></a></div>
+            
+            <!-- Arc 2: Geometry Guardians -->
+            <div class="text-center w-100 mb-4 mt-5" style="z-index: 5;"><span class="badge bg-primary px-4 py-2 rounded-pill shadow-sm">ARC 2: GEOMETRY GUARDIANS</span></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_2_1">🔒<div class="stage-label text-muted">7. Desa Segi Empat</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_2_2">🔒<div class="stage-label text-muted">8. Labirin Dimensi</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_2_3">🔒<div class="stage-label text-muted">9. Jejak Langkah Ksatria</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_2_4">🔒<div class="stage-label text-muted">10. Timbangan Raksasa</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_2_5">🔒<div class="stage-label text-muted">11. Kilat Waktu & Kecepatan</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_2_6">🔒<div class="stage-label text-muted">12. Benteng Luas & Volume</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_2_7">🔒<div class="stage-label text-muted">13. Rahasia Sudut Cahaya</div></a></div>
+
+            <!-- Arc 3: The Data Seer -->
+            <div class="text-center w-100 mb-4 mt-5" style="z-index: 5;"><span class="badge bg-warning text-dark px-4 py-2 rounded-pill shadow-sm">ARC 3: THE DATA SEER</span></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_3_1">🔒<div class="stage-label text-muted">14. Gulungan Laporan Kerajaan</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SD_3_2">🔒<div class="stage-label text-muted">15. Mata Sang Peramal</div></a></div>
+
+            <!-- Arc 4: The Time Rift -->
+            <div class="text-center w-100 mb-4 mt-5" style="z-index: 5;"><span class="badge bg-danger px-4 py-2 rounded-pill shadow-sm">FINAL ARC: THE TIME RIFT (SIMULASI)</span></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=sd&sub=1" class="level-node node-locked" id="node_SD_4_1" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 1: The Rift Awakening</div></a></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=sd&sub=2" class="level-node node-locked" id="node_SD_4_2" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 2: Temporal Storm</div></a></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=sd&sub=3" class="level-node node-locked" id="node_SD_4_3" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 3: Chronos Challenge</div></a></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=sd&sub=4" class="level-node node-locked" id="node_SD_4_4" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 4: Paradox Trial</div></a></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=sd&sub=5" class="level-node node-locked" id="node_SD_4_5" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 5: The Final Singularity</div></a></div>
+        </div>
+
+        <!-- PETA SMP: KOTA ALJABAR -->
+        <div class="map-bg d-none" id="mapSMP" style="background-color: #bae6fd;">
+            <div class="path-line" style="background: #38bdf8;"></div>
+            
+            <!-- Arc 1: Real Number Mastery -->
+            <div class="text-center w-100 mb-4 mt-2" style="z-index: 5;"><span class="badge bg-indigo px-4 py-2 rounded-pill shadow-sm" style="background:#4f46e5;">ARC 1: REAL NUMBER MASTERY</span></div>
+            <div class="level-wrapper"><a href="/materi.html?jenjang=SMP&bab=1&sub=1" class="level-node node-passed" id="node_SMP_1_1" style="background: #6366f1;">⭐<div class="stage-label">1. Gerbang Bilangan Real</div></a></div>
+            <div class="level-wrapper"><a href="/materi.html?jenjang=SMP&bab=1&sub=2" class="level-node node-current" id="node_SMP_1_2" style="background: #f59e0b;">⚔️<div class="stage-label">2. Estimasi & Faktorisasi</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_1_3">🔒<div class="stage-label text-muted">3. Lembah Rasio</div></a></div>
+
+            <!-- Arc 2: The Path of Algebra -->
+            <div class="text-center w-100 mb-4 mt-5" style="z-index: 5;"><span class="badge bg-info text-dark px-4 py-2 rounded-pill shadow-sm">ARC 2: THE PATH OF ALGEBRA</span></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_2_1">🔒<div class="stage-label text-muted">4. Timbangan X & Y</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_2_2">🔒<div class="stage-label text-muted">5. Batas Wilayah Terlarang</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_2_3">🔒<div class="stage-label text-muted">6. Dualitas Persamaan</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_2_4">🔒<div class="stage-label text-muted">7. Seni Gabungan Wujud</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_2_5">🔒<div class="stage-label text-muted">8. Mesin Pemetaan Takdir</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_2_6">🔒<div class="stage-label text-muted">9. Jejak Angka Berantai</div></a></div>
+
+            <!-- Arc 3: Geometry Guardians -->
+            <div class="text-center w-100 mb-4 mt-5" style="z-index: 5;"><span class="badge bg-primary px-4 py-2 rounded-pill shadow-sm">ARC 3: GEOMETRY GUARDIANS</span></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_3_1">🔒<div class="stage-label text-muted">10. Perisai Sudut & Garis</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_3_2">🔒<div class="stage-label text-muted">11. Legenda Segitiga Siku-Siku</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_3_3">🔒<div class="stage-label text-muted">12. Kembaran Bayangan</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_3_4">🔒<div class="stage-label text-muted">13. Jaring-jaring Dimensi</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_3_5">🔒<div class="stage-label text-muted">14. Cermin Dimensi</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_3_6">🔒<div class="stage-label text-muted">15. Kekuatan Ruang & Permukaan</div></a></div>
+
+            <!-- Arc 4: Destiny & Data -->
+            <div class="text-center w-100 mb-4 mt-5" style="z-index: 5;"><span class="badge bg-warning text-dark px-4 py-2 rounded-pill shadow-sm">ARC 4: DESTINY & DATA</span></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_4_1">🔒<div class="stage-label text-muted">16. Menara Pusat Statistik</div></a></div>
+            <div class="level-wrapper"><a href="#" class="level-node node-locked" id="node_SMP_4_2">🔒<div class="stage-label text-muted">17. Dadu Keberuntungan</div></a></div>
+
+            <!-- Arc 5: The Time Rift -->
+            <div class="text-center w-100 mb-4 mt-5" style="z-index: 5;"><span class="badge bg-danger px-4 py-2 rounded-pill shadow-sm">FINAL ARC: THE TIME RIFT (SIMULASI)</span></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=smp&sub=1" class="level-node node-locked" id="node_SMP_5_1" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 1: The Rift Awakening</div></a></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=smp&sub=2" class="level-node node-locked" id="node_SMP_5_2" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 2: Temporal Storm</div></a></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=smp&sub=3" class="level-node node-locked" id="node_SMP_5_3" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 3: Chronos Challenge</div></a></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=smp&sub=4" class="level-node node-locked" id="node_SMP_5_4" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 4: Paradox Trial</div></a></div>
+            <div class="level-wrapper"><a href="/simulasi.html?jenjang=smp&sub=5" class="level-node node-locked" id="node_SMP_5_5" style="background:#475569;">🎓<div class="stage-label text-muted">Paket 5: The Final Singularity</div></a></div>
+        </div>
+
+        <!-- Tombol Pemulihan Nyawa (Hidden by default) -->
+        <div id="heartRecoveryPanel" class="d-none mt-4 p-4 bg-danger bg-opacity-10 border border-danger rounded-4 text-center">
+            <h4 class="fw-bold text-danger">💖 Butuh Energi Tambahan?</h4>
+            <p class="text-muted">Nyawamu habis! Selesaikan salah satu misi di bawah untuk memulihkan ❤️ secara instan:</p>
+            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                <button class="btn btn-success rounded-pill fw-bold px-4" onclick="shareToPlatform('whatsapp')">📢 Share ke WA</button>
+                <a href="https://youtube.com/c/koenbroto" target="_blank" class="btn btn-danger rounded-pill fw-bold px-4" onclick="recoverHeart()">📺 Subscribe Youtube</a>
+                <button class="btn btn-outline-dark rounded-pill fw-bold px-4" onclick="recoverHeart()">🎬 Tonton Iklan (Sponsor)</button>
+            </div>
+        </div>
+
+    </div>
+	
+    <!-- WADAH 2: ORANG TUA -->
+    <div id="panelParent" class="d-none">
+        <!-- Banner Cari Guru -->
+        <div class="alert alert-warning border-0 shadow-sm rounded-4 d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-white p-2 rounded-circle text-warning fs-3 shadow-sm">🎓</div>
+                <div>
+                    <h6 class="fw-bold mb-0 text-dark">Butuh Guru Privat Matematika?</h6>
+                    <small class="text-muted">Temukan mentor terverifikasi untuk anak Anda.</small>
+                </div>
+            </div>
+            <a href="/marketplace.html" class="btn btn-warning rounded-pill fw-bold text-white px-4">Cari Guru</a>
+        </div>
+
+        <div class="fun-card border border-primary border-2 mb-4" id="boxFormTautkan">
+            <h4 class="fw-bold text-primary mb-3">🔗 Tautkan Akun Anak</h4>
+            <p class="text-muted small">Minta anak Anda membuka aplikasinya, dan masukkan 6 digit "Kode Taut" yang tertera di sana.</p>
+            <form id="formTautkanOrtu" class="d-flex gap-2">
+                <input type="text" class="form-control" id="inputKodeAnak" placeholder="Ketik Kode (cth: A7X9P2)" required maxlength="6" style="text-transform: uppercase;">
+                <button type="submit" class="btn btn-primary fw-bold px-4" id="btnTautkanOrtu">Cari</button>
+            </form>
+            <div id="msgTautkanOrtu" class="mt-2 small fw-bold"></div>
+        </div>
+
+        <div id="wadahDataAnak" class="d-none">
+            <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm mb-4 border-start border-4 border-success">
+                <div class="display-4 me-3">👦</div>
+                <div>
+                    <h5 class="fw-bold mb-0 text-dark" id="namaAnakView">Memuat nama...</h5>
+                    <p class="text-muted mb-0 small">Level <span id="levelAnakView" class="fw-bold text-warning">1</span> • <span id="xpAnakView" class="fw-bold text-success">0</span> XP</p>
+                </div>
+            </div>
+            <div class="fun-card position-relative" style="min-height: 350px; overflow: hidden;" id="tabelNilaiContainer">
+                <h5 class="fw-bold mb-3">Riwayat Pertarungan (Nilai)</h5>
+                <div id="areaTabel" class="locked-blur">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-borderless align-middle">
+                            <thead class="table-light">
+                                <tr><th>Misi / Materi</th><th>Tipe</th><th>Skor</th><th>Waktu</th></tr>
+                            </thead>
+                            <tbody id="isiTabelNilai">
+                                <tr><td colspan="4" class="text-center">Memuat data...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="paywall-overlay" id="paywallOrtu">
+                    <div class="bg-white p-4 rounded-4 shadow-lg text-center" style="max-width: 400px; border: 3px solid #f59e0b;">
+                        <h1 class="display-3 mb-2">🔒</h1>
+                        <h4 class="fw-bold text-dark">Laporan Terkunci</h4>
+                        <p class="text-muted small mb-3">Ingin pantau nilai anak secara Real-Time? Buka akses premium <b>GRATIS</b> dengan membagikan info aplikasi ini!</p>
+                        <div class="progress mb-2" style="height: 10px;">
+                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" id="shareProgress" style="width: 0%"></div>
+                        </div>
+                        <p class="small fw-bold text-success mb-3">Misi: Share ke <span id="shareCountText">5</span> Grup/Teman</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-share fw-bold py-2" onclick="shareToPlatform('whatsapp')"><i class="bi bi-whatsapp"></i> Share ke WhatsApp</button>
+                            <button class="btn btn-primary fw-bold py-2" onclick="shareToPlatform('facebook')"><i class="bi bi-facebook"></i> Share ke Facebook</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WADAH 3: GURU (THE MENTOR GUILD) -->
+    <div id="panelTeacher" class="d-none">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="fw-bold text-primary">🏰 Manajemen Guild (Kelas)</h4>
+            <button class="btn btn-primary rounded-pill fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#modalCreateGuild">
+                <i class="bi bi-plus-circle-fill"></i> Buat Guild Baru
+            </button>
+        </div>
+
+        <!-- LIST GUILD -->
+        <div id="guildListContainer" class="row g-4">
+            <!-- Dynamic Guild Cards will be injected here -->
+            <div class="col-12 text-center py-5 text-muted">
+                <div class="spinner-border text-primary" role="status"></div>
+                <p class="mt-2">Memuat data guild...</p>
+            </div>
+        </div>
+
+        <!-- MARKETPLACE PROMO -->
+        <div class="fun-card mt-5 bg-warning bg-opacity-10 border border-warning border-2">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <h5 class="fw-bold text-dark">🌟 Marketplace Guru Premium</h5>
+                    <p class="mb-0 small text-muted">Tingkatkan visibilitas Anda dan dapatkan murid privat dari sekitar Anda.</p>
+                </div>
+                <button class="btn btn-warning fw-bold text-white rounded-pill px-4" id="btnManageAd">Kelola Profil Iklan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL MANAGE AD (LOCKED/UNLOCKED) -->
+    <div class="modal fade" id="modalManageAd" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header border-0 bg-warning text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold text-dark">🌟 Profil Marketplace</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4" id="adModalContent">
+                    <!-- CONTENT WILL BE INJECTED BY JS -->
+                    <div class="text-center py-5">
+                        <div class="spinner-border text-warning" role="status"></div>
+                        <p class="mt-2 text-muted">Memeriksa kelayakan...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CREATE GUILD -->
+    <div class="modal fade" id="modalCreateGuild" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header border-0 bg-primary text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold">⚔️ Bentuk Guild Baru</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Nama Guild (Kelas)</label>
+                        <input type="text" class="form-control rounded-pill" id="inputGuildName" placeholder="Contoh: Ksatria 5A - SDN 01">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Deskripsi (Opsional)</label>
+                        <textarea class="form-control rounded-4" id="inputGuildDesc" rows="3" placeholder="Deskripsi singkat untuk murid..."></textarea>
+                    </div>
+                    <div class="alert alert-info small rounded-4">
+                        <i class="bi bi-info-circle-fill"></i> Kode Guild akan digenerate otomatis setelah dibuat.
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary rounded-pill fw-bold py-2" id="btnSubmitGuild">Bentuk Guild!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL GUILD DETAIL (VIEW MEMBERS) -->
+    <div class="modal fade" id="modalGuildDetail" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header border-0 bg-white sticky-top">
+                    <div>
+                        <h4 class="modal-title fw-bold text-primary mb-0" id="detailGuildName">Nama Guild</h4>
+                        <div class="d-flex align-items-center gap-2 mt-1">
+                            <span class="badge bg-light text-dark border font-monospace" id="detailGuildCode">CODE</span>
+                            <button class="btn btn-sm btn-outline-secondary rounded-pill" onclick="copyGuildCode()"><i class="bi bi-files"></i> Salin</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <!-- TABS -->
+                    <ul class="nav nav-tabs nav-justified" id="guildTabs" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active fw-bold" data-bs-toggle="tab" data-bs-target="#tabMembers">👥 Anggota</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#tabGrades">📊 Buku Nilai</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content p-4">
+                        <!-- TAB MEMBERS -->
+                        <div class="tab-pane fade show active" id="tabMembers">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead class="table-light">
+                                        <tr><th>Nama Siswa</th><th>Level</th><th>XP</th><th>Status</th></tr>
+                                    </thead>
+                                    <tbody id="listGuildMembers">
+                                        <!-- Dynamic Data -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- TAB GRADES -->
+                        <div class="tab-pane fade" id="tabGrades">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h6 class="fw-bold mb-0">Rekap Nilai Terkini</h6>
+                                <button class="btn btn-success btn-sm rounded-pill fw-bold" id="btnExportExcel"><i class="bi bi-file-earmark-excel-fill"></i> Download Excel</button>
+                            </div>
+                            <div class="alert alert-warning small">
+                                <i class="bi bi-exclamation-triangle-fill"></i> Fitur "Download Excel" akan tersedia setelah database terisi data nilai siswa.
+                            </div>
+                            <div id="gradesPreview" class="text-muted small text-center py-4">
+                                Pilih siswa di tab Anggota untuk melihat detail nilai individual (Coming Soon).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button class="btn btn-danger btn-sm rounded-pill" id="btnDeleteGuild">Hapus Guild</button>
+                    <button class="btn btn-secondary btn-sm rounded-pill" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/src/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena Latihan - Pertarungan Boss!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- KaTeX untuk Rumus -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <!-- Marked.js for Markdown Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #1e293b; color: white; overflow-x: hidden; }
+        .combat-arena { background: linear-gradient(to bottom, #334155, #0f172a); padding: 20px; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        /* Health Bars */
+        .hp-container { background: #334155; border: 3px solid #64748b; border-radius: 20px; height: 30px; position: relative; overflow: hidden; }
+        .hp-bar { height: 100%; transition: width 0.5s ease-in-out; }
+        .hp-player { background: linear-gradient(90deg, #10b981, #34d399); }
+        .hp-monster { background: linear-gradient(90deg, #ef4444, #f87171); }
+        
+        .avatar { font-size: 3rem; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 50%; border: 3px solid white; display: inline-block; }
+        
+        /* Soal Card */
+        .quest-card { background: white; color: #1e293b; border-radius: 20px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); margin-top: -30px; position: relative; z-index: 10; }
+        
+        .opsi-label { display: block; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 15px; margin-bottom: 10px; cursor: pointer; transition: 0.2s; font-weight: 700; font-size: 1.1rem; }
+        .opsi-label:hover { background: #e2e8f0; border-color: #94a3b8; }
+        .opsi-radio:checked + .opsi-label { background: #4f46e5; color: white; border-color: #3730a3; transform: scale(1.02); }
+        
+        /* Animasi Serangan */
+        .shake { animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake { 10%, 90% { transform: translate3d(-2px, 0, 0); } 20%, 80% { transform: translate3d(4px, 0, 0); } 30%, 50%, 70% { transform: translate3d(-6px, 0, 0); } 40%, 60% { transform: translate3d(6px, 0, 0); } }
+        
+        .btn-serang { background: #f59e0b; color: white; font-weight: 900; font-size: 1.3rem; border-radius: 50px; padding: 15px; width: 100%; border: none; text-transform: uppercase; box-shadow: 0 8px 15px rgba(245, 158, 11, 0.4); transition: 0.3s; }
+        .btn-serang:hover { transform: scale(1.05); background: #d97706; }
+
+        /* Insight Panel Styles */
+        .insight-panel { display: none; background: #fffbeb; border: 2px solid #f59e0b; border-radius: 15px; padding: 20px; margin-top: 20px; color: #92400e; animation: slideDown 0.4s ease; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-insight { background: #4f46e5; color: white; border-radius: 50px; padding: 8px 20px; font-weight: bold; border: none; font-size: 0.9rem; transition: 0.3s; }
+        .btn-insight:hover { background: #4338ca; transform: scale(1.05); }
+        .video-box { border-radius: 10px; overflow: hidden; margin-top: 15px; display: none; }
+
+        /* Drill Styles */
+        .drill-step { background: #f1f5f9; border-left: 5px solid #64748b; padding: 15px; border-radius: 5px; transition: 0.3s; }
+        .drill-step.active { border-color: #f59e0b; background: #fffbeb; transform: translateX(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .drill-input { border: none; border-bottom: 2px solid #94a3b8; background: transparent; width: 60px; text-align: center; font-weight: bold; color: #0f172a; margin: 0 5px; }
+        .drill-input:focus { outline: none; border-color: #f59e0b; }
+        .drill-input.correct { border-color: #10b981; color: #10b981; }
+        .drill-input.wrong { border-color: #ef4444; color: #ef4444; animation: shake 0.3s; }
+
+        /* Markdown Table Styling for Quest Card */
+        .quest-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: #f8fafc;
+            color: #1e293b;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .quest-card th, .quest-card td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: left;
+        }
+        .quest-card th {
+            background: #e2e8f0;
+            color: #334155;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Arena Pertarungan (Atas) -->
+    <div class="combat-arena" id="combatArena">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-3">
+                <button id="btnKembali" class="btn btn-outline-light btn-sm rounded-pill fw-bold">🏳️ Menyerah</button>
+                <div id="timerContainer" class="badge bg-warning text-dark px-3 py-2 rounded-pill fs-6 timer-box">⏳ <span id="timerDisplay">10:00</span></div>
+            </div>
+
+            <div class="row text-center mt-3" id="hpStatsRow">
+                <!-- HP Player -->
+                <div class="col-5">
+                    <div class="avatar" id="avatarPlayer">🧑‍🚀</div>
+                    <h5 class="fw-bold mt-2">Kamu</h5>
+                    <div class="hp-container"><div class="hp-bar hp-player" id="hpPlayer" style="width: 100%"></div></div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                    <h2 class="fw-bold text-warning" style="font-style: italic;">VS</h2>
+                </div>
+                <!-- HP Monster -->
+                <div class="col-5">
+                    <div class="avatar" id="avatarMonster">👾</div>
+                    <h5 class="fw-bold mt-2 text-danger">Soal Ujian</h5>
+                    <div class="hp-container"><div class="hp-bar hp-monster" id="hpMonster" style="width: 100%"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Papan Soal (Bawah) -->
+    <div class="container mb-5">
+        <div class="quest-card mx-auto" style="max-width: 700px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge bg-primary fs-6 rounded-pill">Misi <span id="infoNomorSoal">1 / X</span></span>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-info text-dark rounded-pill" id="badgeTipe">Memuat...</span>
+                    <button id="btnReport" class="btn btn-link text-muted p-0" title="Laporkan Soal"><i class="bi bi-flag-fill"></i></button>
+                </div>
+            </div>
+            
+            <div id="wadahSoal">
+                <div class="text-center py-5">
+                    <div class="spinner-border text-primary"></div>
+                    <p class="mt-3 fw-bold">Memanggil monster soal...</p>
+                </div>
+            </div>
+
+            <!-- Drill UI (Shadow Training Only) -->
+            <div id="drillContainer" class="d-none mt-4">
+                <!-- Persistent Question Display -->
+                <div class="alert alert-info border-2 border-info shadow-sm mb-4">
+                    <span class="badge bg-primary mb-2">Misi Utama:</span>
+                    <h4 id="drillQuestionText" class="fw-bold mb-0 text-dark">Memuat Misi...</h4>
+                    <div id="drillTechniqueInfo" class="mt-3 p-2 bg-light border-start border-4 border-warning rounded fst-italic text-secondary small">
+                        <i class="bi bi-lightbulb-fill text-warning"></i> <strong>Teknik Strategi:</strong> <span id="textTechnique">-</span>
+                    </div>
+                </div>
+
+                <div class="card bg-dark text-warning border-warning mb-3">
+                    <div class="card-body text-center">
+                        <h5 class="card-title font-monospace"><i class="bi bi-headset"></i> VOICE GUIDANCE ACTIVE</h5>
+                        <div id="drillStatus" class="small text-light mb-2">Mendengarkan instruksi Master Sage...</div>
+                        <button id="btnReplayAudio" class="btn btn-sm btn-outline-warning rounded-pill"><i class="bi bi-arrow-counterclockwise"></i> Ulangi Instruksi</button>
+                    </div>
+                </div>
+                
+                <div id="drillSteps" class="v-stack gap-3">
+                    <!-- Dynamic Steps injected here -->
+                </div>
+            </div>
+
+            <!-- Hint Controls (Only for Guardian/Rift) -->
+            <div id="hintControls" class="d-none mt-4 text-center border-top pt-3">
+                <button class="btn-insight" id="btnShowInsight">📜 BUKA GULUNGAN INSIGHT</button>
+                <button class="btn-insight ms-2" id="btnShowVideo" style="background:#ef4444;"><i class="bi bi-play-circle-fill"></i> KRISTAL PENGLIHATAN</button>
+                
+                <div class="insight-panel text-start" id="insightPanel">
+                    <h6 class="fw-bold"><i class="bi bi-lightbulb-fill"></i> POLA CARA CEPAT:</h6>
+                    <div id="insightContent" class="small italic"></div>
+                    <div class="video-box" id="videoBox">
+                        <iframe id="videoIframe" width="100%" height="200" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p class="text-muted extra-small mt-2"><i>*Membuka Insight akan mengurangi perolehan XP sebesar 50%</i></p>
+            </div>
+
+            <button class="btn-serang mt-4 d-none" id="btnSerang">⚔️ JAWAB & SERANG!</button>
+        </div>
+    </div>
+
+    <!-- Modal Skor -->
+    <div class="modal fade" id="modalSkor" data-bs-backdrop="static" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4 rounded-4 border-0 shadow-lg text-dark">
+            <h1 class="display-1 mb-2" id="ikonSkor">🏆</h1>
+            <h2 class="fw-bold mb-1">Pertarungan Selesai!</h2>
+            <h1 class="display-2 fw-bold text-primary my-3" id="angkaSkor">100</h1>
+            <p class="fw-bold fs-4 text-success" id="teksXP">+50 XP</p>
+            <button type="button" class="btn btn-primary w-100 rounded-pill fw-bold py-3 mt-2 fs-5" id="btnLanjutMateri">Kembali ke Peta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Report -->
+    <div class="modal fade" id="modalReport" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-warning text-dark">
+                <div class="modal-header bg-light border-bottom">
+                    <h5 class="modal-title text-warning"><i class="bi bi-flag-fill"></i> Laporkan Masalah</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body bg-light">
+                    <p class="small text-muted">Bantu Master Sage memperbaiki soal ini. Apa masalahnya?</p>
+                    <textarea id="reportIssue" class="form-control" rows="3" placeholder="Contoh: Jawaban salah, Soal tidak jelas..."></textarea>
+                </div>
+                <div class="modal-footer bg-light border-top">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" id="btnSubmitReport" class="btn btn-warning btn-sm fw-bold">Kirim Laporan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/src/latihan.js"></script>
+</body>
+</html>
