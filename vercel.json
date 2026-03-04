@@ -1,0 +1,17 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/auth", "destination": "/auth.html" },
+    { "source": "/b2b", "destination": "/b2b.html" },
+    { "source": "/dashboard", "destination": "/dashboard.html" },
+    { "source": "/grandmaster-admin", "destination": "/grandmaster-admin.html" },
+    { "source": "/grandmaster-portal", "destination": "/grandmaster-portal.html" },
+    { "source": "/iklanguru", "destination": "/iklanguru.html" },
+    { "source": "/latihan", "destination": "/latihan.html" },
+    { "source": "/latihan_shadow", "destination": "/latihan_shadow.html" },
+    { "source": "/marketplace", "destination": "/marketplace.html" },
+    { "source": "/materi", "destination": "/materi.html" }
+  ]
+}
