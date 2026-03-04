@@ -1,3 +1,4 @@
+import { supabase } from './supabase.js';
 import * as pdfjsLib from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/+esm';
 import * as mammoth from 'https://cdn.jsdelivr.net/npm/mammoth@1.6.0/+esm';
 
@@ -5,7 +6,7 @@ import * as mammoth from 'https://cdn.jsdelivr.net/npm/mammoth@1.6.0/+esm';
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.min.mjs';
 
 // --- GOOGLE AI CONFIG ---
-const GEMINI_API_KEY = "AIzaSyDqaUzrHqEwnR23PUBhsGIcjdC4WK58v2s";
+// API Key is now secured in Supabase Edge Functions (gemini-proxy)
 
 // DOM Elements
 const dom = {
@@ -174,26 +175,19 @@ Material Context:
 ${fileContent.substring(0, 30000)} // Limit context
 `;
 
-    // DIRECT GOOGLE GEMINI API CALL
+    // DIRECT GOOGLE GEMINI API CALL (Now via Dedicated Automator Proxy)
     try {
-        // Using 'gemini-3-flash-preview' as explicitly requested
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${GEMINI_API_KEY}`;
-        
-        const payload = {
-            contents: [{ parts: [{ text: userQuery }] }],
-            systemInstruction: { parts: [{ text: systemInstruction }] }
-        };
-
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+        // Call Dedicated Supabase Edge Function for Automator (gemini-3-flash-preview)
+        const { data, error } = await supabase.functions.invoke('video-automator-proxy', {
+            body: { 
+                prompt: userQuery,
+                systemInstruction: systemInstruction,
+                model: 'gemini-3-flash-preview'
+            }
         });
 
-        const data = await response.json();
-        
-        if (!response.ok) {
-            throw new Error(data.error?.message || `API Error ${response.status}`);
+        if (error) {
+            throw new Error(error.message || "Edge Function Error");
         }
         
         const resultText = data.candidates?.[0]?.content?.parts?.[0]?.text;

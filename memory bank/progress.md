@@ -6,7 +6,11 @@ The project has successfully integrated **Interactive Video Learning** ("Shadow 
 ## What Works
 - [x] **Setup & Database**: Supabase integration, `profiles`, `materi`, `questions`, `shadow_drills`, `question_reports`, `progress`, and `video_quiz_logs` tables.
 - [x] **High-Security Admin System**: Implementation of the "Forbidden Gate" (`grandmaster-portal.html`) and "Protected Citadel" (`grandmaster-admin.html`) with strict role validation.
-- [x] **Video Automator**: Internal tool for generating high-quality AI video prompts from document sources using Google Gemini.
+- [x] **Video Automator**: Internal tool for generating high-quality AI video prompts from document sources using Google Gemini (Proxied via `video-automator-proxy` with dedicated `GEMINI_API_KEY2`).
+- [x] **API Security Overhaul**:
+    - [x] Secured all Gemini API calls via Supabase Edge Functions (`gemini-proxy` and `video-automator-proxy`).
+    - [x] Implemented strict Admin Role verification (RBAC) in the backend.
+    - [x] Removed all hardcoded API keys from frontend JavaScript files.
 - [x] **Interactive Video (Shadow Overlay)**:
     - [x] **Engine**: YouTube IFrame API integration in `src/materi.js`.
     - [x] **Shadow Forge**: Admin tool for manual quiz placement & timestamp capture.

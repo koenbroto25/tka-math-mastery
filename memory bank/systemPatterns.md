@@ -42,6 +42,10 @@ The application is built as a dynamic Static Site (SSG/SPA hybrid) using Vite an
     - Failing a battle reduces Heart count.
     - Hearts are recovered via "Social Quests" (API links with auto-copy promotional text) or "Sage's Rest" (Time-based).
 - **Auth Guard**: Every protected page runs a `checkAuth()` session validation before loading data.
+- **Secure API Proxy (Gemini Shield)**: Frontend never calls Google Gemini directly.
+    - `admin.js` (Shadow Forge) uses `gemini-proxy` with `GEMINI_API_KEY`.
+    - `video-automator.js` uses `video-automator-proxy` with `GEMINI_API_KEY2` to handle isolated long-running generation tasks.
+    - Both functions verify the user's Admin Role via `profiles` table before executing the server-to-server call to Google.
 
 ## Critical Implementation Paths
 - **Material Unlocking Flow**: 

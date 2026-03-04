@@ -14,7 +14,9 @@
 - **Shadow Forge (Admin Tool)**: Built a new Admin module for creating interactive videos. Features include **Live Preview**, **Timestamp Capture**, and **Magic Auto-Forge** (AI Sync).
 - **Magic Auto-Forge**: An AI-powered tool that reads uploaded PDF materials and TXT video scripts to automatically generate quizzes and map them to the correct video timestamps.
 - **Auto-Verify Progression**: The "Saya sudah mempelajari visi ini!" checkbox in `materi.html` is now automated. It only unlocks when all video quizzes are answered correctly.
-- **Video Automator**: Implemented a powerful internal tool using **Google Gemini 1.5 Flash** to convert PDF/DOCX materials into detailed animation prompts for Grok/X (Stickman style).
+- **API Security Overhaul**: Secured all Gemini AI integrations by removing hardcoded keys from the frontend. Implemented a **Dual-Proxy Architecture** using Supabase Edge Functions (`gemini-proxy` and `video-automator-proxy`) with strict Admin role verification (RBAC).
+- **Advanced AI Models**: Upgraded the Video Automator to use **Gemini 3 Flash Preview** (via dedicated `GEMINI_API_KEY2`) to handle large, complex scene-by-scene prompt generation.
+- **Video Automator**: Implemented a powerful internal tool to convert PDF/DOCX materials into detailed animation prompts for Grok/X (Stickman style).
 - **Guided Drill Engine**: Fully implemented `latihan_shadow.js` with step-by-step input validation and optimized Text-to-Speech (TTS) for math formulas.
 - **Admin Citadel Upgrades**: Added **God Mode** (Role Simulation), **AI JSON Sync**, **Shadow Forge**, and Global **Site Settings** configuration.
 
@@ -24,6 +26,8 @@
 - **Dual-Input AI Sync**: For accurate video quiz mapping, we use both the Source Material (PDF) for content and the Video Script (TXT) for timing, as raw YouTube analysis is limited without transcripts.
 - **Strict Unlocking Flow**: Adopted a rigid progression path: *Interactive Video (Auto-Verify) -> Training Grounds -> Shadow Training -> Guardian Skirmish -> Time Rift*.
 - **AI-First Content**: All new material generation defaults to using internal AI tools (Gemini) rather than manual entry.
+- **Zero-Key Frontend Policy**: No API keys for 3rd party services (Gemini, OpenRouter, etc.) shall be stored in frontend modules. All such calls must be proxied through Supabase Edge Functions with identity verification.
+- **Isolated AI Pipelines**: High-load AI tasks (like Video Automation) are isolated into separate Edge Functions and API keys to prevent quota exhaustion and performance interference with the main Admin Dashboard.
 
 ## Next Steps
 - [ ] **Landing Page**: Refactor `iklanguru.html` into a persuasive "Teacher Invitation" page.

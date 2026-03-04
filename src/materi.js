@@ -296,7 +296,7 @@ async function handleQuizAnswer(quiz, selectedIdx, btnElem) {
     const feedback = document.getElementById('vq-feedback');
     const allBtns = document.getElementById('vq-options').querySelectorAll('button');
     
-    // Disable all buttons
+    // Disable all buttons to prevent multiple clicks
     allBtns.forEach(b => b.disabled = true);
     
     if (isCorrect) {
@@ -310,7 +310,7 @@ async function handleQuizAnswer(quiz, selectedIdx, btnElem) {
         if (currentUser) {
             await supabase.from('video_quiz_logs').insert({
                 user_id: currentUser.id,
-                materi_id: currentMateriId, // Need to fetch materi.id in loadMateri
+                materi_id: currentMateriId,
                 quiz_index: quizConfig.indexOf(quiz),
                 is_correct: true
             });
@@ -320,11 +320,12 @@ async function handleQuizAnswer(quiz, selectedIdx, btnElem) {
         correctQuizzes.add(quizConfig.indexOf(quiz));
         checkAllQuizzesCompleted();
 
-        // Resume video after delay
+        // Close and Resume automatically after delay
         setTimeout(() => {
-            document.getElementById('videoQuizOverlay').classList.add('d-none');
-            document.getElementById('videoQuizOverlay').classList.remove('d-flex');
-            player.playVideo();
+            const overlay = document.getElementById('videoQuizOverlay');
+            overlay.classList.add('d-none');
+            overlay.classList.remove('d-flex');
+            player.playVideo(); // Auto-resume video
         }, 1500);
         
     } else {
@@ -334,7 +335,7 @@ async function handleQuizAnswer(quiz, selectedIdx, btnElem) {
         feedback.classList.remove('d-none', 'text-success');
         feedback.classList.add('text-danger');
         
-        // Allow retry after delay
+        // Allow retry ONLY if wrong - User CANNOT close overlay until correct
         setTimeout(() => {
             allBtns.forEach(b => {
                 b.disabled = false;
