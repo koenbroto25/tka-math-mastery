@@ -15,12 +15,22 @@ Mumpung aksesnya masih GRATIS, yuk daftarkan pahlawan kecil kita sekarang di:
 
 async function checkAuth() {
   const { data: { session }, error } = await supabase.auth.getSession();
+  
   if (!session || error) {
-    window.location.href = '/auth.html';
+    console.warn("Sesi tidak ditemukan atau kadaluarsa. Mengalihkan ke halaman login...");
+    window.location.replace('auth.html');
     return;
   }
+
   currentUser = session.user;
   loadUserProfile(currentUser.id);
+
+  // Listener untuk memantau status login (misal user logout di tab lain)
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_OUT' || !session) {
+      window.location.replace('auth.html');
+    }
+  });
 }
 
 async function loadUserProfile(userId) {
@@ -922,7 +932,7 @@ function aturDashboardAdmin(profile) {
 
         document.getElementById('btnLogoutAdmin')?.addEventListener('click', async () => {
             await supabase.auth.signOut();
-            window.location.href = '/auth.html';
+            window.location.replace('auth.html');
         });
     }
 }
@@ -981,7 +991,7 @@ function showAdminSimulationBadge() {
 document.addEventListener('click', async (e) => {
     if (e.target.id === 'btnLogout') {
         await supabase.auth.signOut();
-        window.location.href = '/auth.html';
+        window.location.replace('auth.html');
     }
 });
 
